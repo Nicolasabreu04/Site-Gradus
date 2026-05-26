@@ -1,0 +1,583 @@
+ {
+ "direito": {
+    "1": [
+      {
+        "pergunta": "Qual é a principal função da Constituição Federal?",
+        "opcoes": [
+          "Regular apenas contratos privados",
+          "Organizar o Estado e garantir direitos fundamentais",
+          "Criar empresas públicas",
+          "Regular apenas o direito penal",
+          "Fiscalizar eleições"
+        ],
+        "correta": 1
+      },
+      {
+        "pergunta": "Qual área do Direito estuda a origem e evolução das normas jurídicas?",
+        "opcoes": [
+          "Direito Penal",
+          "Direito Tributário",
+          "História do Direito",
+          "Direito Digital",
+          "Direito Administrativo"
+        ],
+        "correta": 2
+      },
+      {
+        "pergunta": "O que significa o princípio da separação dos poderes?",
+        "opcoes": [
+          "O poder pertence apenas ao Executivo",
+          "Cada poder possui funções específicas e independentes",
+          "O Judiciário controla sozinho o país",
+          "O Legislativo é superior aos demais",
+          "O Executivo pode criar leis sem limites"
+        ],
+        "correta": 1
+      },
+      {
+        "pergunta": "Na Filosofia Jurídica, justiça pode ser entendida como:",
+        "opcoes": [
+          "Aplicação da força física",
+          "Vontade exclusiva do governante",
+          "Busca pelo equilíbrio e garantia de direitos",
+          "Interesse econômico do Estado",
+          "Punição obrigatória em qualquer situação"
+        ],
+        "correta": 2
+      },
+      {
+        "pergunta": "Segundo a teoria contratualista, o Estado surgiu:",
+        "opcoes": [
+          "Por intervenção divina",
+          "Pela vontade exclusiva do rei",
+          "A partir de um acordo social entre indivíduos",
+          "Pela criação do Poder Judiciário",
+          "Pela imposição militar"
+        ],
+        "correta": 2
+      }
+    ],
+
+    "2": [
+      {
+        "pergunta": "O que é considerado crime no Direito Penal?",
+        "opcoes": [
+          "Qualquer ato imoral",
+          "Conduta prevista em lei penal",
+          "Apenas homicídio",
+          "Somente crimes com violência",
+          "Qualquer dívida não paga"
+        ],
+        "correta": 1
+      },
+      {
+        "pergunta": "No Direito Civil, pessoa física é:",
+        "opcoes": [
+          "Apenas servidor público",
+          "Toda pessoa natural com direitos e deveres",
+          "Apenas maior de 21 anos",
+          "Apenas empresário",
+          "Pessoa condenada criminalmente"
+        ],
+        "correta": 1
+      },
+      {
+        "pergunta": "Qual é a função da Teoria Geral do Processo?",
+        "opcoes": [
+          "Estudar apenas crimes",
+          "Estabelecer regras gerais do funcionamento do processo judicial",
+          "Regular empresas privadas",
+          "Criar tributos",
+          "Organizar eleições"
+        ],
+        "correta": 1
+      },
+      {
+        "pergunta": "O princípio da legalidade determina que:",
+        "opcoes": [
+          "Ninguém será obrigado a fazer algo senão em virtude de lei",
+          "Apenas juízes devem cumprir a lei",
+          "O Executivo pode ignorar normas",
+          "O Legislativo julga crimes",
+          "A Constituição pode ser desconsiderada"
+        ],
+        "correta": 0
+      },
+      {
+        "pergunta": "Na teoria do crime, a tipicidade significa:",
+        "opcoes": [
+          "Existência de dano moral",
+          "Adequação da conduta à descrição legal do crime",
+          "Julgamento pelo STF",
+          "Aplicação automática da pena",
+          "Existência de contrato inválido"
+        ],
+        "correta": 1
+      }
+    ],
+
+    "3": [
+      {
+        "pergunta": "Obrigação, no Direito Civil, é:",
+        "opcoes": [
+          "Apenas pagamento em dinheiro",
+          "Relação jurídica entre credor e devedor",
+          "Exclusivamente obrigação do Estado",
+          "Qualquer norma penal",
+          "Ato político"
+        ],
+        "correta": 1
+      },
+      {
+        "pergunta": "Qual poder é responsável por criar leis?",
+        "opcoes": [
+          "Executivo",
+          "Judiciário",
+          "Legislativo",
+          "Ministério Público",
+          "Polícia Federal"
+        ],
+        "correta": 2
+      },
+      {
+        "pergunta": "Crimes em espécie são:",
+        "opcoes": [
+          "Regras constitucionais",
+          "Categorias específicas de crimes previstas no Código Penal",
+          "Apenas crimes internacionais",
+          "Apenas crimes militares",
+          "Tipos de contratos civis"
+        ],
+        "correta": 1
+      },
+      {
+        "pergunta": "A mediação de conflitos busca:",
+        "opcoes": [
+          "Punir imediatamente o réu",
+          "Resolver conflitos com diálogo entre as partes",
+          "Eliminar o Judiciário",
+          "Aplicar prisão preventiva",
+          "Aumentar processos judiciais"
+        ],
+        "correta": 1
+      },
+      {
+        "pergunta": "No Direito das Obrigações, inadimplemento significa:",
+        "opcoes": [
+          "Criação de uma lei",
+          "Descumprimento da obrigação assumida",
+          "Julgamento criminal",
+          "Extinção automática do contrato",
+          "Prisão civil obrigatória"
+        ],
+        "correta": 1
+      }
+    ],
+
+    "4": [
+      {
+        "pergunta": "Contrato é:",
+        "opcoes": [
+          "Apenas documento empresarial",
+          "Acordo de vontades com efeitos jurídicos",
+          "Norma penal",
+          "Decisão judicial",
+          "Tributo obrigatório"
+        ],
+        "correta": 1
+      },
+      {
+        "pergunta": "Os Direitos Humanos têm como objetivo:",
+        "opcoes": [
+          "Garantir dignidade e proteção da pessoa humana",
+          "Defender apenas empresas",
+          "Criar impostos",
+          "Punir países pobres",
+          "Regular apenas eleições"
+        ],
+        "correta": 0
+      },
+      {
+        "pergunta": "O controle de constitucionalidade serve para:",
+        "opcoes": [
+          "Criar leis municipais",
+          "Verificar se leis estão de acordo com a Constituição",
+          "Julgar contratos privados",
+          "Aplicar multas de trânsito",
+          "Organizar concursos públicos"
+        ],
+        "correta": 1
+      },
+      {
+        "pergunta": "Hermenêutica jurídica refere-se:",
+        "opcoes": [
+          "À criação de impostos",
+          "À interpretação das normas jurídicas",
+          "Ao julgamento criminal",
+          "À administração pública",
+          "À fiscalização policial"
+        ],
+        "correta": 1
+      },
+      {
+        "pergunta": "No controle concentrado de constitucionalidade, quem julga em regra é:",
+        "opcoes": [
+          "Tribunal do Júri",
+          "Superior Tribunal Militar",
+          "Supremo Tribunal Federal",
+          "Ministério Público",
+          "Senado Federal"
+        ],
+        "correta": 2
+      }
+    ],
+
+    "5": [
+      {
+        "pergunta": "Direito do Consumidor protege:",
+        "opcoes": [
+          "Apenas empresas",
+          "Relações entre consumidor e fornecedor",
+          "Somente contratos internacionais",
+          "Crimes ambientais",
+          "Relações políticas"
+        ],
+        "correta": 1
+      },
+      {
+        "pergunta": "Processo Penal trata:",
+        "opcoes": [
+          "Da criação de empresas",
+          "Da aplicação da lei penal em juízo",
+          "Apenas de contratos",
+          "Da cobrança de tributos",
+          "De eleições"
+        ],
+        "correta": 1
+      },
+      {
+        "pergunta": "Posse e propriedade são temas de qual área?",
+        "opcoes": [
+          "Direito Civil – Coisas",
+          "Direito Tributário",
+          "Direito Internacional",
+          "Direito Financeiro",
+          "Direito Eleitoral"
+        ],
+        "correta": 0
+      },
+      {
+        "pergunta": "Recurso judicial é utilizado para:",
+        "opcoes": [
+          "Encerrar automaticamente o processo",
+          "Revisar decisão judicial",
+          "Criar nova lei",
+          "Aplicar pena criminal",
+          "Registrar empresa"
+        ],
+        "correta": 1
+      },
+      {
+        "pergunta": "A responsabilidade objetiva do fornecedor no CDC depende:",
+        "opcoes": [
+          "Da comprovação de culpa",
+          "Apenas de decisão criminal",
+          "Da existência do dano e nexo causal",
+          "Exclusivamente de contrato escrito",
+          "Da autorização judicial prévia"
+        ],
+        "correta": 2
+      }
+    ],
+
+    "6": [
+      {
+        "pergunta": "Direito Administrativo regula:",
+        "opcoes": [
+          "Relações familiares",
+          "Atuação da Administração Pública",
+          "Apenas crimes federais",
+          "Contratos internacionais",
+          "Casamento civil"
+        ],
+        "correta": 1
+      },
+      {
+        "pergunta": "O Direito das Famílias trata de:",
+        "opcoes": [
+          "Tributos municipais",
+          "Relações familiares e sucessórias",
+          "Crimes ambientais",
+          "Contratos bancários",
+          "Direito empresarial"
+        ],
+        "correta": 1
+      },
+      {
+        "pergunta": "Sucessão ocorre:",
+        "opcoes": [
+          "Apenas em contratos",
+          "Com a transmissão de bens após a morte",
+          "Em crimes eleitorais",
+          "Na criação de empresas",
+          "Em licitações públicas"
+        ],
+        "correta": 1
+      },
+      {
+        "pergunta": "O princípio da legalidade administrativa significa que:",
+        "opcoes": [
+          "O administrador pode fazer tudo que quiser",
+          "A Administração só pode agir conforme a lei",
+          "O Judiciário cria leis administrativas",
+          "Empresas privadas controlam o Estado",
+          "Tributos são facultativos"
+        ],
+        "correta": 1
+      },
+      {
+        "pergunta": "A união estável pode ser reconhecida quando houver:",
+        "opcoes": [
+          "Relação pública, contínua e duradoura com objetivo de constituição familiar",
+          "Apenas contrato escrito",
+          "Necessariamente casamento religioso",
+          "Autorização judicial prévia",
+          "Somente convivência superior a 10 anos"
+        ],
+        "correta": 0
+      }
+    ],
+
+    "7": [
+      {
+        "pergunta": "O Direito do Trabalho protege:",
+        "opcoes": [
+          "Apenas empresas multinacionais",
+          "Relações entre empregado e empregador",
+          "Crimes financeiros",
+          "Relações internacionais",
+          "Direito penal militar"
+        ],
+        "correta": 1
+      },
+      {
+        "pergunta": "Responsabilidade civil envolve:",
+        "opcoes": [
+          "Reparação de danos causados a terceiros",
+          "Apenas prisão criminal",
+          "Criação de tributos",
+          "Relações diplomáticas",
+          "Eleições municipais"
+        ],
+        "correta": 0
+      },
+      {
+        "pergunta": "Férias remuneradas são direito previsto em:",
+        "opcoes": [
+          "Direito Tributário",
+          "Direito Administrativo",
+          "Direito do Trabalho",
+          "Direito Penal",
+          "Direito Internacional"
+        ],
+        "correta": 2
+      },
+      {
+        "pergunta": "Licitação é:",
+        "opcoes": [
+          "Julgamento criminal",
+          "Processo administrativo para contratação pública",
+          "Contrato internacional",
+          "Tipo de tributo",
+          "Procedimento eleitoral"
+        ],
+        "correta": 1
+      },
+      {
+        "pergunta": "Na responsabilidade civil subjetiva, é necessária:",
+        "opcoes": [
+          "Apenas existência do dano",
+          "Prova de culpa ou dolo",
+          "Prisão preventiva",
+          "Decisão do Senado",
+          "Existência de casamento"
+        ],
+        "correta": 1
+      }
+    ],
+
+    "8": [
+      {
+        "pergunta": "Tributo é:",
+        "opcoes": [
+          "Pena criminal",
+          "Prestação compulsória prevista em lei",
+          "Contrato empresarial",
+          "Norma internacional",
+          "Processo eleitoral"
+        ],
+        "correta": 1
+      },
+      {
+        "pergunta": "Direito Digital regula:",
+        "opcoes": [
+          "Apenas jogos online",
+          "Relações jurídicas envolvendo tecnologia e internet",
+          "Apenas redes sociais",
+          "Somente crimes financeiros",
+          "Apenas contratos internacionais"
+        ],
+        "correta": 1
+      },
+      {
+        "pergunta": "A seguridade social engloba:",
+        "opcoes": [
+          "Apenas previdência privada",
+          "Saúde, assistência e previdência social",
+          "Apenas saúde pública",
+          "Segurança pública",
+          "Apenas aposentadoria militar"
+        ],
+        "correta": 1
+      },
+      {
+        "pergunta": "O processo constitucional busca:",
+        "opcoes": [
+          "Aplicar apenas normas penais",
+          "Garantir proteção da Constituição e dos direitos fundamentais",
+          "Criar empresas públicas",
+          "Regular contratos privados",
+          "Organizar licitações"
+        ],
+        "correta": 1
+      },
+      {
+        "pergunta": "O princípio da anterioridade tributária impede:",
+        "opcoes": [
+          "Criação de leis penais",
+          "Cobrança imediata de tributo recém-criado em determinadas hipóteses",
+          "Existência de impostos municipais",
+          "Julgamento pelo STF",
+          "Criação de contribuições sociais"
+        ],
+        "correta": 1
+      }
+    ],
+
+    "9": [
+      {
+        "pergunta": "O Processo do Trabalho é utilizado para:",
+        "opcoes": [
+          "Resolver conflitos trabalhistas",
+          "Julgar crimes militares",
+          "Cobrar impostos",
+          "Organizar eleições",
+          "Regular comércio exterior"
+        ],
+        "correta": 0
+      },
+      {
+        "pergunta": "A Justiça do Trabalho julga:",
+        "opcoes": [
+          "Apenas crimes comuns",
+          "Conflitos entre empregado e empregador",
+          "Apenas causas internacionais",
+          "Casos eleitorais",
+          "Questões tributárias federais"
+        ],
+        "correta": 1
+      },
+      {
+        "pergunta": "Mandado de segurança é utilizado para:",
+        "opcoes": [
+          "Cobrar dívida comum",
+          "Proteger direito líquido e certo",
+          "Criar tributos",
+          "Julgar homicídios",
+          "Regular contratos privados"
+        ],
+        "correta": 1
+      },
+      {
+        "pergunta": "Na prática jurídica, petição inicial é:",
+        "opcoes": [
+          "Documento que inicia a ação judicial",
+          "Sentença final do juiz",
+          "Tipo de contrato empresarial",
+          "Lei complementar",
+          "Recurso constitucional"
+        ],
+        "correta": 0
+      },
+      {
+        "pergunta": "Na Justiça do Trabalho, o princípio da proteção busca:",
+        "opcoes": [
+          "Favorecer economicamente empresas",
+          "Equilibrar a relação entre empregado e empregador",
+          "Extinguir sindicatos",
+          "Eliminar direitos trabalhistas",
+          "Substituir a Constituição Federal"
+        ],
+        "correta": 1
+      }
+    ],
+
+    "10": [
+      {
+        "pergunta": "Direito Ambiental busca:",
+        "opcoes": [
+          "Apenas proteger empresas",
+          "Preservar o meio ambiente e garantir sustentabilidade",
+          "Criar tributos internacionais",
+          "Regular eleições",
+          "Julgar crimes militares"
+        ],
+        "correta": 1
+      },
+      {
+        "pergunta": "Direito Internacional regula:",
+        "opcoes": [
+          "Relações entre países e organismos internacionais",
+          "Apenas contratos trabalhistas",
+          "Crimes de trânsito",
+          "Relações familiares internas",
+          "Apenas comércio local"
+        ],
+        "correta": 0
+      },
+      {
+        "pergunta": "Legislação antidiscriminatória busca:",
+        "opcoes": [
+          "Incentivar desigualdade",
+          "Combater discriminação e promover igualdade",
+          "Reduzir direitos fundamentais",
+          "Eliminar políticas públicas",
+          "Criar novos tributos"
+        ],
+        "correta": 1
+      },
+      {
+        "pergunta": "Empreendedorismo jurídico pode envolver:",
+        "opcoes": [
+          "Apenas concursos públicos",
+          "Criação de soluções e inovação no setor jurídico",
+          "Extinção da advocacia",
+          "Apenas atuação criminal",
+          "Somente atividades políticas"
+        ],
+        "correta": 1
+      },
+      {
+        "pergunta": "No Direito Internacional Público, soberania significa:",
+        "opcoes": [
+          "Dependência absoluta de outros países",
+          "Poder supremo do Estado dentro de seu território",
+          "Ausência de governo",
+          "Controle do Judiciário mundial",
+          "Eliminação das fronteiras nacionais"
+        ],
+        "correta": 1
+      }
+    ]
+  }
+ }

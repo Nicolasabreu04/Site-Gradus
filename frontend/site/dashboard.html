@@ -1,0 +1,117 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard Gradus</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="page-shell">
+    <header class="dashboard-header">
+      <div>
+        <p class="eyebrow">Painel Administrativo</p>
+        <h1>Dashboard Gradus</h1>
+      </div>
+      <div class="dashboard-actions">
+        <a href="index.html" class="button button-outline">Voltar ao início</a>
+        <button id="botaoAtualizar" class="button button-primary">Atualizar dados</button>
+        <button id="botaoSair" class="button button-secondary">Sair</button>
+      </div>
+    </header>
+
+    <section class="cards-grid">
+      <article class="card blue-card">
+        <span>Total de alunos</span>
+        <strong id="totalAlunos">0</strong>
+      </article>
+      <article class="card green-card">
+        <span>Total de respostas</span>
+        <strong id="totalRespostas">0</strong>
+      </article>
+      <article class="card yellow-card">
+        <span>Total de acertos</span>
+        <strong id="totalAcertos">0</strong>
+      </article>
+      <article class="card red-card">
+        <span>Total de erros</span>
+        <strong id="totalErros">0</strong>
+      </article>
+      <article class="card blue-card">
+        <span>Percentual de acertos</span>
+        <strong id="percentualAcertos">0%</strong>
+      </article>
+      <article class="card green-card">
+        <span>Média de pontuação</span>
+        <strong id="mediaPontuacaoPorResposta">0</strong>
+      </article>
+    </section>
+
+    <section class="report-section">
+      <div class="report-card">
+        <div class="report-card-header">
+          <h2>Desempenho por curso</h2>
+          <p>Compare resultados por área de formação.</p>
+        </div>
+        <div class="table-wrapper">
+          <table id="tabelaDesempenhoCurso">
+            <thead>
+              <tr>
+                <th>Curso</th>
+                <th>Respostas</th>
+                <th>Acertos</th>
+                <th>Erros</th>
+                <th>% Acertos</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="report-card">
+        <div class="report-card-header">
+          <h2>Desempenho por período</h2>
+          <p>Análise do rendimento por semestre/período.</p>
+        </div>
+        <div class="table-wrapper">
+          <table id="tabelaDesempenhoPeriodo">
+            <thead>
+              <tr>
+                <th>Período</th>
+                <th>Respostas</th>
+                <th>Acertos</th>
+                <th>Erros</th>
+                <th>% Acertos</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="report-card full-width-card">
+        <div class="report-card-header">
+          <h2>Perguntas com mais erros</h2>
+          <p>Questões que exigem revisão ou reforço.</p>
+        </div>
+        <div class="table-wrapper">
+          <table id="tabelaPerguntasErros">
+            <thead>
+              <tr>
+                <th>Pergunta</th>
+                <th>Erros</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <div id="mensagemErro" class="error-banner hidden"></div>
+  </div>
+
+  <script src="js/dashboard.js"></script>
+</body>
+</html>

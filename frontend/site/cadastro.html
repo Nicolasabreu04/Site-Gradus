@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cadastro - Gradus</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="page-shell page-center">
+    <header class="form-header">
+      <div>
+        <h1>Cadastro de aluno</h1>
+        <p>Preencha seus dados para iniciar a experiência de avaliação em VR.</p>
+      </div>
+      <a href="index.html" class="button button-outline">Voltar</a>
+    </header>
+
+    <main class="form-panel">
+      <form id="cadastroForm" class="form-card">
+        <label for="nome">Nome completo</label>
+        <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required />
+
+        <label for="curso">Curso</label>
+        <select id="curso" name="curso" required>
+          <option value="">Selecione o curso</option>
+          <option value="Ciencia da Computacao">Ciência da Computação</option>
+          <option value="Direito">Direito</option>
+        </select>
+
+        <label for="periodo">Período</label>
+        <select id="periodo" name="periodo" required>
+          <option value="">Selecione o período</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+        </select>
+
+        <button type="submit" class="button button-primary">Cadastrar e acessar jogo</button>
+        <p id="mensagemCadastro" class="form-message"></p>
+      </form>
+    </main>
+  </div>
+  <script src="js/cadastro.js"></script>
+</body>
+</html>
