@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const { db } = require("../firebase");
+const pool = require("../database");
 
 router.get("/", (req, res) => {
   res.json({ mensagem: "Rota de dashboard funcionando" });
@@ -8,15 +8,12 @@ router.get("/", (req, res) => {
 
 router.get("/resumo", async (req, res) => {
   try {
-    if (!db) {
-      return res.status(500).json({ mensagem: "Firebase não está configurado." });
-    }
+    const alunosResult = await pool.query("SELECT COUNT(*)::int AS total FROM alunos");
+    const respostasResult = await pool.query("SELECT * FROM respostas");
 
-    const alunosSnapshot = await db.collection("alunos").get();
-    const respostasSnapshot = await db.collection("respostas").get();
-
-    const totalAlunos = alunosSnapshot.size;
-    const totalRespostas = respostasSnapshot.size;
+    const totalAlunos = alunosResult.rows[0].total;
+    const respostas = respostasResult.rows;
+    const totalRespostas = respostas.length;
 
     let totalAcertos = 0;
     let totalErros = 0;
@@ -26,8 +23,7 @@ router.get("/resumo", async (req, res) => {
     const desempenhoPorPeriodo = {};
     const errosPorPergunta = {};
 
-    respostasSnapshot.forEach((doc) => {
-      const resposta = doc.data();
+    respostas.forEach((resposta) => {
       const acertou = resposta.acertou === true;
       const erro = !acertou;
 

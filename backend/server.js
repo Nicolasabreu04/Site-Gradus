@@ -16,7 +16,7 @@ app.use("/respostas", respostasRoutes);
 app.use("/dashboard", dashboardRoutes);
 
 app.get("/", (req, res) => {
-  res.send("🚀 API Gradus funcionando!");
+  res.send("API Gradus funcionando com PostgreSQL");
 });
 
 const PORT = 3000;

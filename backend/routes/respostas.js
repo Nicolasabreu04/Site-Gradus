@@ -1,20 +1,27 @@
 const express = require("express");
 const router = express.Router();
-const { db } = require("../firebase");
+const pool = require("../database");
+
+function mapResposta(row) {
+  return {
+    id: row.id,
+    alunoId: row.aluno_id,
+    nome: row.nome,
+    curso: row.curso,
+    periodo: row.periodo,
+    pergunta: row.pergunta,
+    respostaEscolhida: row.resposta_escolhida,
+    respostaCorreta: row.resposta_correta,
+    acertou: row.acertou,
+    pontuacao: row.pontuacao,
+    criadoEm: row.criado_em,
+  };
+}
 
 router.get("/", async (req, res) => {
   try {
-    if (!db) {
-      return res.status(500).json({ mensagem: "Firebase não está configurado." });
-    }
-
-    const snapshot = await db.collection("respostas").get();
-    const respostas = [];
-
-    snapshot.forEach((doc) => {
-      respostas.push({ id: doc.id, ...doc.data() });
-    });
-
+    const result = await pool.query("SELECT * FROM respostas ORDER BY id");
+    const respostas = result.rows.map(mapResposta);
     return res.json({ mensagem: "Respostas listadas com sucesso", respostas });
   } catch (error) {
     console.error("Erro ao listar respostas:", error);
@@ -24,10 +31,6 @@ router.get("/", async (req, res) => {
 
 router.post("/", async (req, res) => {
   try {
-    if (!db) {
-      return res.status(500).json({ mensagem: "Firebase não está configurado." });
-    }
-
     const {
       alunoId,
       nome,
@@ -63,7 +66,22 @@ router.post("/", async (req, res) => {
       return res.status(400).json({ mensagem: "pontuacao deve ser um número" });
     }
 
-    const novaResposta = {
+    const insertQuery = `
+      INSERT INTO respostas (
+        aluno_id,
+        nome,
+        curso,
+        periodo,
+        pergunta,
+        resposta_escolhida,
+        resposta_correta,
+        acertou,
+        pontuacao
+      ) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9)
+      RETURNING *
+    `;
+
+    const values = [
       alunoId,
       nome,
       curso,
@@ -73,17 +91,12 @@ router.post("/", async (req, res) => {
       respostaCorreta,
       acertou,
       pontuacao,
-      criadoEm: new Date(),
-    };
+    ];
 
-    const docRef = await db.collection("respostas").add(novaResposta);
-    const respostaCriada = { id: docRef.id, ...novaResposta };
+    const result = await pool.query(insertQuery, values);
+    const resposta = mapResposta(result.rows[0]);
 
-    return res.status(201).json({
-      mensagem: "Resposta criada com sucesso",
-      id: docRef.id,
-      resposta: respostaCriada,
-    });
+    return res.status(201).json({ mensagem: "Resposta criada com sucesso", id: resposta.id, resposta });
   } catch (error) {
     console.error("Erro ao criar resposta:", error);
     return res.status(500).json({ mensagem: "Erro ao criar resposta" });
@@ -92,19 +105,14 @@ router.post("/", async (req, res) => {
 
 router.get("/:id", async (req, res) => {
   try {
-    if (!db) {
-      return res.status(500).json({ mensagem: "Firebase não está configurado." });
-    }
-
     const { id } = req.params;
-    const docRef = db.collection("respostas").doc(id);
-    const doc = await docRef.get();
+    const result = await pool.query("SELECT * FROM respostas WHERE id = $1", [id]);
 
-    if (!doc.exists) {
+    if (result.rowCount === 0) {
       return res.status(404).json({ mensagem: "Resposta não encontrada" });
     }
 
-    return res.json({ mensagem: "Resposta encontrada", resposta: { id: doc.id, ...doc.data() } });
+    return res.json({ mensagem: "Resposta encontrada", resposta: mapResposta(result.rows[0]) });
   } catch (error) {
     console.error("Erro ao buscar resposta:", error);
     return res.status(500).json({ mensagem: "Erro ao buscar resposta" });
@@ -113,19 +121,13 @@ router.get("/:id", async (req, res) => {
 
 router.delete("/:id", async (req, res) => {
   try {
-    if (!db) {
-      return res.status(500).json({ mensagem: "Firebase não está configurado." });
-    }
-
     const { id } = req.params;
-    const docRef = db.collection("respostas").doc(id);
-    const doc = await docRef.get();
+    const result = await pool.query("DELETE FROM respostas WHERE id = $1 RETURNING *", [id]);
 
-    if (!doc.exists) {
+    if (result.rowCount === 0) {
       return res.status(404).json({ mensagem: "Resposta não encontrada" });
     }
 
-    await docRef.delete();
     return res.json({ mensagem: "Resposta deletada com sucesso", id });
   } catch (error) {
     console.error("Erro ao deletar resposta:", error);

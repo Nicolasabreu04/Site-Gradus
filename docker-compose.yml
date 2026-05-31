@@ -1,0 +1,30 @@
+services:
+  db:
+    image: postgres:16
+    container_name: gradus_postgres
+    environment:
+      POSTGRES_USER: gradus
+      POSTGRES_PASSWORD: gradus123
+      POSTGRES_DB: gradus_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - gradus_pgdata:/var/lib/postgresql/data
+      - ./backend/sql/init.sql:/docker-entrypoint-initdb.d/init.sql
+
+  backend:
+    build: ./backend
+    container_name: gradus_backend
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+    environment:
+      DB_HOST: db
+      DB_PORT: 5432
+      DB_USER: gradus
+      DB_PASSWORD: gradus123
+      DB_NAME: gradus_db
+
+volumes:
+  gradus_pgdata:
