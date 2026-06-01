@@ -3,14 +3,46 @@
 
 const formCadastro = document.getElementById("cadastroForm");
 const mensagemCadastro = document.getElementById("mensagemCadastro");
+const selectCurso = document.getElementById("curso");
+const selectPeriodo = document.getElementById("periodo");
+
+const CURSO_CC_VALUE = "Ciencia da Computacao";
+const PERIODO_MAX_CC = 8;
+const PERIODO_MAX_DEFAULT = 10;
+
+function atualizarPeriodosPorCurso(curso) {
+  const maxPeriodo = curso === CURSO_CC_VALUE ? PERIODO_MAX_CC : PERIODO_MAX_DEFAULT;
+  const periodoAtual = selectPeriodo.value;
+
+  selectPeriodo.innerHTML = '<option value="">Selecione o período</option>';
+
+  for (let i = 1; i <= maxPeriodo; i += 1) {
+    const option = document.createElement("option");
+    option.value = String(i);
+    option.textContent = String(i);
+    selectPeriodo.appendChild(option);
+  }
+
+  if (periodoAtual && Number(periodoAtual) <= maxPeriodo) {
+    selectPeriodo.value = periodoAtual;
+  }
+}
+
+selectCurso.addEventListener("change", () => {
+  atualizarPeriodosPorCurso(selectCurso.value);
+});
+
+window.addEventListener("DOMContentLoaded", () => {
+  atualizarPeriodosPorCurso(selectCurso.value);
+});
 
 formCadastro.addEventListener("submit", async (event) => {
   event.preventDefault();
   mensagemCadastro.textContent = "";
 
   const nome = document.getElementById("nome").value.trim();
-  const curso = document.getElementById("curso").value;
-  const periodo = document.getElementById("periodo").value;
+  const curso = selectCurso.value;
+  const periodo = selectPeriodo.value;
 
   if (!nome || !curso || !periodo) {
     mensagemCadastro.textContent = "Por favor, preencha todos os campos.";
