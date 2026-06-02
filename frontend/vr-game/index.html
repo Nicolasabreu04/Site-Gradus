@@ -9,12 +9,96 @@
 </head>
 <body>
   <a-scene background="color: #0F1419">
-    <a-sky color="#0F1419"></a-sky>
-    <a-entity light="type: ambient; color: #ffffff; intensity: 0.6"></a-entity>
-    <a-entity light="type: directional; color: #ffffff; intensity: 1" position="5 8 3"></a-entity>
+    <a-sky color="#7da8cb"></a-sky>
+    <a-entity light="type: hemisphere; skyColor: #e8f2ff; groundColor: #6c8c7b; intensity: 0.6"></a-entity>
+    <a-entity light="type: directional; color: #ffffff; intensity: 0.9" position="-5 12 4"></a-entity>
+    <a-entity light="type: point; color: #f7f1e0; intensity: 0.6; distance: 30" position="0 5 0"></a-entity>
+    <a-entity light="type: point; color: #f7f1e0; intensity: 0.45; distance: 18" position="-11 4 -7"></a-entity>
+    <a-entity light="type: point; color: #f7f1e0; intensity: 0.45; distance: 18" position="11 4 -7"></a-entity>
 
-    <!-- Chão (plano grande) -->
-    <a-plane rotation="-90 0 0" width="60" height="60" color="#070b12"></a-plane>
+    <!-- Chão maior e campus (área útil aumentada e caminhos alargados) -->
+    <a-plane rotation="-90 0 0" width="140" height="140" color="#4c7d53"></a-plane>
+    <a-plane rotation="-90 0 0" width="30" height="14" position="0 0.01 0" color="#d7d0be"></a-plane>
+    <a-plane rotation="-90 0 0" width="8" height="28" position="0 0.02 -6" color="#d7d0be"></a-plane>
+    <a-plane rotation="-90 0 0" width="30" height="10" position="0 0.02 -11" color="#d7d0be"></a-plane>
+    <a-circle radius="3.5" rotation="-90 0 0" color="#c5b99c" position="0 0.03 0"></a-circle>
+    <a-entity geometry="primitive: ring; radiusInner: 1.1; radiusOuter: 1.8" rotation="-90 0 0" material="color: #a8a18a; opacity: 0.95" position="0 0.05 0"></a-entity>
+
+    <!-- Fonte central -->
+    <a-entity id="fonteCentral" position="0 0 0">
+      <a-cylinder radius="1.4" height="0.18" color="#9c8f78" position="0 0.09 0"></a-cylinder>
+      <a-cylinder radius="1.0" height="0.28" color="#75a8c6" opacity="0.85" position="0 0.24 0"></a-cylinder>
+      <a-cylinder radius="0.35" height="0.28" color="#9c8f78" position="0 0.56 0"></a-cylinder>
+      <a-sphere radius="0.08" color="#ffffff" position="0 0.85 0"></a-sphere>
+      <a-entity text="value: FONTE CENTRAL; width: 4; color: #ffffff; anchor: center; align: center; fontSize: 10" position="0 1.1 0"></a-entity>
+    </a-entity>
+
+    <!-- NPC / Recepcionista perto da fonte (simples, sem modelos externos) -->
+    <a-entity id="npcRecepc" position="-4 0 2.5" face-camera>
+      <a-cylinder position="0 0.6 0" radius="0.25" height="1.2" color="#6b4f3a"></a-cylinder>
+      <a-sphere position="0 1.5 0" radius="0.28" color="#f1d7c4"></a-sphere>
+      <a-cylinder position="-0.45 0.8 0" radius="0.06" height="0.6" rotation="0 0 20" color="#6b4f3a"></a-cylinder>
+      <a-cylinder position="0.45 0.8 0" radius="0.06" height="0.6" rotation="0 0 -20" color="#6b4f3a"></a-cylinder>
+      <a-entity text="value: Bem-vindo ao Gradus VR\nExplore os ambientes e responda aos desafios; width: 4.2; color: #ffffff; anchor: center; align: center; fontSize: 14" position="0 2.3 0" pointer-events="none" face-camera></a-entity>
+    </a-entity>
+
+    <!-- Letreiro grande na entrada da praça -->
+    <a-entity id="letreiroGradus" position="0 2.8 6" pointer-events="none">
+      <a-entity text="value: GRADUS VR; width: 10; color: #ffffff; anchor: center; align: center; fontSize: 28" position="0 0 0"></a-entity>
+      <a-entity text="value: AVALIACAO ACADEMICA IMERSIVA; width: 10; color: #ffffff; anchor: center; align: center; fontSize: 12" position="0 -0.4 0"></a-entity>
+    </a-entity>
+
+    <!-- Árvores reposicionadas para laterais, longe do caminho principal -->
+    <a-entity id="arvoresDecor">
+      <a-cylinder position="-12 0 5" radius="0.18" height="1.2" color="#6b4f3a" pointer-events="none"></a-cylinder>
+      <a-sphere position="-12 1.2 5" radius="0.9" color="#2f8a4f" pointer-events="none"></a-sphere>
+
+      <a-cylinder position="12 0 5" radius="0.18" height="1.2" color="#6b4f3a" pointer-events="none"></a-cylinder>
+      <a-sphere position="12 1.2 5" radius="0.9" color="#2f8a4f" pointer-events="none"></a-sphere>
+
+      <a-cylinder position="-12 0 -5" radius="0.18" height="1.2" color="#6b4f3a" pointer-events="none"></a-cylinder>
+      <a-sphere position="-12 1.2 -5" radius="0.9" color="#2f8a4f" pointer-events="none"></a-sphere>
+
+      <a-cylinder position="12 0 -5" radius="0.18" height="1.2" color="#6b4f3a" pointer-events="none"></a-cylinder>
+      <a-sphere position="12 1.2 -5" radius="0.9" color="#2f8a4f" pointer-events="none"></a-sphere>
+
+      <a-cylinder position="-11 0 -15" radius="0.18" height="1.2" color="#6b4f3a" pointer-events="none"></a-cylinder>
+      <a-sphere position="-11 1.2 -15" radius="0.9" color="#2f8a4f" pointer-events="none"></a-sphere>
+
+      <a-cylinder position="11 0 -15" radius="0.18" height="1.2" color="#6b4f3a" pointer-events="none"></a-cylinder>
+      <a-sphere position="11 1.2 -15" radius="0.9" color="#2f8a4f" pointer-events="none"></a-sphere>
+
+      <a-cylinder position="-11 0 -25" radius="0.18" height="1.2" color="#6b4f3a" pointer-events="none"></a-cylinder>
+      <a-sphere position="-11 1.2 -25" radius="0.9" color="#2f8a4f" pointer-events="none"></a-sphere>
+
+      <a-cylinder position="11 0 -25" radius="0.18" height="1.2" color="#6b4f3a" pointer-events="none"></a-cylinder>
+      <a-sphere position="11 1.2 -25" radius="0.9" color="#2f8a4f" pointer-events="none"></a-sphere>
+
+      <a-cylinder position="-11 0 -35" radius="0.18" height="1.2" color="#6b4f3a" pointer-events="none"></a-cylinder>
+      <a-sphere position="-11 1.2 -35" radius="0.9" color="#2f8a4f" pointer-events="none"></a-sphere>
+
+      <a-cylinder position="11 0 -35" radius="0.18" height="1.2" color="#6b4f3a" pointer-events="none"></a-cylinder>
+      <a-sphere position="11 1.2 -35" radius="0.9" color="#2f8a4f" pointer-events="none"></a-sphere>
+    </a-entity>
+
+    <!-- Bancos reposicionados para ficar mais longe da fonte e do caminho -->
+    <a-entity id="bancos">
+      <a-box position="-6 0.35 3" width="1.4" height="0.15" depth="0.5" color="#6b3e26" pointer-events="none"></a-box>
+      <a-box position="-6.45 0.05 3" width="0.12" height="0.35" depth="0.12" color="#4a2b1c" pointer-events="none"></a-box>
+      <a-box position="-5.55 0.05 3" width="0.12" height="0.35" depth="0.12" color="#4a2b1c" pointer-events="none"></a-box>
+
+      <a-box position="6 0.35 3" width="1.4" height="0.15" depth="0.5" color="#6b3e26" pointer-events="none"></a-box>
+      <a-box position="5.55 0.05 3" width="0.12" height="0.35" depth="0.12" color="#4a2b1c" pointer-events="none"></a-box>
+      <a-box position="6.45 0.05 3" width="0.12" height="0.35" depth="0.12" color="#4a2b1c" pointer-events="none"></a-box>
+
+      <a-box position="-7 0.35 -2" width="1.4" height="0.15" depth="0.5" color="#6b3e26" pointer-events="none"></a-box>
+      <a-box position="-7.45 0.05 -2" width="0.12" height="0.35" depth="0.12" color="#4a2b1c" pointer-events="none"></a-box>
+      <a-box position="-6.55 0.05 -2" width="0.12" height="0.35" depth="0.12" color="#4a2b1c" pointer-events="none"></a-box>
+
+      <a-box position="7 0.35 -2" width="1.4" height="0.15" depth="0.5" color="#6b3e26" pointer-events="none"></a-box>
+      <a-box position="6.55 0.05 -2" width="0.12" height="0.35" depth="0.12" color="#4a2b1c" pointer-events="none"></a-box>
+      <a-box position="7.45 0.05 -2" width="0.12" height="0.35" depth="0.12" color="#4a2b1c" pointer-events="none"></a-box>
+    </a-entity>
 
     <!-- RIG: container de câmera e locomoção -->
     <a-entity id="rig" position="0 0 6">
@@ -37,7 +121,7 @@
     </a-entity>
 
     <!-- Painel de interface (quiz + Final) -->
-    <a-entity id="interfacePanel" position="0 1.8 -3.5">
+    <a-entity id="interfacePanel" visible="false" position="0 1.8 -3.5">
       <a-box depth="0.15" height="4" width="5.6" color="#172032" material="opacity: 0.96"></a-box>
 
       <!-- Resultado Final -->
@@ -74,78 +158,176 @@
       <a-text id="textBtnSair" class="clickable" value="SAIR DA EXPERIENCIA" onclick="sairExperiencia()" width="1.6" color="#fff" anchor="center" align="center" wrapCount="6" font-size="12" position="1.3 -0.8 0.15" visible="false"></a-text>
     </a-entity>
 
-    <!-- Painel de Salas/Períodos (oculto inicialmente) -->
-    <a-entity id="salasPanel" position="0 1.5 -4" visible="false">
-      <a-box depth="0.15" height="3.5" width="6" color="#172032" material="opacity: 0.96"></a-box>
+    <!-- Corredor de períodos atrás da praça -->
+    <a-entity id="corredorGroup">
+      <!-- Corredor ampliado: largura maior e comprimento maior -->
+      <a-plane rotation="-90 0 0" width="12" height="80" color="#f8f7ef" position="0 0.01 -34"></a-plane>
+      <a-plane rotation="-90 0 0" width="2" height="80" color="#ffffff" position="0 0.02 -34"></a-plane>
+      <a-box width="0.25" height="0.35" depth="80" color="#bccdd4" position="-6 0.2 -34"></a-box>
+      <a-box width="0.25" height="0.35" depth="80" color="#bccdd4" position="6 0.2 -34"></a-box>
+      <!-- corridor heading removed to reduce visual noise (plaques used instead) -->
+      <a-entity id="portasCorredor"></a-entity>
 
-      <a-entity id="titleSalas" text="value: ESCOLHA UM PERIODO; width: 5.5; color: #bdd8ff; anchor: center; align: center; wrapCount: 40; fontSize: 14" position="0 1.5 0.08"></a-entity>
+      <!-- Postes de luz ao longo do corredor (simples, com point-light fraca) -->
+      <a-entity id="postesCorredor">
+        <a-entity position="-4.5 0 -8">
+          <a-cylinder position="0 0.9 0" radius="0.07" height="1.8" color="#888" pointer-events="none"></a-cylinder>
+          <a-sphere position="0 1.8 0" radius="0.18" color="#fff2a0" pointer-events="none"></a-sphere>
+          <a-entity light="type: point; intensity: 0.55; distance: 8; color: #fff2a0" position="0 1.8 0"></a-entity>
+        </a-entity>
+        <a-entity position="4.5 0 -8">
+          <a-cylinder position="0 0.9 0" radius="0.07" height="1.8" color="#888" pointer-events="none"></a-cylinder>
+          <a-sphere position="0 1.8 0" radius="0.18" color="#fff2a0" pointer-events="none"></a-sphere>
+          <a-entity light="type: point; intensity: 0.55; distance: 8; color: #fff2a0" position="0 1.8 0"></a-entity>
+        </a-entity>
+        <a-entity position="-4.5 0 -18">
+          <a-cylinder position="0 0.9 0" radius="0.07" height="1.8" color="#888" pointer-events="none"></a-cylinder>
+          <a-sphere position="0 1.8 0" radius="0.18" color="#fff2a0" pointer-events="none"></a-sphere>
+          <a-entity light="type: point; intensity: 0.55; distance: 8; color: #fff2a0" position="0 1.8 0"></a-entity>
+        </a-entity>
+        <a-entity position="4.5 0 -18">
+          <a-cylinder position="0 0.9 0" radius="0.07" height="1.8" color="#888" pointer-events="none"></a-cylinder>
+          <a-sphere position="0 1.8 0" radius="0.18" color="#fff2a0" pointer-events="none"></a-sphere>
+          <a-entity light="type: point; intensity: 0.55; distance: 8; color: #fff2a0" position="0 1.8 0"></a-entity>
+        </a-entity>
+        <a-entity position="-4.5 0 -28">
+          <a-cylinder position="0 0.9 0" radius="0.07" height="1.8" color="#888" pointer-events="none"></a-cylinder>
+          <a-sphere position="0 1.8 0" radius="0.18" color="#fff2a0" pointer-events="none"></a-sphere>
+          <a-entity light="type: point; intensity: 0.55; distance: 8; color: #fff2a0" position="0 1.8 0"></a-entity>
+        </a-entity>
+        <a-entity position="4.5 0 -28">
+          <a-cylinder position="0 0.9 0" radius="0.07" height="1.8" color="#888" pointer-events="none"></a-cylinder>
+          <a-sphere position="0 1.8 0" radius="0.18" color="#fff2a0" pointer-events="none"></a-sphere>
+          <a-entity light="type: point; intensity: 0.55; distance: 8; color: #fff2a0" position="0 1.8 0"></a-entity>
+        </a-entity>
+        <a-entity position="-4.5 0 -38">
+          <a-cylinder position="0 0.9 0" radius="0.07" height="1.8" color="#888" pointer-events="none"></a-cylinder>
+          <a-sphere position="0 1.8 0" radius="0.18" color="#fff2a0" pointer-events="none"></a-sphere>
+          <a-entity light="type: point; intensity: 0.55; distance: 8; color: #fff2a0" position="0 1.8 0"></a-entity>
+        </a-entity>
+        <a-entity position="4.5 0 -38">
+          <a-cylinder position="0 0.9 0" radius="0.07" height="1.8" color="#888" pointer-events="none"></a-cylinder>
+          <a-sphere position="0 1.8 0" radius="0.18" color="#fff2a0" pointer-events="none"></a-sphere>
+          <a-entity light="type: point; intensity: 0.55; distance: 8; color: #fff2a0" position="0 1.8 0"></a-entity>
+        </a-entity>
+      </a-entity>
 
-      <!-- Grid de salas (até 10) - 2 colunas -->
-      <!-- Linha 1 -->
-      <a-box id="sala-periodo-1" class="clickable click-debug" position="-1.8 1 0.08" width="1.8" height="1" depth="0.2" color="#2ec4b6" onclick="escolherPeriodoVR(1)"></a-box>
-      <a-text id="sala-periodo-text-1" class="clickable" value="1 PERIODO" onclick="escolherPeriodoVR(1)" width="1.5" color="#fff" anchor="center" align="center" font-size="14" position="-1.8 1 0.28"></a-text>
+      <!-- Pontos de movimentação no corredor (sequência mais próxima para mira fácil) -->
+      <a-entity id="corredorPontos">
+        <a-entity class="clickable" geometry="primitive: cylinder; radius: 0.45; height: 0.08" material="color: #3f5a7f; emissive: #3f5a7f" position="0 0.04 -8" onclick="teleportar(0, -8)"></a-entity>
+        
 
-      <a-box id="sala-periodo-2" class="clickable click-debug" position="1.8 1 0.08" width="1.8" height="1" depth="0.2" color="#2ec4b6" onclick="escolherPeriodoVR(2)"></a-box>
-      <a-text id="sala-periodo-text-2" class="clickable" value="2 PERIODO" onclick="escolherPeriodoVR(2)" width="1.5" color="#fff" anchor="center" align="center" font-size="14" position="1.8 1 0.28"></a-text>
+        <a-entity class="clickable" geometry="primitive: cylinder; radius: 0.45; height: 0.08" material="color: #3f5a7f; emissive: #3f5a7f" position="0 0.04 -11" onclick="teleportar(0, -11)"></a-entity>
+        
 
-      <!-- Linha 2 -->
-      <a-box id="sala-periodo-3" class="clickable click-debug" position="-1.8 0.2 0.08" width="1.8" height="1" depth="0.2" color="#2ec4b6" onclick="escolherPeriodoVR(3)"></a-box>
-      <a-text id="sala-periodo-text-3" class="clickable" value="3 PERIODO" onclick="escolherPeriodoVR(3)" width="1.5" color="#fff" anchor="center" align="center" font-size="14" position="-1.8 0.2 0.28"></a-text>
+        <a-entity class="clickable" geometry="primitive: cylinder; radius: 0.45; height: 0.08" material="color: #3f5a7f; emissive: #3f5a7f" position="0 0.04 -14" onclick="teleportar(0, -14)"></a-entity>
+        
 
-      <a-box id="sala-periodo-4" class="clickable click-debug" position="1.8 0.2 0.08" width="1.8" height="1" depth="0.2" color="#2ec4b6" onclick="escolherPeriodoVR(4)"></a-box>
-      <a-text id="sala-periodo-text-4" class="clickable" value="4 PERIODO" onclick="escolherPeriodoVR(4)" width="1.5" color="#fff" anchor="center" align="center" font-size="14" position="1.8 0.2 0.28"></a-text>
+        <a-entity class="clickable" geometry="primitive: cylinder; radius: 0.45; height: 0.08" material="color: #3f5a7f; emissive: #3f5a7f" position="0 0.04 -17" onclick="teleportar(0, -17)"></a-entity>
+        
 
-      <!-- Linha 3 -->
-      <a-box id="sala-periodo-5" class="clickable click-debug" position="-1.8 -0.6 0.08" width="1.8" height="1" depth="0.2" color="#2ec4b6" onclick="escolherPeriodoVR(5)"></a-box>
-      <a-text id="sala-periodo-text-5" class="clickable" value="5 PERIODO" onclick="escolherPeriodoVR(5)" width="1.5" color="#fff" anchor="center" align="center" font-size="14" position="-1.8 -0.6 0.28"></a-text>
+        <a-entity class="clickable" geometry="primitive: cylinder; radius: 0.45; height: 0.08" material="color: #3f5a7f; emissive: #3f5a7f" position="0 0.04 -20" onclick="teleportar(0, -20)"></a-entity>
+        
 
-      <a-box id="sala-periodo-6" class="clickable click-debug" position="1.8 -0.6 0.08" width="1.8" height="1" depth="0.2" color="#2ec4b6" onclick="escolherPeriodoVR(6)"></a-box>
-      <a-text id="sala-periodo-text-6" class="clickable" value="6 PERIODO" onclick="escolherPeriodoVR(6)" width="1.5" color="#fff" anchor="center" align="center" font-size="14" position="1.8 -0.6 0.28"></a-text>
+        <a-entity class="clickable" geometry="primitive: cylinder; radius: 0.45; height: 0.08" material="color: #3f5a7f; emissive: #3f5a7f" position="0 0.04 -23" onclick="teleportar(0, -23)"></a-entity>
+        
 
-      <!-- Linha 4 -->
-      <a-box id="sala-periodo-7" class="clickable click-debug" position="-1.8 -1.4 0.08" width="1.8" height="1" depth="0.2" color="#2ec4b6" onclick="escolherPeriodoVR(7)"></a-box>
-      <a-text id="sala-periodo-text-7" class="clickable" value="7 PERIODO" onclick="escolherPeriodoVR(7)" width="1.5" color="#fff" anchor="center" align="center" font-size="14" position="-1.8 -1.4 0.28"></a-text>
+        <a-entity class="clickable" geometry="primitive: cylinder; radius: 0.45; height: 0.08" material="color: #3f5a7f; emissive: #3f5a7f" position="0 0.04 -26" onclick="teleportar(0, -26)"></a-entity>
+        
 
-      <a-box id="sala-periodo-8" class="clickable click-debug" position="1.8 -1.4 0.08" width="1.8" height="1" depth="0.2" color="#2ec4b6" onclick="escolherPeriodoVR(8)"></a-box>
-      <a-text id="sala-periodo-text-8" class="clickable" value="8 PERIODO" onclick="escolherPeriodoVR(8)" width="1.5" color="#fff" anchor="center" align="center" font-size="14" position="1.8 -1.4 0.28"></a-text>
+        <a-entity class="clickable" geometry="primitive: cylinder; radius: 0.45; height: 0.08" material="color: #3f5a7f; emissive: #3f5a7f" position="0 0.04 -29" onclick="teleportar(0, -29)"></a-entity>
+        
 
-      <!-- Linha 5 (apenas para Direito - até Sala 10) -->
-      <a-box id="sala-periodo-9" class="clickable click-debug" position="-1.8 -2.2 0.08" width="1.8" height="1" depth="0.2" color="#2ec4b6" visible="false" onclick="escolherPeriodoVR(9)"></a-box>
-      <a-text id="sala-periodo-text-9" class="clickable" value="9 PERIODO" onclick="escolherPeriodoVR(9)" width="1.5" color="#fff" anchor="center" align="center" font-size="14" position="-1.8 -2.2 0.28" visible="false"></a-text>
+        <a-entity class="clickable" geometry="primitive: cylinder; radius: 0.45; height: 0.08" material="color: #3f5a7f; emissive: #3f5a7f" position="0 0.04 -32" onclick="teleportar(0, -32)"></a-entity>
+        
 
-      <a-box id="sala-periodo-10" class="clickable click-debug" position="1.8 -2.2 0.08" width="1.8" height="1" depth="0.2" color="#2ec4b6" visible="false" onclick="escolherPeriodoVR(10)"></a-box>
-      <a-text id="sala-periodo-text-10" class="clickable" value="10 PERIODO" onclick="escolherPeriodoVR(10)" width="1.5" color="#fff" anchor="center" align="center" font-size="14" position="1.8 -2.2 0.28" visible="false"></a-text>
+        <a-entity class="clickable" geometry="primitive: cylinder; radius: 0.45; height: 0.08" material="color: #3f5a7f; emissive: #3f5a7f" position="0 0.04 -35" onclick="teleportar(0, -35)"></a-entity>
+        
 
-      <!-- Botão voltar -->
-      <a-box id="btnVoltarCurso" class="clickable" position="0 -2.9 0.08" width="2.2" height="0.6" depth="0.12" color="#6b7b9f" opacity="0.96" onclick="mostrarMapaPrincipal()"></a-box>
-      <a-text text="value: VOLTAR AO MAPA; width: 2; color: #fff; anchor: center; align: center; wrapCount: 10; fontSize: 14" position="0 -2.9 0.17" pointer-events="none"></a-text>
+        <a-entity class="clickable" geometry="primitive: cylinder; radius: 0.45; height: 0.08" material="color: #3f5a7f; emissive: #3f5a7f" position="0 0.04 -38" onclick="teleportar(0, -38)"></a-entity>
+        
+      </a-entity>
     </a-entity>
 
     <!-- Prédios e pontos de interesse no mapa principal -->
-    <a-entity id="predioCCGroup" visible="true" position="-8 0 0">
-      <!-- Prédio CC (azul/verde) -->
-      <a-entity id="predioCCBox" class="clickable" geometry="primitive: box; width: 3; height: 3; depth: 2" material="color: #1e7b7e; metalness: 0.3" position="0 1.5 0" onclick="escolherCursoVR('tecnologia')"></a-entity>
-      <a-entity class="clickable" text="value: CC\nCIENCIA DA\nCOMPUTACAO; width: 2.8; color: #fff; anchor: center; align: center; fontSize: 13" position="0 1.5 1.2" onclick="escolherCursoVR('tecnologia')" pointer-events="none"></a-entity>
+    <a-entity id="predioCCGroup" visible="true" position="-12 0 -7">
+      <!-- Prédio CC (azul) -->
+      <a-box id="predioCCBox" class="clickable click-debug" geometry="primitive: box; width: 4; height: 3.5; depth: 3" material="color: #2c74b3; metalness: 0.2" position="0 1.75 0"></a-box>
+      <a-box width="4.2" height="0.8" depth="0.18" color="#1d4f7a" position="0 3.45 0.9"></a-box>
+      <a-entity text="value: Ciência da Computação; width: 4; color: #ffffff; anchor: center; align: center; fontSize: 12" position="0 3.45 1.05"></a-entity>
+      <a-box position="0 0.12 2.1" width="2.6" height="0.3" depth="0.2" color="#f0e7c2"></a-box>
+      <a-entity text="value: Ciência da Computação; width: 2.4; color: #1f2f4f; anchor: center; align: center; fontSize: 7" position="0 0.4 2.11"></a-entity>
+      <a-cylinder radius="0.12" height="0.8" color="#ffffff" position="-1.5 0.4 1.4"></a-cylinder>
+      <a-cylinder radius="0.12" height="0.8" color="#ffffff" position="1.5 0.4 1.4"></a-cylinder>
     </a-entity>
 
-    <a-entity id="predioDireitoGroup" visible="true" position="8 0 0">
-      <!-- Prédio Direito (roxo/dourado) -->
-      <a-entity id="predioDireitoBox" class="clickable" geometry="primitive: box; width: 3; height: 3; depth: 2" material="color: #6b3fa0; metalness: 0.3" position="0 1.5 0" onclick="escolherCursoVR('direito')"></a-entity>
-      <a-entity class="clickable" text="value: DIREITO; width: 2.8; color: #f5b641; anchor: center; align: center; fontSize: 14" position="0 1.5 1.2" onclick="escolherCursoVR('direito')" pointer-events="none"></a-entity>
+    <a-entity id="predioDireitoGroup" visible="true" position="12 0 -7">
+      <!-- Prédio Direito (vinho/roxo) -->
+      <a-box id="predioDireitoBox" class="clickable click-debug" geometry="primitive: box; width: 4; height: 3.5; depth: 3" material="color: #7d2d6f; metalness: 0.2" position="0 1.75 0"></a-box>
+      <a-box width="4.2" height="0.8" depth="0.18" color="#4a1f3f" position="0 3.45 0.9"></a-box>
+      <a-entity text="value: Direito; width: 4; color: #f7dc9b; anchor: center; align: center; fontSize: 12" position="0 3.45 1.05"></a-entity>
+      <a-box position="0 0.12 2.1" width="2.6" height="0.3" depth="0.2" color="#e7d3b8"></a-box>
+      <a-entity text="value: Direito; width: 2.4; color: #3a1b3f; anchor: center; align: center; fontSize: 7" position="0 0.4 2.11"></a-entity>
+      <a-cylinder radius="0.12" height="0.8" color="#ffffff" position="-1.5 0.4 1.4"></a-cylinder>
+      <a-cylinder radius="0.12" height="0.8" color="#ffffff" position="1.5 0.4 1.4"></a-cylinder>
+    </a-entity>
+
+    <!-- Placas de identificação -->
+    <a-entity position="-12 0 -3.5">
+      <a-box width="1.8" height="0.25" depth="0.18" color="#f0e7c2" position="0 0.13 0"></a-box>
+      <a-entity text="value: Ciência da Computação; width: 1.7; color: #1f2f4f; anchor: center; align: center; fontSize: 6" position="0 0.4 0"></a-entity>
+    </a-entity>
+    <a-entity position="12 0 -3.5">
+      <a-box width="1.8" height="0.25" depth="0.18" color="#e7d3b8" position="0 0.13 0"></a-box>
+      <a-entity text="value: Direito; width: 1.7; color: #3a1b3f; anchor: center; align: center; fontSize: 6" position="0 0.4 0"></a-entity>
+    </a-entity>
+
+    <!-- Placas indicativas no caminho -->
+    <a-entity id="placasCaminho">
+      <!-- Left plaque: Ciência da Computação -->
+      <a-entity id="plaqueLeft" position="-6 5 -10" face-camera pointer-events="none">
+        <a-plane width="7.2" height="2.4" color="#ffffff" position="0 0 -0.02"></a-plane>
+        <a-plane width="6.8" height="2.0" color="#1f344f" position="0 0 0" material="shader: flat; opacity: 0.95"></a-plane>
+        <a-plane width="6.6" height="0.3" color="#000000" position="0 -0.55 0.01" material="opacity:0.12"></a-plane>
+        <a-entity text="value: Ciência da Computação; width: 6.4; color: #ffffff; anchor: center; align: center; fontSize: 22" position="0 0 0.02"></a-entity>
+      </a-entity>
+
+      <!-- Right plaque: Direito -->
+      <a-entity id="plaqueRight" position="6 5 -10" face-camera pointer-events="none">
+        <a-plane width="7.2" height="2.4" color="#ffffff" position="0 0 -0.02"></a-plane>
+        <a-plane width="6.8" height="2.0" color="#4b2b3b" position="0 0 0" material="shader: flat; opacity: 0.95"></a-plane>
+        <a-plane width="6.6" height="0.3" color="#000000" position="0 -0.55 0.01" material="opacity:0.12"></a-plane>
+        <a-entity text="value: Direito; width: 6.4; color: #ffffff; anchor: center; align: center; fontSize: 22" position="0 0 0.02"></a-entity>
+      </a-entity>
     </a-entity>
 
     <!-- Pontos de teleporte no chão (visual + clicável) -->
-    <a-entity id="tpInicio" class="clickable" geometry="primitive: cylinder; radius: 0.45; height: 0.08" material="color: #3f5a7f; emissive: #3f5a7f" position="0 0.04 4" onclick="teleportar(0, 4)"></a-entity>
-    <a-entity text="value: INICIO; width: 0.8; color: #fff; anchor: center; align: center; fontSize: 12" position="0 0.15 4" pointer-events="none"></a-entity>
+    <a-entity id="tpInicio" class="clickable" geometry="primitive: cylinder; radius: 0.45; height: 0.08" material="color: #3f5a7f; emissive: #3f5a7f" position="0 0.04 8" onclick="teleportar(0, 8)"></a-entity>
+    <a-entity text="value: INICIO; width: 0.8; color: #fff; anchor: center; align: center; fontSize: 12" position="0 0.15 8" pointer-events="none"></a-entity>
 
-    <a-entity id="tpCentro" class="clickable" geometry="primitive: cylinder; radius: 0.45; height: 0.08" material="color: #3f5a7f; emissive: #3f5a7f" position="0 0.04 1" onclick="teleportar(0, 1)"></a-entity>
-    <a-entity text="value: CENTRO; width: 0.8; color: #fff; anchor: center; align: center; fontSize: 12" position="0 0.15 1" pointer-events="none"></a-entity>
+    <!-- Novos pontos próximos da fonte (maiores e fáceis de mirar) -->
+    <a-entity class="clickable" geometry="primitive: cylinder; radius: 0.55; height: 0.08" material="color: #2b6b8f; emissive: #2b6b8f" position="-1.8 0.06 1" onclick="teleportar(0, -4)"></a-entity>
+    <a-entity text="value: CORREDOR; width: 1.4; color: #fff; anchor: center; align: center; fontSize: 16" position="-1.8 0.22 1" pointer-events="none"></a-entity>
 
-    <a-entity id="tpCC" class="clickable" geometry="primitive: cylinder; radius: 0.45; height: 0.08" material="color: #2a7f7f; emissive: #2a7f7f" position="-3 0.04 -1" onclick="teleportar(-3, -1)"></a-entity>
-    <a-entity text="value: CC; width: 0.8; color: #fff; anchor: center; align: center; fontSize: 12" position="-3 0.15 -1" pointer-events="none"></a-entity>
+    <a-entity class="clickable" geometry="primitive: cylinder; radius: 0.55; height: 0.08" material="color: #2b6b8f; emissive: #2b6b8f" position="1.8 0.06 1" onclick="teleportar(0, -4)"></a-entity>
+    <a-entity text="value: CORREDOR; width: 1.4; color: #fff; anchor: center; align: center; fontSize: 16" position="1.8 0.22 1" pointer-events="none"></a-entity>
 
-    <a-entity id="tpDireito" class="clickable" geometry="primitive: cylinder; radius: 0.45; height: 0.08" material="color: #6b3fa0; emissive: #6b3fa0" position="3 0.04 -1" onclick="teleportar(3, -1)"></a-entity>
-    <a-entity text="value: DIREITO; width: 0.8; color: #f5b641; anchor: center; align: center; fontSize: 12" position="3 0.15 -1" pointer-events="none"></a-entity>
+    <a-entity class="clickable" geometry="primitive: cylinder; radius: 0.55; height: 0.08" material="color: #2b6b8f; emissive: #2b6b8f" position="0 0.06 2.5" onclick="teleportar(0, -4)"></a-entity>
+    <a-entity text="value: CENTRO; width: 1.6; color: #fff; anchor: center; align: center; fontSize: 18" position="0 0.26 2.5" pointer-events="none"></a-entity>
+
+    <!-- Pontos intermediários no caminho branco (sequência para facilitar mira) -->
+    <a-entity class="clickable" geometry="primitive: cylinder; radius: 0.55; height: 0.08" material="color: #3f78a0; emissive: #3f78a0" position="0 0.06 -2" onclick="teleportar(0, -2)"></a-entity>
+
+    <a-entity class="clickable" geometry="primitive: cylinder; radius: 0.55; height: 0.08" material="color: #3f78a0; emissive: #3f78a0" position="0 0.06 -5" onclick="teleportar(0, -5)"></a-entity>
+
+    <a-entity class="clickable" geometry="primitive: cylinder; radius: 0.55; height: 0.08" material="color: #3f78a0; emissive: #3f78a7" position="0 0.06 -8" onclick="teleportar(0, -8)"></a-entity>
+
+    <a-entity class="clickable" geometry="primitive: cylinder; radius: 0.55; height: 0.08" material="color: #3f78a0; emissive: #3f78a0" position="0 0.06 -11" onclick="teleportar(0, -11)"></a-entity>
+
+    <!-- Centro antigo mantenho (tpCentro) sem alterar seu comportamento original -->
+    <a-entity id="tpCentro" class="clickable" geometry="primitive: cylinder; radius: 0.45; height: 0.08" material="color: #3f5a7f; emissive: #3f5a7f" position="0 0.04 3" onclick="teleportar(0, 3)"></a-entity>
+    <a-entity text="value: CENTRO MAPA; width: 0.8; color: #fff; anchor: center; align: center; fontSize: 12" position="0 0.15 3" pointer-events="none"></a-entity>
+
   </a-scene>
 
   <script src="script.js"></script>

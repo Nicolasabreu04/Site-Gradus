@@ -37,6 +37,23 @@ AFRAME.registerComponent("click-debug", {
   }
 });
 
+// Faz textos e placas olharem para a câmera e manterem-se verticais
+AFRAME.registerComponent('face-camera', {
+  init: function () {
+    this.cameraEl = document.getElementById('camera');
+    this.tempVec = new THREE.Vector3();
+  },
+  tick: function () {
+    if (!this.cameraEl || !this.el.object3D) return;
+    const camObj = this.cameraEl.object3D;
+    camObj.getWorldPosition(this.tempVec);
+    this.el.object3D.lookAt(this.tempVec);
+    // keep text upright: zero X and Z rotation
+    this.el.object3D.rotation.x = 0;
+    this.el.object3D.rotation.z = 0;
+  }
+});
+
 // Função de teste de clique
 function testarClique(nome) {
   console.log("✓ Clique detectado:", nome);
@@ -45,12 +62,12 @@ function testarClique(nome) {
 // ===== ESTADO GLOBAL =====
 let cursoSelecionado = null;
 let periodoSelecionado = null;
-let telaAtual = "mapa"; // mapa, salas, quiz, final
+let periodoCorredorAtual = 1;
+let telaAtual = "mapa"; // mapa, salas, corredor, quiz, final
 
 // Elementos A-Frame
 const rig = document.getElementById("rig");
 const interfacePanel = document.getElementById("interfacePanel");
-const salasPanel = document.getElementById("salasPanel");
 const contador = document.getElementById("contador");
 const resultadoTitulo = document.getElementById("resultadoTitulo");
 const pergunta = document.getElementById("pergunta");
@@ -74,6 +91,10 @@ const btnVoltarMapa = document.getElementById("btnVoltarMapa");
 const textBtnVoltar = document.getElementById("textBtnVoltar");
 const btnSair = document.getElementById("btnSair");
 const textBtnSair = document.getElementById("textBtnSair");
+const portasCorredor = document.getElementById("portasCorredor");
+
+// Cria as portas do corredor contínuo
+criarPortasCorredor();
 
 // Estado do quiz
 let perguntas = [];
@@ -87,52 +108,88 @@ let perguntaRespondida = false;
 // Teleporta o rig para uma posição
 function teleportar(x, z) {
   console.log("🚀 Teleportando para:", x, z);
-  rig.setAttribute("position", `${x} 0 ${z}`);
+  document.getElementById("rig").setAttribute("position", `${x} 0 ${z}`);
 }
 
 // Mostra o mapa principal
 function mostrarMapaPrincipal() {
   console.log("🗺️ Mostrando mapa principal");
   telaAtual = "mapa";
-  salasPanel.setAttribute("visible", false);
   interfacePanel.setAttribute("visible", false);
+
+  const predioCC = document.getElementById("predioCCGroup");
+  const predioDireito = document.getElementById("predioDireitoGroup");
+  const tpInicio = document.getElementById("tpInicio");
+  const tpCentro = document.getElementById("tpCentro");
+  if (predioCC) predioCC.setAttribute("visible", true);
+  if (predioDireito) predioDireito.setAttribute("visible", true);
+  if (tpInicio) tpInicio.setAttribute("visible", true);
+  if (tpCentro) tpCentro.setAttribute("visible", true);
   teleportar(0, 4);
 }
 
-// Escolhe um curso e mostra as salas
-function escolherCursoVR(curso) {
-  console.log("🏛️ Curso escolhido:", curso);
-  cursoSelecionado = curso;
-  telaAtual = "salas";
-  interfacePanel.setAttribute("visible", false);
+function criarPortasCorredor() {
+  if (!portasCorredor) return;
 
-  // Atualiza título
-  const titleEl = document.getElementById("titleSalas");
-  const nomeCurso = curso === "tecnologia" ? "CC - CIENCIA DA COMPUTACAO" : "DIREITO";
-  titleEl.setAttribute("text", "value", `${nomeCurso}\nESCOLHA UM PERIODO`);
+  const infoCursos = [
+    // Afastar portas das salas para fora do caminho central
+    { curso: "tecnologia", label: "CC", max: 8, x: -6, doorColor: "#2ec4b6" },
+    { curso: "direito", label: "DIREITO", max: 10, x: 6, doorColor: "#d88ca4" },
+  ];
 
-  // Mostra salas conforme o curso
-  const numSalas = curso === "tecnologia" ? 8 : 10;
-  for (let i = 1; i <= 10; i++) {
-    const salaEl = document.getElementById(`sala-periodo-${i}`);
-    const textEl = document.getElementById(`sala-periodo-text-${i}`);
-    if (salaEl) {
-      salaEl.setAttribute("visible", i <= numSalas);
-      if (textEl) textEl.setAttribute("visible", i <= numSalas);
-      // Ajusta cor conforme curso
-      if (curso === "tecnologia") {
-        salaEl.setAttribute("material", "color", "#2a7f7f");
-        salaEl.dataset.originalColor = "#2a7f7f";
-      } else {
-        salaEl.setAttribute("material", "color", "#6b3fa0");
-        salaEl.dataset.originalColor = "#6b3fa0";
-      }
+  infoCursos.forEach(({ curso, label, max, x, doorColor }) => {
+    for (let periodo = 1; periodo <= max; periodo += 1) {
+      const z = -6 - periodo * 4;
+      const portaGroup = document.createElement("a-entity");
+      portaGroup.setAttribute("position", `${x} 0 ${z}`);
+      portaGroup.setAttribute("id", `${label.toLowerCase()}Porta${periodo}`);
+
+      const moldura = document.createElement("a-box");
+      moldura.setAttribute("width", "2.6");
+      moldura.setAttribute("height", "2.4");
+      moldura.setAttribute("depth", "0.18");
+      moldura.setAttribute("color", "#ffffff");
+      moldura.setAttribute("position", "0 1.2 0");
+
+      const porta = document.createElement("a-box");
+      porta.setAttribute("class", "clickable click-debug");
+      porta.setAttribute("width", "2.2");
+      porta.setAttribute("height", "2");
+      porta.setAttribute("depth", "0.3");
+      porta.setAttribute("color", doorColor);
+      porta.setAttribute("position", "0 1.2 0");
+      porta.setAttribute("onclick", `iniciarQuizPorSala('${curso}', ${periodo})`);
+
+      const placa = document.createElement("a-entity");
+      const ordinal = `${periodo}º Período`;
+      placa.setAttribute(
+        "text",
+        `value: ${ordinal}; width: 2.4; color: #ffffff; anchor: center; align: center; fontSize: 13`
+      );
+      placa.setAttribute("position", "0 2.45 0.18");
+      placa.setAttribute("pointer-events", "none");
+      placa.setAttribute("face-camera", "");
+
+      portaGroup.appendChild(moldura);
+      portaGroup.appendChild(porta);
+      portaGroup.appendChild(placa);
+      portasCorredor.appendChild(portaGroup);
     }
-  }
-
-  salasPanel.setAttribute("visible", true);
-  teleportar(0, 2);
+  });
 }
+
+async function iniciarQuizPorSala(curso, periodo) {
+  console.log("🎓 Iniciando quiz por sala", curso, periodo);
+  cursoSelecionado = curso;
+  periodoSelecionado = String(periodo);
+  telaAtual = "quiz";
+  interfacePanel.setAttribute("visible", true);
+  interfacePanel.setAttribute("position", "0 2 -42");
+  teleportar(0, -38);
+  resultadoTitulo.setAttribute("visible", false);
+  await iniciarQuiz();
+}
+
 
 // Escolhe um período e inicia o quiz
 async function escolherPeriodoVR(periodo) {
@@ -140,7 +197,6 @@ async function escolherPeriodoVR(periodo) {
   console.log("CURSO ATUAL:", cursoSelecionado);
   periodoSelecionado = String(periodo);
   telaAtual = "quiz";
-  salasPanel.setAttribute("visible", false);
   interfacePanel.setAttribute("visible", true);
 
   // Carrega perguntas e inicia quiz
@@ -178,7 +234,6 @@ function voltarMapa() {
   textBtnVoltar.setAttribute("visible", false);
   btnSair.setAttribute("visible", false);
   textBtnSair.setAttribute("visible", false);
-  salasPanel.setAttribute("visible", false);
   interfacePanel.setAttribute("visible", false);
   // Mostrar mapa/prédios e posicionar o rig na praça
   const predioCC = document.getElementById("predioCCGroup");
@@ -221,8 +276,9 @@ async function novoQuiz() {
   textBtnVoltar.setAttribute("visible", false);
   btnSair.setAttribute("visible", false);
   textBtnSair.setAttribute("visible", false);
-  salasPanel.setAttribute("visible", false);
   interfacePanel.setAttribute("visible", true);
+  interfacePanel.setAttribute("position", "0 2 -42");
+  teleportar(0, -38);
   await iniciarQuiz();
 }
 
@@ -370,7 +426,6 @@ async function iniciarQuiz() {
     perguntas = [];
     perguntaAtual = null;
     interfacePanel.setAttribute("visible", true);
-    salasPanel.setAttribute("visible", false);
     atualizarFeedback("NENHUMA PERGUNTA ENCONTRADA PARA ESTE PERIODO", "#ff6b6b");
     pergunta.setAttribute("text", "value", "Nenhuma pergunta encontrada para este período.");
     boxEls.forEach((box) => {
@@ -455,7 +510,6 @@ function finalizarQuiz() {
 // ===== INICIALIZAÇÃO =====
 window.responder = responder;
 window.teleportar = teleportar;
-window.escolherCursoVR = escolherCursoVR;
 window.escolherPeriodoVR = escolherPeriodoVR;
 window.voltarMapa = voltarMapa;
 window.novoQuiz = novoQuiz;
