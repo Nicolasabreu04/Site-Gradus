@@ -1,464 +1,460 @@
 {
-"tecnologia": {
-  "1": [
-    {
-      "pergunta": "O que é um algoritmo?",
-      "opcoes": [
-        "Um tipo de computador",
-        "Um conjunto de instruções para resolver um problema",
-        "Um programa antivírus",
-        "Um componente físico do PC",
-        "Um sistema operacional"
-      ],
-      "correta": 1
-    },
-    {
-      "pergunta": "HTML é utilizado principalmente para:",
-      "opcoes": [
-        "Criar banco de dados",
-        "Estruturar páginas web",
-        "Desenvolver jogos",
-        "Configurar redes",
-        "Criar inteligência artificial"
-      ],
-      "correta": 1
-    },
-    {
-      "pergunta": "Na matemática discreta, um grafo é:",
-      "opcoes": [
-        "Um tipo de vírus",
-        "Estrutura formada por vértices e arestas",
-        "Linguagem de programação",
-        "Banco de dados relacional",
-        "Sistema operacional"
-      ],
-      "correta": 1
-    },
-    {
-      "pergunta": "UX/UI Design busca:",
-      "opcoes": [
-        "Melhorar experiência e interação do usuário",
-        "Apenas aumentar velocidade da internet",
-        "Criar peças de hardware",
-        "Substituir programadores",
-        "Configurar servidores físicos"
-      ],
-      "correta": 0
-    },
-    {
-      "pergunta": "Qual estrutura lógica é essencial para repetição em algoritmos?",
-      "opcoes": [
-        "Variável constante",
-        "Loop de repetição",
-        "Driver de vídeo",
-        "Endereço IP",
-        "Cache de memória"
-      ],
-      "correta": 1
-    }
-  ],
-
-  "2": [
-    {
-      "pergunta": "POO significa:",
-      "opcoes": [
-        "Programa Operacional Online",
-        "Programação Orientada a Objetos",
-        "Processo Operacional Objetivo",
-        "Plataforma Online Operacional",
-        "Programação Objetiva Organizada"
-      ],
-      "correta": 1
-    },
-    {
-      "pergunta": "Qual estrutura armazena dados em sequência?",
-      "opcoes": [
-        "Lista",
-        "Monitor",
-        "Processador",
-        "GPU",
-        "Roteador"
-      ],
-      "correta": 0
-    },
-    {
-      "pergunta": "O sistema operacional é responsável por:",
-      "opcoes": [
-        "Apenas acessar internet",
-        "Gerenciar hardware e software do computador",
-        "Criar sites automaticamente",
-        "Desenvolver aplicativos móveis",
-        "Substituir memória RAM"
-      ],
-      "correta": 1
-    },
-    {
-      "pergunta": "Qual protocolo é mais usado para navegação web?",
-      "opcoes": [
-        "FTP",
-        "HTTP",
-        "SMTP",
-        "Bluetooth",
-        "BIOS"
-      ],
-      "correta": 1
-    },
-    {
-      "pergunta": "Uma pilha (stack) segue qual princípio?",
-      "opcoes": [
-        "FIFO",
-        "LIFO",
-        "Binário",
-        "Paralelo",
-        "Distribuído"
-      ],
-      "correta": 1
-    }
-  ],
-
-  "3": [
-    {
-      "pergunta": "Banco de dados serve para:",
-      "opcoes": [
-        "Armazenar e organizar informações",
-        "Melhorar apenas conexão Wi-Fi",
-        "Criar placas eletrônicas",
-        "Aumentar memória RAM",
-        "Produzir energia elétrica"
-      ],
-      "correta": 0
-    },
-    {
-      "pergunta": "Computação em nuvem permite:",
-      "opcoes": [
-        "Utilizar serviços pela internet",
-        "Apenas jogar online",
-        "Montar computadores físicos",
-        "Criar chips eletrônicos",
-        "Eliminar servidores"
-      ],
-      "correta": 0
-    },
-    {
-      "pergunta": "SQL é utilizada para:",
-      "opcoes": [
-        "Configurar hardware",
-        "Gerenciar bancos de dados relacionais",
-        "Criar jogos em 3D",
-        "Controlar robôs industriais",
-        "Criar sistemas operacionais"
-      ],
-      "correta": 1
-    },
-    {
-      "pergunta": "A análise de software busca:",
-      "opcoes": [
-        "Entender requisitos e necessidades do sistema",
-        "Apenas criar telas bonitas",
-        "Configurar roteadores",
-        "Trocar peças do computador",
-        "Montar bancos físicos"
-      ],
-      "correta": 0
-    },
-    {
-      "pergunta": "Em banco de dados, chave primária é:",
-      "opcoes": [
-        "Campo que identifica unicamente um registro",
-        "Senha do administrador",
-        "Backup automático",
-        "Endereço IP do servidor",
-        "Tipo de antivírus"
-      ],
-      "correta": 0
-    }
-  ],
-
-  "4": [
-    {
-      "pergunta": "Aplicativos móveis são desenvolvidos para:",
-      "opcoes": [
-        "Apenas computadores desktop",
-        "Smartphones e tablets",
-        "Apenas servidores físicos",
-        "Roteadores",
-        "Impressoras"
-      ],
-      "correta": 1
-    },
-    {
-      "pergunta": "Arquitetura de software define:",
-      "opcoes": [
-        "Organização estrutural do sistema",
-        "Apenas design gráfico",
-        "Tipo de monitor utilizado",
-        "Velocidade da internet",
-        "Marca do processador"
-      ],
-      "correta": 0
-    },
-    {
-      "pergunta": "Governança de TI busca:",
-      "opcoes": [
-        "Alinhar tecnologia aos objetivos da organização",
-        "Apenas trocar computadores antigos",
-        "Criar jogos eletrônicos",
-        "Eliminar bancos de dados",
-        "Reduzir uso da internet"
-      ],
-      "correta": 0
-    },
-    {
-      "pergunta": "APIs permitem:",
-      "opcoes": [
-        "Comunicação entre sistemas",
-        "Apenas instalação de hardware",
-        "Criação de energia elétrica",
-        "Fabricação de chips",
-        "Montagem de computadores"
-      ],
-      "correta": 0
-    },
-    {
-      "pergunta": "O padrão MVC separa:",
-      "opcoes": [
-        "Rede e hardware",
-        "Modelo, visualização e controle",
-        "Dados físicos e digitais",
-        "Usuários e servidores",
-        "Front-end e internet"
-      ],
-      "correta": 1
-    }
-  ],
-
-  "5": [
-    {
-      "pergunta": "Segurança da informação busca:",
-      "opcoes": [
-        "Proteger dados e sistemas",
-        "Apenas aumentar internet",
-        "Melhorar desempenho gráfico",
-        "Criar jogos online",
-        "Fabricar processadores"
-      ],
-      "correta": 0
-    },
-    {
-      "pergunta": "Big Data refere-se a:",
-      "opcoes": [
-        "Pequenos bancos de dados locais",
-        "Grandes volumes de dados",
-        "Apenas planilhas do Excel",
-        "Redes domésticas",
-        "Equipamentos eletrônicos"
-      ],
-      "correta": 1
-    },
-    {
-      "pergunta": "Sistemas distribuídos funcionam:",
-      "opcoes": [
-        "Em apenas um computador",
-        "Em múltiplos computadores conectados",
-        "Sem uso de rede",
-        "Apenas offline",
-        "Exclusivamente em celulares"
-      ],
-      "correta": 1
-    },
-    {
-      "pergunta": "Machine Learning é uma área relacionada a:",
-      "opcoes": [
-        "Inteligência Artificial",
-        "Hardware gráfico",
-        "Sistemas operacionais antigos",
-        "Impressoras",
-        "Redes cabeadas"
-      ],
-      "correta": 0
-    },
-    {
-      "pergunta": "A criptografia serve para:",
-      "opcoes": [
-        "Compactar imagens",
-        "Proteger informações por codificação",
-        "Aumentar FPS em jogos",
-        "Melhorar bateria do celular",
-        "Criar placas-mãe"
-      ],
-      "correta": 1
-    }
-  ],
-  "6": [
-  {
-    "pergunta": "IoT significa:",
-    "opcoes": [
-      "Internet das Coisas",
-      "Interface Online Total",
-      "Integração Operacional Técnica",
-      "Informação de Tecnologia",
-      "Organização Tecnológica Internacional"
+  "tecnologia": {
+    "1": [
+      {
+        "pergunta": "o que e um algoritmo",
+        "opcoes": [
+          "um tipo de hardware",
+          "um conjunto de instrucoes para resolver um problema",
+          "um sistema operacional",
+          "um protocolo de rede",
+          "um banco de dados"
+        ],
+        "correta": 1
+      },
+      {
+        "pergunta": "o que e uma variavel em programacao",
+        "opcoes": [
+          "um tipo de rede",
+          "um espaco de memoria para armazenar valores",
+          "um dispositivo fisico",
+          "um formato de arquivo",
+          "um sistema de build"
+        ],
+        "correta": 1
+      },
+      {
+        "pergunta": "qual estrutura e usada para repeticao",
+        "opcoes": [
+          "condicional if",
+          "loop repeticao",
+          "arquivo de log",
+          "endereco ip",
+          "driver de impressora"
+        ],
+        "correta": 1
+      },
+      {
+        "pergunta": "o que e pseudocodigo",
+        "opcoes": [
+          "codigo fonte compilado",
+          "descricao informal de um algoritmo",
+          "um tipo de banco de dados",
+          "uma linguagem de rede",
+          "um protocolo de seguranca"
+        ],
+        "correta": 1
+      },
+      {
+        "pergunta": "qual e a finalidade de testar um algoritmo",
+        "opcoes": [
+          "melhorar a seguranca fisica do servidor",
+          "verificar se ele produz o resultado esperado",
+          "aumentar o consumo de memoria",
+          "trocar o sistema operacional",
+          "reduzir a largura de banda"
+        ],
+        "correta": 1
+      }
     ],
-    "correta": 0
-  },
-  {
-    "pergunta": "Sistemas embarcados estão presentes em:",
-    "opcoes": [
-      "Apenas supercomputadores",
-      "Dispositivos inteligentes como carros e eletrodomésticos",
-      "Somente celulares",
-      "Apenas redes sociais",
-      "Bancos físicos"
+    "2": [
+      {
+        "pergunta": "o que e um array",
+        "opcoes": [
+          "estrutura que armazena itens em posicoes indexadas",
+          "um tipo de processador",
+          "um servico de rede",
+          "um sistema operacional",
+          "um protocolo de comunicacao"
+        ],
+        "correta": 0
+      },
+      {
+        "pergunta": "o que e uma lista ligada",
+        "opcoes": [
+          "estrutura com nos que apontam para o proximo",
+          "um tipo de processador",
+          "um algoritmo de ordenacao",
+          "um protocolo de rede",
+          "um sistema de arquivos"
+        ],
+        "correta": 0
+      },
+      {
+        "pergunta": "qual a principal caracteristica de uma pilha",
+        "opcoes": [
+          "acesso ultimo a entrar primeiro a sair",
+          "acesso em tempo constante aleatorio",
+          "armazenamento em disco",
+          "transmissao de pacotes",
+          "criptografia dos dados"
+        ],
+        "correta": 0
+      },
+      {
+        "pergunta": "o que e uma fila",
+        "opcoes": [
+          "estrutura com principio fifo",
+          "um tipo de memoria ram",
+          "uma linguagem de programacao",
+          "um servidor web",
+          "um sistema de logs"
+        ],
+        "correta": 0
+      },
+      {
+        "pergunta": "o que e uma tabela hash",
+        "opcoes": [
+          "estrutura que mapeia chaves para valores",
+          "um tipo de processador grafico",
+          "um protocolo de rede",
+          "um banco de dados relacional",
+          "um tipo de sistema operacional"
+        ],
+        "correta": 0
+      }
     ],
-    "correta": 1
-  },
-  {
-    "pergunta": "Microsserviços são:",
-    "opcoes": [
-      "Pequenos componentes independentes de software",
-      "Cabos de rede especiais",
-      "Placas eletrônicas",
-      "Memórias RAM compactas",
-      "Sistemas operacionais antigos"
+    "3": [
+      {
+        "pergunta": "o que e banco de dados relacional",
+        "opcoes": [
+          "banco que organiza dados em tabelas relacionadas",
+          "um tipo de software grafico",
+          "uma linguagem de programacao",
+          "um protocolo de internet",
+          "uma placa de rede"
+        ],
+        "correta": 0
+      },
+      {
+        "pergunta": "qual a linguagem padrao para consultas sql",
+        "opcoes": [
+          "sql",
+          "html",
+          "css",
+          "java",
+          "csharp"
+        ],
+        "correta": 0
+      },
+      {
+        "pergunta": "o que e normalizacao de dados",
+        "opcoes": [
+          "processo para reduzir redundancia em tabelas",
+          "backup automatico de servidores",
+          "aumento de desempenho grafico",
+          "encrypt de redes sociais",
+          "instalacao de drivers"
+        ],
+        "correta": 0
+      },
+      {
+        "pergunta": "qual e a funcao de uma chave primaria",
+        "opcoes": [
+          "identificar unicamente um registro",
+          "proteger contra invasoes",
+          "aumentar largura de banda",
+          "gerar relatorios automaticamente",
+          "compactar arquivos"
+        ],
+        "correta": 0
+      },
+      {
+        "pergunta": "o que e uma transacao em banco de dados",
+        "opcoes": [
+          "conjunto de operacoes que devem ser atomicamente aplicadas",
+          "um tipo de firewall",
+          "um servidor web",
+          "um processo grafico",
+          "uma impressora de rede"
+        ],
+        "correta": 0
+      }
     ],
-    "correta": 0
-  },
-  {
-    "pergunta": "Circuitos digitais utilizam:",
-    "opcoes": [
-      "Sinais binários",
-      "Apenas ondas sonoras",
-      "Energia mecânica",
-      "Tinta magnética",
-      "Sinais analógicos puros"
+    "4": [
+      {
+        "pergunta": "o que e programacao orientada a objetos",
+        "opcoes": [
+          "paradigma que usa objetos com dados e metodos",
+          "um tipo de rede",
+          "uma base de dados",
+          "um protocolo de internet",
+          "um editor de texto"
+        ],
+        "correta": 0
+      },
+      {
+        "pergunta": "o que e encapsulamento",
+        "opcoes": [
+          "ocultar detalhes internos e expor interface",
+          "dividir a rede em subredes",
+          "armazenar dados em disco",
+          "compilar codigo fonte",
+          "controlar versoes do banco"
+        ],
+        "correta": 0
+      },
+      {
+        "pergunta": "o que e heranca em oop",
+        "opcoes": [
+          "reuso de codigo por meio de classes derivadas",
+          "armazenamento em nuvem",
+          "criptografia de dados",
+          "monitoramento de rede",
+          "compilacao incremental"
+        ],
+        "correta": 0
+      },
+      {
+        "pergunta": "o que e polimorfismo",
+        "opcoes": [
+          "capacidade de objetos responderem de formas diferentes",
+          "um metodo de compressao",
+          "uma ferramenta de rede",
+          "um sistema operacional",
+          "um formato de imagem"
+        ],
+        "correta": 0
+      },
+      {
+        "pergunta": "qual a vantagem de usar classes",
+        "opcoes": [
+          "organizar codigo e facilitar reuso",
+          "aumentar temperatura do processador",
+          "melhorar apenas a rede",
+          "substituir banco de dados",
+          "criar documentos pdf"
+        ],
+        "correta": 0
+      }
     ],
-    "correta": 0
-  },
-  {
-    "pergunta": "Em IoT, sensores são utilizados para:",
-    "opcoes": [
-      "Captar dados do ambiente",
-      "Apenas reproduzir vídeos",
-      "Melhorar resolução gráfica",
-      "Substituir processadores",
-      "Criar sistemas jurídicos"
+    "5": [
+      {
+        "pergunta": "o que e engenharia de software",
+        "opcoes": [
+          "disciplina que aplica processos e tecnicas para desenvolver software",
+          "uma linguagem de programacao",
+          "um tipo de hardware",
+          "um banco de dados",
+          "um protocolo de rede"
+        ],
+        "correta": 0
+      },
+      {
+        "pergunta": "o que e um requisito de software",
+        "opcoes": [
+          "descricao do que o sistema deve fazer",
+          "um tipo de servidor",
+          "um firmware",
+          "um estilo de design",
+          "um cabo de rede"
+        ],
+        "correta": 0
+      },
+      {
+        "pergunta": "o que e teste de software",
+        "opcoes": [
+          "processo para identificar defeitos no sistema",
+          "instalacao de hardware",
+          "configuracao de rede",
+          "criptografia de banco",
+          "desenho de interfaces"
+        ],
+        "correta": 0
+      },
+      {
+        "pergunta": "o que e integracao continua",
+        "opcoes": [
+          "pratica de integrar e testar codigo com frequencia",
+          "um tipo de monitor",
+          "um protocolo de sincronizacao de discos",
+          "um servidor de email",
+          "uma impressora compartilhada"
+        ],
+        "correta": 0
+      },
+      {
+        "pergunta": "qual e o objetivo da documentacao tecnica",
+        "opcoes": [
+          "facilitar manutencao e uso do software",
+          "aumentar consumo de memoria",
+          "criar ruido na rede",
+          "reduzir numero de usuarios",
+          "melhorar apenas a rede fisica"
+        ],
+        "correta": 0
+      }
     ],
-    "correta": 0
+    "6": [
+      {
+        "pergunta": "o que e modelo osi",
+        "opcoes": [
+          "referencia em camadas para redes de comunicacao",
+          "um banco de dados relacional",
+          "uma linguagem de programacao",
+          "um sistema de arquivos",
+          "um tipo de hardware"
+        ],
+        "correta": 0
+      },
+      {
+        "pergunta": "qual protocolo e usado para enviar emails",
+        "opcoes": [
+          "smtp",
+          "http",
+          "ftp",
+          "ssh",
+          "tcp"
+        ],
+        "correta": 0
+      },
+      {
+        "pergunta": "o que e endereco ip",
+        "opcoes": [
+          "identificador numerico de um dispositivo na rede",
+          "tipo de processador",
+          "formato de imagem",
+          "linguagem de marcacao",
+          "um sistema de compressao"
+        ],
+        "correta": 0
+      },
+      {
+        "pergunta": "o que e roteador",
+        "opcoes": [
+          "dispositivo que encaminha pacotes entre redes",
+          "um sistema operacional",
+          "um banco de dados",
+          "um protocolo de criptografia",
+          "uma placa de video"
+        ],
+        "correta": 0
+      },
+      {
+        "pergunta": "o que e nat",
+        "opcoes": [
+          "tecnica que permite a traducao de enderecos entre redes",
+          "um tipo de virus",
+          "um protocolo de email",
+          "um banco de dados",
+          "um modelo de seguranca"
+        ],
+        "correta": 0
+      }
+    ],
+    "7": [
+      {
+        "pergunta": "o que e cloud computing",
+        "opcoes": [
+          "modelo de fornecimento de recursos de computacao via internet",
+          "um tipo de hardware",
+          "um protocolo de rede",
+          "um banco de dados local",
+          "um compilador"
+        ],
+        "correta": 0
+      },
+      {
+        "pergunta": "o que e container",
+        "opcoes": [
+          "ambiente isolado para executar aplicativos",
+          "um servidor fisico",
+          "um protocolo de comunicacao",
+          "uma linguagem de programacao",
+          "um banco de dados remoto"
+        ],
+        "correta": 0
+      },
+      {
+        "pergunta": "o que e orkestracao de containers",
+        "opcoes": [
+          "gerenciar implantacao e escalonamento de containers",
+          "instalar sistemas operacionais",
+          "cripto de dados",
+          "controlar usuarios",
+          "configurar roteadores"
+        ],
+        "correta": 0
+      },
+      {
+        "pergunta": "o que e lambda em contextos serverless",
+        "opcoes": [
+          "funcao executada em resposta a eventos",
+          "um tipo de servidor",
+          "um protocolo de rede",
+          "um banco de dados",
+          "uma ferramenta de devops"
+        ],
+        "correta": 0
+      },
+      {
+        "pergunta": "qual e a vantagem de usar microservicos",
+        "opcoes": [
+          "facilitar escalabilidade e manutencao por servicos pequenos",
+          "aumentar dependencias entre equipes",
+          "criar um monolitico maior",
+          "impedir testes automatizados",
+          "gradualmente reduzir a qualidade"
+        ],
+        "correta": 0
+      }
+    ],
+    "8": [
+      {
+        "pergunta": "o que e ciberseguranca",
+        "opcoes": [
+          "conjunto de praticas para proteger sistemas e dados",
+          "um tipo de virus",
+          "um banco de dados",
+          "uma ferramenta grafica",
+          "um protocolo de rede"
+        ],
+        "correta": 0
+      },
+      {
+        "pergunta": "o que e autenticacao",
+        "opcoes": [
+          "processo de verificar identidade de um usuario",
+          "criptografar todo o disco",
+          "configurar um roteador",
+          "instalar um certificado fisico",
+          "um tipo de rede"
+        ],
+        "correta": 0
+      },
+      {
+        "pergunta": "o que e criptografia",
+        "opcoes": [
+          "tecnica para proteger dados tornando-os incompreensiveis sem chave",
+          "um tipo de hardware",
+          "um servidor web",
+          "um processo grafico",
+          "uma impressora"
+        ],
+        "correta": 0
+      },
+      {
+        "pergunta": "o que e firewall",
+        "opcoes": [
+          "sistema que controla trafego de rede conforme regras",
+          "um tipo de banco de dados",
+          "um cliente de email",
+          "uma rede social",
+          "um protocolo"
+        ],
+        "correta": 0
+      },
+      {
+        "pergunta": "o que e engenharia social",
+        "opcoes": [
+          "manipulacao de pessoas para obter informacoes ou acesso",
+          "um algoritmo de ordenacao",
+          "um servico web",
+          "uma aplicacao movil",
+          "uma licitacao"
+        ],
+        "correta": 0
+      }
+    ]
   }
-],
-"7": [
-  {
-    "pergunta": "Realidade Virtual cria:",
-    "opcoes": [
-      "Ambiente digital imersivo",
-      "Apenas sites comuns",
-      "Planilhas automáticas",
-      "Cabos de rede",
-      "Bancos físicos"
-    ],
-    "correta": 0
-  },
-  {
-    "pergunta": "Wearables são:",
-    "opcoes": [
-      "Equipamentos vestíveis inteligentes",
-      "Apenas computadores desktop",
-      "Sistemas jurídicos digitais",
-      "Servidores físicos gigantes",
-      "Linguagens de programação"
-    ],
-    "correta": 0
-  },
-  {
-    "pergunta": "Robótica combina:",
-    "opcoes": [
-      "Mecânica, eletrônica e programação",
-      "Apenas internet",
-      "Somente design gráfico",
-      "Apenas banco de dados",
-      "Direito e medicina"
-    ],
-    "correta": 0
-  },
-  {
-    "pergunta": "Casas inteligentes utilizam:",
-    "opcoes": [
-      "Automação residencial",
-      "Apenas energia solar",
-      "Sistemas jurídicos",
-      "Exclusivamente computadores antigos",
-      "Redes desconectadas"
-    ],
-    "correta": 0
-  },
-  {
-    "pergunta": "A Realidade Aumentada diferencia-se da Virtual porque:",
-    "opcoes": [
-      "Substitui totalmente o mundo real",
-      "Sobrepõe elementos digitais ao ambiente real",
-      "Funciona apenas offline",
-      "Não utiliza câmeras",
-      "Não depende de software"
-    ],
-    "correta": 1
-  }
-],
-"8": [
-  {
-    "pergunta": "Visão computacional permite que computadores:",
-    "opcoes": [
-      "Interpretem imagens e vídeos",
-      "Apenas imprimam documentos",
-      "Criem peças mecânicas",
-      "Aumentem memória RAM",
-      "Produzam energia elétrica"
-    ],
-    "correta": 0
-  },
-  {
-    "pergunta": "Computação gráfica é utilizada em:",
-    "opcoes": [
-      "Jogos, animações e interfaces visuais",
-      "Apenas cálculos jurídicos",
-      "Redes elétricas",
-      "Processos eleitorais",
-      "Tribunais de justiça"
-    ],
-    "correta": 0
-  },
-  {
-    "pergunta": "Processamento digital de imagens envolve:",
-    "opcoes": [
-      "Manipulação e análise de imagens digitais",
-      "Apenas impressão de fotos",
-      "Exclusivamente desenho manual",
-      "Troca de hardware físico",
-      "Criação de cabos de rede"
-    ],
-    "correta": 0
-  },
-  {
-    "pergunta": "O TCC é:",
-    "opcoes": [
-      "Trabalho acadêmico de conclusão do curso",
-      "Sistema operacional avançado",
-      "Linguagem de programação",
-      "Equipamento eletrônico",
-      "Banco de dados distribuído"
-    ],
-    "correta": 0
-  },
-  {
-    "pergunta": "Na visão computacional, reconhecimento facial utiliza principalmente:",
-    "opcoes": [
-      "Algoritmos de Inteligência Artificial",
-      "Apenas memória RAM",
-      "Cabos de rede especiais",
-      "Sistemas jurídicos automatizados",
-      "Impressoras térmicas"
-    ],
-    "correta": 0
-  }
-]
-}
 }

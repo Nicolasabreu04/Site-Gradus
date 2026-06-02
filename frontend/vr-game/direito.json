@@ -1,583 +1,574 @@
- {
- "direito": {
+{
+  "direito": {
     "1": [
       {
-        "pergunta": "Qual é a principal função da Constituição Federal?",
+        "pergunta": "o que e a constituicao",
         "opcoes": [
-          "Regular apenas contratos privados",
-          "Organizar o Estado e garantir direitos fundamentais",
-          "Criar empresas públicas",
-          "Regular apenas o direito penal",
-          "Fiscalizar eleições"
+          "conjunto de normas que organiza o estado",
+          "um tipo de contrato privado",
+          "uma empresa publica",
+          "um tribunal especifico",
+          "um protocolo de rede"
         ],
-        "correta": 1
+        "correta": 0
       },
       {
-        "pergunta": "Qual área do Direito estuda a origem e evolução das normas jurídicas?",
+        "pergunta": "qual e a funcao dos direitos fundamentais",
         "opcoes": [
-          "Direito Penal",
-          "Direito Tributário",
-          "História do Direito",
-          "Direito Digital",
-          "Direito Administrativo"
+          "garantir protecao basica aos individuos",
+          "regular apenas contratos comerciais",
+          "definir taxas administrativas",
+          "organizar eleicoes internas",
+          "criar empresas estatais"
         ],
-        "correta": 2
+        "correta": 0
       },
       {
-        "pergunta": "O que significa o princípio da separação dos poderes?",
+        "pergunta": "o que significa separacao dos poderes",
         "opcoes": [
-          "O poder pertence apenas ao Executivo",
-          "Cada poder possui funções específicas e independentes",
-          "O Judiciário controla sozinho o país",
-          "O Legislativo é superior aos demais",
-          "O Executivo pode criar leis sem limites"
+          "divisao entre executivo legislativo e judiciario",
+          "controle unico do executivo",
+          "autonomia apenas do judiciario",
+          "unificacao dos poderes",
+          "dominacao do legislativo"
         ],
-        "correta": 1
+        "correta": 0
       },
       {
-        "pergunta": "Na Filosofia Jurídica, justiça pode ser entendida como:",
+        "pergunta": "o que e fonte do direito",
         "opcoes": [
-          "Aplicação da força física",
-          "Vontade exclusiva do governante",
-          "Busca pelo equilíbrio e garantia de direitos",
-          "Interesse econômico do Estado",
-          "Punição obrigatória em qualquer situação"
+          "leis e normas publicadas",
+          "apenas costumes locais",
+          "opiniao de empresas privadas",
+          "artigos cientificos",
+          "protocolos de internet"
         ],
-        "correta": 2
+        "correta": 0
       },
       {
-        "pergunta": "Segundo a teoria contratualista, o Estado surgiu:",
+        "pergunta": "o que e controle de constitucionalidade",
         "opcoes": [
-          "Por intervenção divina",
-          "Pela vontade exclusiva do rei",
-          "A partir de um acordo social entre indivíduos",
-          "Pela criação do Poder Judiciário",
-          "Pela imposição militar"
+          "verificar se leis estao de acordo com a constituicao",
+          "elaborar contratos internacionais",
+          "julgar apenas casos civis",
+          "organizar congressos",
+          "administrar recursos financeiros"
         ],
-        "correta": 2
+        "correta": 0
       }
     ],
-
     "2": [
       {
-        "pergunta": "O que é considerado crime no Direito Penal?",
+        "pergunta": "o que caracteriza um crime",
         "opcoes": [
-          "Qualquer ato imoral",
-          "Conduta prevista em lei penal",
-          "Apenas homicídio",
-          "Somente crimes com violência",
-          "Qualquer dívida não paga"
-        ],
-        "correta": 1
-      },
-      {
-        "pergunta": "No Direito Civil, pessoa física é:",
-        "opcoes": [
-          "Apenas servidor público",
-          "Toda pessoa natural com direitos e deveres",
-          "Apenas maior de 21 anos",
-          "Apenas empresário",
-          "Pessoa condenada criminalmente"
-        ],
-        "correta": 1
-      },
-      {
-        "pergunta": "Qual é a função da Teoria Geral do Processo?",
-        "opcoes": [
-          "Estudar apenas crimes",
-          "Estabelecer regras gerais do funcionamento do processo judicial",
-          "Regular empresas privadas",
-          "Criar tributos",
-          "Organizar eleições"
-        ],
-        "correta": 1
-      },
-      {
-        "pergunta": "O princípio da legalidade determina que:",
-        "opcoes": [
-          "Ninguém será obrigado a fazer algo senão em virtude de lei",
-          "Apenas juízes devem cumprir a lei",
-          "O Executivo pode ignorar normas",
-          "O Legislativo julga crimes",
-          "A Constituição pode ser desconsiderada"
+          "conduta prevista em lei penal",
+          "mero desagrado social",
+          "divida nao paga",
+          "contrato rescindido",
+          "acao administrativa"
         ],
         "correta": 0
       },
       {
-        "pergunta": "Na teoria do crime, a tipicidade significa:",
+        "pergunta": "qual e o principio da legalidade penal",
         "opcoes": [
-          "Existência de dano moral",
-          "Adequação da conduta à descrição legal do crime",
-          "Julgamento pelo STF",
-          "Aplicação automática da pena",
-          "Existência de contrato inválido"
+          "nao ha crime sem lei previa",
+          "lei posterior pode punir retroativamente",
+          "juiz cria crimes conforme o caso",
+          "policia determina a lei",
+          "lei e opcional"
         ],
-        "correta": 1
+        "correta": 0
+      },
+      {
+        "pergunta": "o que e tipicidade no direito penal",
+        "opcoes": [
+          "adequacao da conduta a descricao legal do crime",
+          "apenas a pena aplicada",
+          "a forma do processo civil",
+          "o cumprimento de um contrato",
+          "a competencia do tribunal"
+        ],
+        "correta": 0
+      },
+      {
+        "pergunta": "o que e ilicitude",
+        "opcoes": [
+          "ausencia de justificativa legal para a conduta",
+          "apenas ausencia de prova",
+          "erro de procedimento civil",
+          "disputa contratual",
+          "regularidade administrativa"
+        ],
+        "correta": 0
+      },
+      {
+        "pergunta": "qual e a finalidade da pena",
+        "opcoes": [
+          "reprimir e prevenir condutas lesivas",
+          "aumentar taxa de litigiosidade",
+          "regular impostos",
+          "controlar empresas",
+          "definir contratos civis"
+        ],
+        "correta": 0
       }
     ],
-
     "3": [
       {
-        "pergunta": "Obrigação, no Direito Civil, é:",
+        "pergunta": "o que e obrigacao civil",
         "opcoes": [
-          "Apenas pagamento em dinheiro",
-          "Relação jurídica entre credor e devedor",
-          "Exclusivamente obrigação do Estado",
-          "Qualquer norma penal",
-          "Ato político"
+          "vinculo juridico entre credor e devedor",
+          "acao penal imediata",
+          "direito administrativo",
+          "processo trabalhista",
+          "norma constitucional"
         ],
-        "correta": 1
+        "correta": 0
       },
       {
-        "pergunta": "Qual poder é responsável por criar leis?",
+        "pergunta": "o que e contrato",
         "opcoes": [
-          "Executivo",
-          "Judiciário",
-          "Legislativo",
-          "Ministério Público",
-          "Polícia Federal"
+          "acordo de vontades que gera efeitos juridicos",
+          "uma lei federal",
+          "uma medida provisoria",
+          "um tipo de pena",
+          "um recurso ministerial"
         ],
-        "correta": 2
+        "correta": 0
       },
       {
-        "pergunta": "Crimes em espécie são:",
+        "pergunta": "o que e responsabilidade civil",
         "opcoes": [
-          "Regras constitucionais",
-          "Categorias específicas de crimes previstas no Código Penal",
-          "Apenas crimes internacionais",
-          "Apenas crimes militares",
-          "Tipos de contratos civis"
+          "dever de reparar dano causado a terceiro",
+          "penas aplicadas em processos penais",
+          "controle de constitucionalidade",
+          "normas de licitacao",
+          "regulacao tributaria"
         ],
-        "correta": 1
+        "correta": 0
       },
       {
-        "pergunta": "A mediação de conflitos busca:",
+        "pergunta": "o que e posse",
         "opcoes": [
-          "Punir imediatamente o réu",
-          "Resolver conflitos com diálogo entre as partes",
-          "Eliminar o Judiciário",
-          "Aplicar prisão preventiva",
-          "Aumentar processos judiciais"
+          "exercicio de fato sobre coisa",
+          "sentenca judicial definitiva",
+          "norma administrativa",
+          "tipificacao penal",
+          "recurso extraordinario"
         ],
-        "correta": 1
+        "correta": 0
       },
       {
-        "pergunta": "No Direito das Obrigações, inadimplemento significa:",
+        "pergunta": "qual e a funcao do registro de imoveis",
         "opcoes": [
-          "Criação de uma lei",
-          "Descumprimento da obrigação assumida",
-          "Julgamento criminal",
-          "Extinção automática do contrato",
-          "Prisão civil obrigatória"
+          "publicar e garantir seguranca das transacoes imobiliarias",
+          "cobrar tributos municipais",
+          "julgar crimes ambientais",
+          "organizar processos eleitorais",
+          "administrar fundos publicos"
         ],
-        "correta": 1
+        "correta": 0
       }
     ],
-
     "4": [
       {
-        "pergunta": "Contrato é:",
+        "pergunta": "o que e crime",
         "opcoes": [
-          "Apenas documento empresarial",
-          "Acordo de vontades com efeitos jurídicos",
-          "Norma penal",
-          "Decisão judicial",
-          "Tributo obrigatório"
-        ],
-        "correta": 1
-      },
-      {
-        "pergunta": "Os Direitos Humanos têm como objetivo:",
-        "opcoes": [
-          "Garantir dignidade e proteção da pessoa humana",
-          "Defender apenas empresas",
-          "Criar impostos",
-          "Punir países pobres",
-          "Regular apenas eleições"
+          "acao que viola a norma penal",
+          "contrato civil",
+          "lei tributaria",
+          "norma administrativa",
+          "direito internacional"
         ],
         "correta": 0
       },
       {
-        "pergunta": "O controle de constitucionalidade serve para:",
+        "pergunta": "o que e tipicacao penal",
         "opcoes": [
-          "Criar leis municipais",
-          "Verificar se leis estão de acordo com a Constituição",
-          "Julgar contratos privados",
-          "Aplicar multas de trânsito",
-          "Organizar concursos públicos"
+          "adequar uma conduta a descricao de crime na lei",
+          "registro de empresas",
+          "contratacao publica",
+          "direito do trabalho",
+          "licitacao"
         ],
-        "correta": 1
+        "correta": 0
       },
       {
-        "pergunta": "Hermenêutica jurídica refere-se:",
+        "pergunta": "qual e a finalidade da pena restritiva de direitos",
         "opcoes": [
-          "À criação de impostos",
-          "À interpretação das normas jurídicas",
-          "Ao julgamento criminal",
-          "À administração pública",
-          "À fiscalização policial"
+          "substituir penas privativas de liberdade em casos previstos",
+          "aumentar cargas tributarias",
+          "encerrar processos civis",
+          "julgar recursos eleitorais",
+          "organizar servicos publicos"
         ],
-        "correta": 1
+        "correta": 0
       },
       {
-        "pergunta": "No controle concentrado de constitucionalidade, quem julga em regra é:",
+        "pergunta": "o que e principio da presuncao de inocencia",
         "opcoes": [
-          "Tribunal do Júri",
-          "Superior Tribunal Militar",
-          "Supremo Tribunal Federal",
-          "Ministério Público",
-          "Senado Federal"
+          "nenhum individuo e considerado culpado sem condenacao definitiva",
+          "todos sao culpados ate prova em contrario",
+          "penas sao aplicadas sem processo",
+          "juizes decidem sem provas",
+          "acusado nao tem direitos"
         ],
-        "correta": 2
+        "correta": 0
+      },
+      {
+        "pergunta": "o que e medida cautelar",
+        "opcoes": [
+          "provisao para assegurar eficacia do processo",
+          "tipo de contrato comercial",
+          "norma tributaria",
+          "documento de propriedade",
+          "registro civil"
+        ],
+        "correta": 0
       }
     ],
-
     "5": [
       {
-        "pergunta": "Direito do Consumidor protege:",
+        "pergunta": "o que e processo civil",
         "opcoes": [
-          "Apenas empresas",
-          "Relações entre consumidor e fornecedor",
-          "Somente contratos internacionais",
-          "Crimes ambientais",
-          "Relações políticas"
-        ],
-        "correta": 1
-      },
-      {
-        "pergunta": "Processo Penal trata:",
-        "opcoes": [
-          "Da criação de empresas",
-          "Da aplicação da lei penal em juízo",
-          "Apenas de contratos",
-          "Da cobrança de tributos",
-          "De eleições"
-        ],
-        "correta": 1
-      },
-      {
-        "pergunta": "Posse e propriedade são temas de qual área?",
-        "opcoes": [
-          "Direito Civil – Coisas",
-          "Direito Tributário",
-          "Direito Internacional",
-          "Direito Financeiro",
-          "Direito Eleitoral"
+          "conjunto de normas que regulam o procedimento judicial civil",
+          "um tipo de crime",
+          "uma lei trabalhista",
+          "um imposto municipal",
+          "um protocolo de rede"
         ],
         "correta": 0
       },
       {
-        "pergunta": "Recurso judicial é utilizado para:",
+        "pergunta": "o que e peticao inicial",
         "opcoes": [
-          "Encerrar automaticamente o processo",
-          "Revisar decisão judicial",
-          "Criar nova lei",
-          "Aplicar pena criminal",
-          "Registrar empresa"
+          "documento que inicia a acao judicial",
+          "sentenca final do juiz",
+          "declaracao de bens",
+          "registro empresarial",
+          "ata de reuniao"
         ],
-        "correta": 1
+        "correta": 0
       },
       {
-        "pergunta": "A responsabilidade objetiva do fornecedor no CDC depende:",
+        "pergunta": "o que e recurso",
         "opcoes": [
-          "Da comprovação de culpa",
-          "Apenas de decisão criminal",
-          "Da existência do dano e nexo causal",
-          "Exclusivamente de contrato escrito",
-          "Da autorização judicial prévia"
+          "meio para contestar decisao judicial",
+          "documento fiscal",
+          "medida administrativa",
+          "contrato laboral",
+          "registro de propriedade"
         ],
-        "correta": 2
+        "correta": 0
+      },
+      {
+        "pergunta": "qual e o objetivo da coerencia processual",
+        "opcoes": [
+          "garantir regularidade e previsibilidade do processo",
+          "aumentar prazos sem justificativa",
+          "eliminar provas testemunhais",
+          "atribuir poderes ao executivo",
+          "modificar constituicao"
+        ],
+        "correta": 0
+      },
+      {
+        "pergunta": "o que e incidente de desconsideracao da personalidade juridica",
+        "opcoes": [
+          "procedimento para responsabilizar socios por atos da empresa",
+          "tipo de contrato civil",
+          "um recurso eleitoral",
+          "uma norma tributaria",
+          "um crime especifico"
+        ],
+        "correta": 0
       }
     ],
-
     "6": [
       {
-        "pergunta": "Direito Administrativo regula:",
+        "pergunta": "o que e processo penal",
         "opcoes": [
-          "Relações familiares",
-          "Atuação da Administração Pública",
-          "Apenas crimes federais",
-          "Contratos internacionais",
-          "Casamento civil"
+          "conjunto de regras para apurar e julgar crimes",
+          "um contrato trabalhista",
+          "uma norma tributaria",
+          "um registro civil",
+          "um documento administrativo"
         ],
-        "correta": 1
+        "correta": 0
       },
       {
-        "pergunta": "O Direito das Famílias trata de:",
+        "pergunta": "o que e denuncia no processo penal",
         "opcoes": [
-          "Tributos municipais",
-          "Relações familiares e sucessórias",
-          "Crimes ambientais",
-          "Contratos bancários",
-          "Direito empresarial"
+          "exposicao do fato criminoso feita pelo ministerio publico",
+          "um tipo de recurso civil",
+          "uma execucao fiscal",
+          "um contrato administrativo",
+          "um ato de registro"
         ],
-        "correta": 1
+        "correta": 0
       },
       {
-        "pergunta": "Sucessão ocorre:",
+        "pergunta": "o que e audiencia de instruccao",
         "opcoes": [
-          "Apenas em contratos",
-          "Com a transmissão de bens após a morte",
-          "Em crimes eleitorais",
-          "Na criação de empresas",
-          "Em licitações públicas"
+          "fase em que se colhem provas e ouvem testemunhas",
+          "apenas julgamento do recurso",
+          "registro de contratos",
+          "inspecao fiscal",
+          "assinatura de peticoes"
         ],
-        "correta": 1
+        "correta": 0
       },
       {
-        "pergunta": "O princípio da legalidade administrativa significa que:",
+        "pergunta": "o que e prisao preventiva",
         "opcoes": [
-          "O administrador pode fazer tudo que quiser",
-          "A Administração só pode agir conforme a lei",
-          "O Judiciário cria leis administrativas",
-          "Empresas privadas controlam o Estado",
-          "Tributos são facultativos"
+          "medida cautelar que limita a liberdade antes do julgamento",
+          "pena aplicada apos condenacao",
+          "mesma coisa que liberdade condicional",
+          "tipo de sancao administrativa",
+          "um recurso especial"
         ],
-        "correta": 1
+        "correta": 0
       },
       {
-        "pergunta": "A união estável pode ser reconhecida quando houver:",
+        "pergunta": "o que e medida protetiva em violencia domestica",
         "opcoes": [
-          "Relação pública, contínua e duradoura com objetivo de constituição familiar",
-          "Apenas contrato escrito",
-          "Necessariamente casamento religioso",
-          "Autorização judicial prévia",
-          "Somente convivência superior a 10 anos"
+          "acao para proteger vitimas como afastamento do agressor",
+          "apenas multas administrativas",
+          "registro de propriedade",
+          "audiencia civil",
+          "tipo de recurso tributario"
         ],
         "correta": 0
       }
     ],
-
     "7": [
       {
-        "pergunta": "O Direito do Trabalho protege:",
+        "pergunta": "o que e direito do trabalho",
         "opcoes": [
-          "Apenas empresas multinacionais",
-          "Relações entre empregado e empregador",
-          "Crimes financeiros",
-          "Relações internacionais",
-          "Direito penal militar"
-        ],
-        "correta": 1
-      },
-      {
-        "pergunta": "Responsabilidade civil envolve:",
-        "opcoes": [
-          "Reparação de danos causados a terceiros",
-          "Apenas prisão criminal",
-          "Criação de tributos",
-          "Relações diplomáticas",
-          "Eleições municipais"
+          "conjunto de normas que regulam a relacao de emprego",
+          "um tipo de contrato civil",
+          "uma norma penal",
+          "um procedimento fiscal",
+          "um protocolo de rede"
         ],
         "correta": 0
       },
       {
-        "pergunta": "Férias remuneradas são direito previsto em:",
+        "pergunta": "o que e carteira de trabalho",
         "opcoes": [
-          "Direito Tributário",
-          "Direito Administrativo",
-          "Direito do Trabalho",
-          "Direito Penal",
-          "Direito Internacional"
+          "registro das informacoes do contrato de trabalho",
+          "um documento eleitoral",
+          "um tipo de contrato internacional",
+          "um formulario tributario",
+          "um protocolo de seguranca"
         ],
-        "correta": 2
+        "correta": 0
       },
       {
-        "pergunta": "Licitação é:",
+        "pergunta": "o que e jornada de trabalho",
         "opcoes": [
-          "Julgamento criminal",
-          "Processo administrativo para contratação pública",
-          "Contrato internacional",
-          "Tipo de tributo",
-          "Procedimento eleitoral"
+          "tempo em que o empregado esta a disposicao do empregador",
+          "uma taxa de imposto",
+          "uma pena criminal",
+          "um recurso civil",
+          "um tipo de contrato administrativo"
         ],
-        "correta": 1
+        "correta": 0
       },
       {
-        "pergunta": "Na responsabilidade civil subjetiva, é necessária:",
+        "pergunta": "o que e justa causa para demissao",
         "opcoes": [
-          "Apenas existência do dano",
-          "Prova de culpa ou dolo",
-          "Prisão preventiva",
-          "Decisão do Senado",
-          "Existência de casamento"
+          "faltas graves do empregado que autorizam a demissao",
+          "um tipo de beneficio previdenciario",
+          "uma norma constitucional",
+          "uma licitacao publica",
+          "um registro imobiliario"
         ],
-        "correta": 1
+        "correta": 0
+      },
+      {
+        "pergunta": "qual e a funcao da convencao coletiva",
+        "opcoes": [
+          "estabelecer condicoes de trabalho entre sindicatos e empresas",
+          "definir tributos municipais",
+          "julgar processos civis",
+          "registrar imoveis",
+          "emitir licencas ambientais"
+        ],
+        "correta": 0
       }
     ],
-
     "8": [
       {
-        "pergunta": "Tributo é:",
+        "pergunta": "o que e direito tributario",
         "opcoes": [
-          "Pena criminal",
-          "Prestação compulsória prevista em lei",
-          "Contrato empresarial",
-          "Norma internacional",
-          "Processo eleitoral"
+          "regulacao sobre tributos e arrecadacao",
+          "um procedimento penal",
+          "uma lei civil",
+          "um servico administrativo",
+          "um contrato comercial"
         ],
-        "correta": 1
+        "correta": 0
       },
       {
-        "pergunta": "Direito Digital regula:",
+        "pergunta": "o que e tributo",
         "opcoes": [
-          "Apenas jogos online",
-          "Relações jurídicas envolvendo tecnologia e internet",
-          "Apenas redes sociais",
-          "Somente crimes financeiros",
-          "Apenas contratos internacionais"
+          "prestacao compulsoria prevista em lei",
+          "uma multa administrativa",
+          "um contrato civil",
+          "uma licitacao",
+          "um servico municipal"
         ],
-        "correta": 1
+        "correta": 0
       },
       {
-        "pergunta": "A seguridade social engloba:",
+        "pergunta": "o que e principio da capacidade contributiva",
         "opcoes": [
-          "Apenas previdência privada",
-          "Saúde, assistência e previdência social",
-          "Apenas saúde pública",
-          "Segurança pública",
-          "Apenas aposentadoria militar"
+          "quem tem mais renda deve contribuir mais",
+          "todos pagam igual independentemente de renda",
+          "so empresa paga tributo",
+          "isencao para funcionarios publicos",
+          "tributo sobre propriedade publica apenas"
         ],
-        "correta": 1
+        "correta": 0
       },
       {
-        "pergunta": "O processo constitucional busca:",
+        "pergunta": "o que e fato gerador do tributo",
         "opcoes": [
-          "Aplicar apenas normas penais",
-          "Garantir proteção da Constituição e dos direitos fundamentais",
-          "Criar empresas públicas",
-          "Regular contratos privados",
-          "Organizar licitações"
+          "situacao que cria a obrigacao tributaria",
+          "apenas a emissao de multa",
+          "a publicacao da lei",
+          "o julgamento judicial",
+          "a assinatura de contrato"
         ],
-        "correta": 1
+        "correta": 0
       },
       {
-        "pergunta": "O princípio da anterioridade tributária impede:",
+        "pergunta": "qual e a finalida de contencioso administrativo tributario",
         "opcoes": [
-          "Criação de leis penais",
-          "Cobrança imediata de tributo recém-criado em determinadas hipóteses",
-          "Existência de impostos municipais",
-          "Julgamento pelo STF",
-          "Criação de contribuições sociais"
+          "resolver disputas entre contribuinte e administracao tributaria",
+          "arquivar processos civis",
+          "financiar obras publicas",
+          "regular contratos trabalhistas",
+          "emitir licencas ambientais"
         ],
-        "correta": 1
+        "correta": 0
       }
     ],
-
     "9": [
       {
-        "pergunta": "O Processo do Trabalho é utilizado para:",
+        "pergunta": "o que e direito administrativo",
         "opcoes": [
-          "Resolver conflitos trabalhistas",
-          "Julgar crimes militares",
-          "Cobrar impostos",
-          "Organizar eleições",
-          "Regular comércio exterior"
+          "conjunto de normas que regem a administracao publica",
+          "um tipo de processo penal",
+          "uma norma trabalhista",
+          "um contrato comercial",
+          "um recurso eleitoral"
         ],
         "correta": 0
       },
       {
-        "pergunta": "A Justiça do Trabalho julga:",
+        "pergunta": "o que e licitacao publica",
         "opcoes": [
-          "Apenas crimes comuns",
-          "Conflitos entre empregado e empregador",
-          "Apenas causas internacionais",
-          "Casos eleitorais",
-          "Questões tributárias federais"
-        ],
-        "correta": 1
-      },
-      {
-        "pergunta": "Mandado de segurança é utilizado para:",
-        "opcoes": [
-          "Cobrar dívida comum",
-          "Proteger direito líquido e certo",
-          "Criar tributos",
-          "Julgar homicídios",
-          "Regular contratos privados"
-        ],
-        "correta": 1
-      },
-      {
-        "pergunta": "Na prática jurídica, petição inicial é:",
-        "opcoes": [
-          "Documento que inicia a ação judicial",
-          "Sentença final do juiz",
-          "Tipo de contrato empresarial",
-          "Lei complementar",
-          "Recurso constitucional"
+          "procedimento para contratar terceiros pela administracao",
+          "audiencia criminal",
+          "recurso civil",
+          "registro imobiliario",
+          "contrato internacional"
         ],
         "correta": 0
       },
       {
-        "pergunta": "Na Justiça do Trabalho, o princípio da proteção busca:",
+        "pergunta": "o que e ato administrativo",
         "opcoes": [
-          "Favorecer economicamente empresas",
-          "Equilibrar a relação entre empregado e empregador",
-          "Extinguir sindicatos",
-          "Eliminar direitos trabalhistas",
-          "Substituir a Constituição Federal"
+          "manifestacao da administracao que produz efeitos juridicos",
+          "sentenca penal",
+          "contrato de trabalho",
+          "norma constitucional",
+          "um documento privado"
         ],
-        "correta": 1
+        "correta": 0
+      },
+      {
+        "pergunta": "qual e a finalidade da responsabilizacao administrativa",
+        "opcoes": [
+          "punir irregularidades cometidas por agentes publicos",
+          "processar crimes federais",
+          "alterar legislacao",
+          "emitir debitos comerciais",
+          "criar normas internacionais"
+        ],
+        "correta": 0
+      },
+      {
+        "pergunta": "o que e controle interno na administracao",
+        "opcoes": [
+          "mecanismos para monitorar e prevenir irregularidades",
+          "audiencia penal publica",
+          "registro de imoveis",
+          "votacao legislativa",
+          "emissao de moeda"
+        ],
+        "correta": 0
       }
     ],
-
     "10": [
       {
-        "pergunta": "Direito Ambiental busca:",
+        "pergunta": "o que e etica juridica",
         "opcoes": [
-          "Apenas proteger empresas",
-          "Preservar o meio ambiente e garantir sustentabilidade",
-          "Criar tributos internacionais",
-          "Regular eleições",
-          "Julgar crimes militares"
-        ],
-        "correta": 1
-      },
-      {
-        "pergunta": "Direito Internacional regula:",
-        "opcoes": [
-          "Relações entre países e organismos internacionais",
-          "Apenas contratos trabalhistas",
-          "Crimes de trânsito",
-          "Relações familiares internas",
-          "Apenas comércio local"
+          "conjunto de principios que orientam a conduta do profissional do direito",
+          "um tipo de processo penal",
+          "uma norma tributaria",
+          "registro de empresas",
+          "um protocolo de rede"
         ],
         "correta": 0
       },
       {
-        "pergunta": "Legislação antidiscriminatória busca:",
+        "pergunta": "o que e peticao inicial na pratica juridica",
         "opcoes": [
-          "Incentivar desigualdade",
-          "Combater discriminação e promover igualdade",
-          "Reduzir direitos fundamentais",
-          "Eliminar políticas públicas",
-          "Criar novos tributos"
+          "documento que formaliza o inicio da acao e expoe pedidos",
+          "uma decisao judicial final",
+          "um contrato laboral",
+          "um ato administrativo",
+          "um recurso especial"
         ],
-        "correta": 1
+        "correta": 0
       },
       {
-        "pergunta": "Empreendedorismo jurídico pode envolver:",
+        "pergunta": "qual e a importancia do sigilo profissional do advogado",
         "opcoes": [
-          "Apenas concursos públicos",
-          "Criação de soluções e inovação no setor jurídico",
-          "Extinção da advocacia",
-          "Apenas atuação criminal",
-          "Somente atividades políticas"
+          "proteger informacoes do cliente e garantir confianca",
+          "impedir o andamento dos processos",
+          "substituir a prova documental",
+          "aumentar taxas judiciais",
+          "organizar licitacoes"
         ],
-        "correta": 1
+        "correta": 0
       },
       {
-        "pergunta": "No Direito Internacional Público, soberania significa:",
+        "pergunta": "o que e consultoria juridica",
         "opcoes": [
-          "Dependência absoluta de outros países",
-          "Poder supremo do Estado dentro de seu território",
-          "Ausência de governo",
-          "Controle do Judiciário mundial",
-          "Eliminação das fronteiras nacionais"
+          "orientacao preventiva sobre riscos e cumprimento de normas",
+          "execucao de penas",
+          "registro de nascimento",
+          "audiencia criminal",
+          "gestao de recursos financeiros"
         ],
-        "correta": 1
+        "correta": 0
+      },
+      {
+        "pergunta": "qual e a funcao da conciliacao na pratica juridica",
+        "opcoes": [
+          "buscar acordo entre partes para resolver conflitos sem julgamento",
+          "impor penas automaticamente",
+          "realizar denuncias penais",
+          "emitir licencas ambientais",
+          "executar contratos civis"
+        ],
+        "correta": 0
       }
     ]
   }
- }
+}
