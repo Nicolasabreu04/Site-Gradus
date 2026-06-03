@@ -65,6 +65,15 @@ let periodoSelecionado = null;
 let periodoCorredorAtual = 1;
 let telaAtual = "mapa"; // mapa, salas, corredor, quiz, final
 
+// Constante para fonte que suporta acentos
+const FONT_UNICODE = "https://cdn.aframe.io/fonts/DejaVu-sdf.fnt";
+
+// Função helper para adicionar texto com suporte a acentos
+function addTextWithFont(entity, value, options = {}) {
+  const textStr = `value: ${value}; font: ${FONT_UNICODE}${options.style ? '; ' + options.style : ''}`;
+  entity.setAttribute("text", textStr);
+}
+
 // Elementos A-Frame
 const rig = document.getElementById("rig");
 const interfacePanel = document.getElementById("interfacePanel");
@@ -89,6 +98,8 @@ const altEls = [
 
 const btnVoltarMapa = document.getElementById("btnVoltarMapa");
 const textBtnVoltar = document.getElementById("textBtnVoltar");
+const btnRefazer = document.getElementById("btnRefazer");
+const textBtnRefazer = document.getElementById("textBtnRefazer");
 const btnSair = document.getElementById("btnSair");
 const textBtnSair = document.getElementById("textBtnSair");
 const portasCorredor = document.getElementById("portasCorredor");
@@ -164,7 +175,7 @@ function criarPortasCorredor() {
       const ordinal = `${periodo}º Período`;
       placa.setAttribute(
         "text",
-        `value: ${ordinal}; width: 2.4; color: #ffffff; anchor: center; align: center; fontSize: 13`
+        `value: ${ordinal}; width: 2.4; color: #ffffff; anchor: center; align: center; fontSize: 13; font: ${FONT_UNICODE}`
       );
       placa.setAttribute("position", "0 2.45 0.18");
       placa.setAttribute("pointer-events", "none");
@@ -232,6 +243,8 @@ function voltarMapa() {
   });
   btnVoltarMapa.setAttribute("visible", false);
   textBtnVoltar.setAttribute("visible", false);
+  btnRefazer.setAttribute("visible", false);
+  textBtnRefazer.setAttribute("visible", false);
   btnSair.setAttribute("visible", false);
   textBtnSair.setAttribute("visible", false);
   interfacePanel.setAttribute("visible", false);
@@ -274,6 +287,8 @@ async function novoQuiz() {
   });
   btnVoltarMapa.setAttribute("visible", false);
   textBtnVoltar.setAttribute("visible", false);
+  btnRefazer.setAttribute("visible", false);
+  textBtnRefazer.setAttribute("visible", false);
   btnSair.setAttribute("visible", false);
   textBtnSair.setAttribute("visible", false);
   interfacePanel.setAttribute("visible", true);
@@ -310,15 +325,13 @@ function atualizarContador() {
   const pergNum = Math.min(perguntaAtualIndex + 1, total);
   contador.setAttribute(
     "text",
-    "value",
-    `Pergunta ${pergNum} de ${total} | Pontuação: ${pontuacaoFinal}`
+    `value: Pergunta ${pergNum} de ${total} | Pontuação: ${pontuacaoFinal}; font: ${FONT_UNICODE}`
   );
 }
 
 // Atualiza feedback
 function atualizarFeedback(msg, cor = "#f5c66b") {
-  feedback.setAttribute("text", "value", msg);
-  feedback.setAttribute("text", "color", cor);
+  feedback.setAttribute("text", `value: ${msg}; color: ${cor}; font: ${FONT_UNICODE}`);
 }
 
 // Reseta alternativas
@@ -346,12 +359,12 @@ function mostrarPergunta() {
   }
   perguntaAtual = perguntas[perguntaAtualIndex];
   atualizarContador();
-  pergunta.setAttribute("text", "value", perguntaAtual.pergunta || "");
+  pergunta.setAttribute("text", `value: ${perguntaAtual.pergunta || ""}; font: ${FONT_UNICODE}`);
   atualizarFeedback("Escolha uma alternativa.");
   resetarAlternativas();
   altEls.forEach((alt, i) => {
     if (!alt) return;
-    alt.setAttribute("text", "value", perguntaAtual.opcoes[i] || "");
+    alt.setAttribute("text", `value: ${perguntaAtual.opcoes[i] || ""}; font: ${FONT_UNICODE}`);
   });
 }
 
@@ -426,8 +439,8 @@ async function iniciarQuiz() {
     perguntas = [];
     perguntaAtual = null;
     interfacePanel.setAttribute("visible", true);
-    atualizarFeedback("NENHUMA PERGUNTA ENCONTRADA PARA ESTE PERIODO", "#ff6b6b");
-    pergunta.setAttribute("text", "value", "Nenhuma pergunta encontrada para este período.");
+    atualizarFeedback("NENHUMA PERGUNTA ENCONTRADA PARA ESTE PERÍODO", "#ff6b6b");
+    pergunta.setAttribute("text", `value: Nenhuma pergunta encontrada para este período.; font: ${FONT_UNICODE}`);
     boxEls.forEach((box) => {
       if (box) box.setAttribute("visible", false);
     });
@@ -473,15 +486,13 @@ function finalizarQuiz() {
   telaAtual = "final";
   contador.setAttribute(
     "text",
-    "value",
-    `PONTUACAO FINAL: ${pontuacaoFinal} / ${perguntas.length * 10 || 50}`
+    `value: PONTUACAO FINAL: ${pontuacaoFinal} / ${perguntas.length * 10 || 50}; font: ${FONT_UNICODE}`
   );
   resultadoTitulo.setAttribute("visible", true);
-  resultadoTitulo.setAttribute("text", "value", "RESULTADO FINAL");
+  resultadoTitulo.setAttribute("text", `value: RESULTADO FINAL; font: ${FONT_UNICODE}`);
   pergunta.setAttribute(
     "text",
-    "value",
-    "Obrigado por participar."
+    `value: Obrigado por participar.; font: ${FONT_UNICODE}`
   );
   atualizarFeedback(
     "Escolha uma opção abaixo.",
@@ -503,6 +514,8 @@ function finalizarQuiz() {
   textBtnSair.setAttribute("position", "1.3 -0.8 0.15");
   btnVoltarMapa.setAttribute("visible", true);
   textBtnVoltar.setAttribute("visible", true);
+  btnRefazer.setAttribute("visible", true);
+  textBtnRefazer.setAttribute("visible", true);
   btnSair.setAttribute("visible", true);
   textBtnSair.setAttribute("visible", true);
 }
