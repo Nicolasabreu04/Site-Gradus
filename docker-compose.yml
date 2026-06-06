@@ -26,5 +26,13 @@ services:
       DB_PASSWORD: gradus123
       DB_NAME: gradus_db
 
+  frontend:
+    build: ./frontend
+    container_name: gradus_frontend
+    ports:
+      - "8080:80"
+    depends_on:
+      - backend
+
 volumes:
   gradus_pgdata:
