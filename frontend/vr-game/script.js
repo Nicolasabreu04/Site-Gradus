@@ -74,6 +74,17 @@ function addTextWithFont(entity, value, options = {}) {
   entity.setAttribute("text", textStr);
 }
 
+function capitalizarPrimeiraLetra(texto) {
+  if (!texto || typeof texto !== "string") return texto;
+  const trimmed = texto.trimStart();
+  if (!trimmed) return texto;
+  return trimmed[0].toUpperCase() + trimmed.slice(1);
+}
+
+function formatarTextoQuiz(texto) {
+  return capitalizarPrimeiraLetra(texto);
+}
+
 // Elementos A-Frame
 const rig = document.getElementById("rig");
 const interfacePanel = document.getElementById("interfacePanel");
@@ -173,9 +184,10 @@ function criarPortasCorredor() {
 
       const placa = document.createElement("a-entity");
       const ordinal = `${periodo}º Período`;
+      
       placa.setAttribute(
         "text",
-        `value: ${ordinal}; width: 2.4; color: #ffffff; anchor: center; align: center; fontSize: 13; font: ${FONT_UNICODE}`
+        `value: ${ordinal}; width: 3.5; color: #000000; anchor: center; align: center; fontSize: 80; font: ${FONT_UNICODE}`
       );
       placa.setAttribute("position", "0 2.45 0.18");
       placa.setAttribute("pointer-events", "none");
@@ -359,12 +371,15 @@ function mostrarPergunta() {
   }
   perguntaAtual = perguntas[perguntaAtualIndex];
   atualizarContador();
-  pergunta.setAttribute("text", `value: ${perguntaAtual.pergunta || ""}; font: ${FONT_UNICODE}`);
+  pergunta.setAttribute("text", `value: ${formatarTextoQuiz(perguntaAtual.pergunta || "")}; font: ${FONT_UNICODE}`);
   atualizarFeedback("Escolha uma alternativa.");
   resetarAlternativas();
   altEls.forEach((alt, i) => {
     if (!alt) return;
-    alt.setAttribute("text", `value: ${perguntaAtual.opcoes[i] || ""}; font: ${FONT_UNICODE}`);
+    alt.setAttribute(
+      "text",
+      `value: ${formatarTextoQuiz(perguntaAtual.opcoes[i] || "")}; font: ${FONT_UNICODE}`
+    );
   });
 }
 
@@ -462,9 +477,9 @@ async function salvarResposta(p, idx, correta) {
     nome: nomeAluno,
     curso: cursoSelecionado === "tecnologia" ? "Ciência da Computação" : "Direito",
     periodo: periodoSelecionado,
-    pergunta: p.pergunta,
-    respostaEscolhida: p.opcoes[idx],
-    respostaCorreta: p.opcoes[p.correta],
+    pergunta: formatarTextoQuiz(p.pergunta),
+    respostaEscolhida: formatarTextoQuiz(p.opcoes[idx]),
+    respostaCorreta: formatarTextoQuiz(p.opcoes[p.correta]),
     acertou: correta,
     pontuacao: correta ? 10 : 0,
   };
