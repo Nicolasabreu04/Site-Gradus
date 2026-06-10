@@ -12,18 +12,18 @@
   <a-scene background="color: #0F1419">
     <a-sky color="#7da8cb"></a-sky>
     <a-entity light="type: hemisphere; skyColor: #e8f2ff; groundColor: #6c8c7b; intensity: 0.6"></a-entity>
-    <a-entity light="type: directional; color: #ffffff; intensity: 0.9" position="-5 12 4"></a-entity>
+    <a-entity light="type: directional; color: #ffffff; intensity: 0.65" position="-5 12 4"></a-entity>
     <a-entity light="type: point; color: #f7f1e0; intensity: 0.6; distance: 30" position="0 5 0"></a-entity>
     <a-entity light="type: point; color: #f7f1e0; intensity: 0.45; distance: 18" position="-11 4 -7"></a-entity>
     <a-entity light="type: point; color: #f7f1e0; intensity: 0.45; distance: 18" position="11 4 -7"></a-entity>
 
     <!-- Chão maior e campus (área útil aumentada e caminhos alargados) -->
     <a-plane rotation="-90 0 0" width="140" height="140" color="#4c7d53"></a-plane>
-    <a-plane rotation="-90 0 0" width="30" height="14" position="0 0.01 0" color="#A8A8A8"></a-plane>
-    <a-plane rotation="-90 0 0" width="8" height="28" position="0 0.02 -6" color="#A8A8A8"></a-plane>
-    <a-plane rotation="-90 0 0" width="30" height="10" position="0 0.02 -11" color="#A8A8A8"></a-plane>
-    <a-circle radius="3.5" rotation="-90 0 0" color="#B0B0B0" position="0 0.03 0"></a-circle>
-    <a-entity geometry="primitive: ring; radiusInner: 1.1; radiusOuter: 1.8" rotation="-90 0 0" material="color: #8A8A8A; opacity: 0.95" position="0 0.05 0"></a-entity>
+    <a-plane rotation="-90 0 0" width="30" height="14" position="0 0.01 0" color="#9B9B9B"></a-plane>
+    <a-plane rotation="-90 0 0" width="8" height="28" position="0 0.02 -6" color="#7F7F7F"></a-plane>
+    <a-plane rotation="-90 0 0" width="30" height="10" position="0 0.02 -11" color="#8E8E8E"></a-plane>
+    <a-circle radius="3.5" rotation="-90 0 0" color="#A5A5A5" position="0 0.03 0"></a-circle>
+    <a-entity geometry="primitive: ring; radiusInner: 1.1; radiusOuter: 1.8" rotation="-90 0 0" material="color: #8E8E8E; opacity: 0.95" position="0 0.05 0"></a-entity>
 
     <!-- Fonte central -->
     <a-entity id="fonteCentral" position="0 0 0">
@@ -165,10 +165,10 @@
     <!-- Corredor de períodos atrás da praça -->
     <a-entity id="corredorGroup">
       <!-- Corredor ampliado: largura maior e comprimento maior -->
-      <a-plane rotation="-90 0 0" width="12" height="80" color="#A5A5A5" position="0 0.01 -34"></a-plane>
-      <a-plane rotation="-90 0 0" width="2" height="80" color="#8F8F8F" position="0 0.02 -34"></a-plane>
-      <a-box width="0.25" height="0.35" depth="80" color="#bccdd4" position="-6 0.2 -34"></a-box>
-      <a-box width="0.25" height="0.35" depth="80" color="#bccdd4" position="6 0.2 -34"></a-box>
+      <a-plane rotation="-90 0 0" width="12" height="80" color="#8A8A8A" position="0 0.01 -34"></a-plane>
+      <a-plane rotation="-90 0 0" width="2" height="80" color="#6E6E6E" position="0 0.02 -34"></a-plane>
+      <a-box width="0.25" height="0.35" depth="80" color="#9A9A9A" position="-6 0.2 -34"></a-box>
+      <a-box width="0.25" height="0.35" depth="80" color="#A8A8A8" position="6 0.2 -34"></a-box>
       <!-- corridor heading removed to reduce visual noise (plaques used instead) -->
       <a-entity id="portasCorredor"></a-entity>
 
@@ -258,7 +258,7 @@
       <!-- Prédio CC (azul) -->
       <a-box id="predioCCBox" class="clickable click-debug" geometry="primitive: box; width: 4; height: 3.5; depth: 3" material="color: #2c74b3; metalness: 0.2" position="0 1.75 0"></a-box>
       <a-box width="4.2" height="0.8" depth="0.18" color="#1d4f7a" position="0 3.45 0.9"></a-box>
-      <a-entity text="value: Tecnologia; width: 4; color: #ffffff; anchor: center; align: center; fontSize: 12; font: https://cdn.aframe.io/fonts/DejaVu-sdf.fnt" position="0 3.45 1.05"></a-entity>
+      <a-entity text="value: Tecnologia; width: 9; color: #ffffff; anchor: center; align: center; fontSize: 12; font: https://cdn.aframe.io/fonts/DejaVu-sdf.fnt" position="0 3.45 1.05"></a-entity>
       <a-box position="0 0.12 2.1" width="2.6" height="0.3" depth="0.2" color="#f0e7c2"></a-box>
       <a-entity text="value: Tecnologia; width: 2.4; color: #1f2f4f; anchor: center; align: center; fontSize: 7; font: https://cdn.aframe.io/fonts/DejaVu-sdf.fnt" position="0 0.4 2.11"></a-entity>
       <a-cylinder radius="0.12" height="0.8" color="#ffffff" position="-1.5 0.4 1.4"></a-cylinder>
@@ -269,7 +269,7 @@
       <!-- Prédio Direito (vinho/roxo) -->
       <a-box id="predioDireitoBox" class="clickable click-debug" geometry="primitive: box; width: 4; height: 3.5; depth: 3" material="color: #7d2d6f; metalness: 0.2" position="0 1.75 0"></a-box>
       <a-box width="4.2" height="0.8" depth="0.18" color="#4a1f3f" position="0 3.45 0.9"></a-box>
-      <a-entity text="value: Direito; width: 4; color: #f7dc9b; anchor: center; align: center; fontSize: 12; font: https://cdn.aframe.io/fonts/DejaVu-sdf.fnt" position="0 3.45 1.05"></a-entity>
+      <a-entity text="value: Direito; width: 9; color: #f7dc9b; anchor: center; align: center; fontSize: 12; font: https://cdn.aframe.io/fonts/DejaVu-sdf.fnt" position="0 3.45 1.05"></a-entity>
       <a-box position="0 0.12 2.1" width="2.6" height="0.3" depth="0.2" color="#e7d3b8"></a-box>
       <a-entity text="value: Direito; width: 2.4; color: #3a1b3f; anchor: center; align: center; fontSize: 7; font: https://cdn.aframe.io/fonts/DejaVu-sdf.fnt" position="0 0.4 2.11"></a-entity>
       <a-cylinder radius="0.12" height="0.8" color="#ffffff" position="-1.5 0.4 1.4"></a-cylinder>
