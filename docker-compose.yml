@@ -6,8 +6,6 @@ services:
       POSTGRES_USER: gradus
       POSTGRES_PASSWORD: gradus123
       POSTGRES_DB: gradus_db
-    ports:
-      - "5432:5432"
     volumes:
       - gradus_pgdata:/var/lib/postgresql/data
       - ./backend/sql/init.sql:/docker-entrypoint-initdb.d/init.sql
