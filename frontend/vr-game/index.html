@@ -113,7 +113,7 @@
     </a-entity>
 
     <!-- RIG: container de câmera e locomoção -->
-    <a-entity id="rig" position="0 0 6">
+    <a-entity id="rig" position="0 0 6" rotation="0 -10 0">
       <a-entity 
         id="camera"
         camera
@@ -213,8 +213,6 @@
 
       <a-entity id="box4" class="clickable" position="0 -1.46 0.17" geometry="primitive: box; width: 8.65; height: 0.35; depth: 0.07" material="color: #16365b; opacity: 0.96" onclick="responder(4)"></a-entity>
       <a-entity id="alt4" text="value: ; width: 8.0; color: #eef4fb; anchor: left; align: left; wrapCount: 70; fontSize: 5.6; font: https://cdn.aframe.io/fonts/DejaVu-sdf.fnt" position="-4.05 -1.46 0.24" pointer-events="none"></a-entity>
-
-      <a-entity id="feedback" text="value: ; width: 9.8; color: #64e8e0; anchor: center; align: center; wrapCount: 48; fontSize: 7; font: https://cdn.aframe.io/fonts/DejaVu-sdf.fnt" position="0 -1.78 0.22"></a-entity>
 
       <!-- Botões finais dentro do próprio quadro -->
       <a-box id="btnVoltarMapa" class="clickable" position="-2.7 -0.85 0.22" width="1.65" height="0.35" depth="0.07" color="#2d537b" opacity="0.96" visible="false" onclick="voltarMapa()"></a-box>

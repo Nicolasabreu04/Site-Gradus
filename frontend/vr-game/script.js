@@ -200,7 +200,8 @@ function mostrarMapaPrincipal() {
   if (predioDireito) predioDireito.setAttribute("visible", true);
   if (tpInicio) tpInicio.setAttribute("visible", true);
   if (tpCentro) tpCentro.setAttribute("visible", true);
-  teleportar(0, 4);
+  rig.setAttribute("rotation", "0 -10 0");
+  teleportar(0, 6);
 }
 
 function criarPortasCorredor() {
@@ -238,7 +239,7 @@ function criarPortasCorredor() {
       const seloTexto = document.createElement("a-entity");
       seloTexto.setAttribute(
         "text",
-        `value: ${periodo}\nSEMESTRE; width: 1.8; color: #ffffff; anchor: center; align: center; wrapCount: 12; fontSize: 18; font: ${FONT_UNICODE}`
+        `value: ${periodo}\nSEMESTRE; width: 1.8; color: #111111; anchor: center; align: center; wrapCount: 12; fontSize: 18; font: ${FONT_UNICODE}`
       );
       seloTexto.setAttribute("position", "0 1.16 0.27");
       seloTexto.setAttribute("pointer-events", "none");
@@ -405,6 +406,7 @@ function atualizarContador() {
 
 // Atualiza feedback
 function atualizarFeedback(msg, cor = "#f5c66b") {
+  if (!feedback) return;
   feedback.setAttribute("text", `value: ${msg}; color: ${cor}; font: ${FONT_UNICODE}`);
 }
 
