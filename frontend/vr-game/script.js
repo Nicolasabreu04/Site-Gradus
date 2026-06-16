@@ -65,77 +65,6 @@ let periodoSelecionado = null;
 let periodoCorredorAtual = 1;
 let telaAtual = "mapa"; // mapa, salas, corredor, quiz, final
 
-// Constante para fonte que suporta acentos
-const FONT_UNICODE = "https://cdn.aframe.io/fonts/DejaVu-sdf.fnt";
-
-const POSICAO_SALA_QUIZ = { x: 0, z: -58.2 };
-const POSICAO_PAINEL_QUIZ = "0 2.05 -61.55";
-
-function setVisible(el, visible) {
-  if (el) el.setAttribute("visible", visible);
-}
-
-function ocultarBotoesFinais() {
-  [btnVoltarMapa, textBtnVoltar, btnRefazer, textBtnRefazer, btnSair, textBtnSair].forEach((el) => setVisible(el, false));
-}
-
-function resetarUIQuiz() {
-  resultadoTitulo.setAttribute("visible", false);
-  contador.setAttribute("text", `value: ; font: ${FONT_UNICODE}`);
-  pergunta.setAttribute("text", `value: ; font: ${FONT_UNICODE}`);
-  atualizarFeedback("", "#f5c66b");
-  ocultarBotoesFinais();
-
-  boxEls.forEach((box) => {
-    if (!box) return;
-    box.setAttribute("visible", true);
-    box.setAttribute("material", "color", "#22324a");
-    box.setAttribute("material", "opacity", 0.96);
-  });
-
-  altEls.forEach((alt) => {
-    if (!alt) return;
-    alt.setAttribute("visible", true);
-    alt.setAttribute("text", `value: ; color: #eef4fb; font: ${FONT_UNICODE}`);
-  });
-}
-
-function mostrarSalaQuiz() {
-  telaAtual = "quiz";
-  setVisible(salaQuizGroup, true);
-  setVisible(interfacePanel, true);
-
-  const predioCC = document.getElementById("predioCCGroup");
-  const predioDireito = document.getElementById("predioDireitoGroup");
-  setVisible(predioCC, true);
-  setVisible(predioDireito, true);
-
-  interfacePanel.setAttribute("position", POSICAO_PAINEL_QUIZ);
-  teleportar(POSICAO_SALA_QUIZ.x, POSICAO_SALA_QUIZ.z);
-}
-
-function esconderSalaQuiz() {
-  setVisible(salaQuizGroup, false);
-}
-
-
-// Função helper para adicionar texto com suporte a acentos
-function addTextWithFont(entity, value, options = {}) {
-  const textStr = `value: ${value}; font: ${FONT_UNICODE}${options.style ? '; ' + options.style : ''}`;
-  entity.setAttribute("text", textStr);
-}
-
-function capitalizarPrimeiraLetra(texto) {
-  if (!texto || typeof texto !== "string") return texto;
-  const trimmed = texto.trimStart();
-  if (!trimmed) return texto;
-  return trimmed[0].toUpperCase() + trimmed.slice(1);
-}
-
-function formatarTextoQuiz(texto) {
-  return capitalizarPrimeiraLetra(texto);
-}
-
 // Elementos A-Frame
 const rig = document.getElementById("rig");
 const interfacePanel = document.getElementById("interfacePanel");
@@ -160,12 +89,9 @@ const altEls = [
 
 const btnVoltarMapa = document.getElementById("btnVoltarMapa");
 const textBtnVoltar = document.getElementById("textBtnVoltar");
-const btnRefazer = document.getElementById("btnRefazer");
-const textBtnRefazer = document.getElementById("textBtnRefazer");
 const btnSair = document.getElementById("btnSair");
 const textBtnSair = document.getElementById("textBtnSair");
 const portasCorredor = document.getElementById("portasCorredor");
-const salaQuizGroup = document.getElementById("salaQuizGroup");
 
 // Cria as portas do corredor contínuo
 criarPortasCorredor();
@@ -190,7 +116,6 @@ function mostrarMapaPrincipal() {
   console.log("🗺️ Mostrando mapa principal");
   telaAtual = "mapa";
   interfacePanel.setAttribute("visible", false);
-  esconderSalaQuiz();
 
   const predioCC = document.getElementById("predioCCGroup");
   const predioDireito = document.getElementById("predioDireitoGroup");
@@ -207,74 +132,46 @@ function criarPortasCorredor() {
   if (!portasCorredor) return;
 
   const infoCursos = [
-    { curso: "tecnologia", label: "TEC", max: 8, x: -6, doorColor: "#2ec4b6", moldura: "#e8fff8" },
-    { curso: "direito", label: "DIR", max: 10, x: 6, doorColor: "#d88ca4", moldura: "#fff0f5" },
+    // Afastar portas das salas para fora do caminho central
+    { curso: "tecnologia", label: "CC", max: 8, x: -6, doorColor: "#2ec4b6" },
+    { curso: "direito", label: "DIREITO", max: 10, x: 6, doorColor: "#d88ca4" },
   ];
 
-  infoCursos.forEach(({ curso, label, max, x, doorColor, moldura }) => {
+  infoCursos.forEach(({ curso, label, max, x, doorColor }) => {
     for (let periodo = 1; periodo <= max; periodo += 1) {
       const z = -6 - periodo * 4;
       const portaGroup = document.createElement("a-entity");
       portaGroup.setAttribute("position", `${x} 0 ${z}`);
-      portaGroup.setAttribute("id", `${curso}Porta${periodo}`);
+      portaGroup.setAttribute("id", `${label.toLowerCase()}Porta${periodo}`);
 
-      const frame = document.createElement("a-box");
-      frame.setAttribute("width", "2.25");
-      frame.setAttribute("height", "2.25");
-      frame.setAttribute("depth", "0.16");
-      frame.setAttribute("color", moldura);
-      frame.setAttribute("position", "0 1.15 0");
+      const moldura = document.createElement("a-box");
+      moldura.setAttribute("width", "2.6");
+      moldura.setAttribute("height", "2.4");
+      moldura.setAttribute("depth", "0.18");
+      moldura.setAttribute("color", "#ffffff");
+      moldura.setAttribute("position", "0 1.2 0");
 
       const porta = document.createElement("a-box");
       porta.setAttribute("class", "clickable click-debug");
-      porta.setAttribute("width", "1.82");
-      porta.setAttribute("height", "1.86");
-      porta.setAttribute("depth", "0.26");
+      porta.setAttribute("width", "2.2");
+      porta.setAttribute("height", "2");
+      porta.setAttribute("depth", "0.3");
       porta.setAttribute("color", doorColor);
-      porta.setAttribute("position", "0 1.05 0.08");
+      porta.setAttribute("position", "0 1.2 0");
       porta.setAttribute("onclick", `iniciarQuizPorSala('${curso}', ${periodo})`);
 
-      // Placa superior grande e limpa para identificar o período mesmo à distância.
       const placa = document.createElement("a-entity");
+      const ordinal = `${periodo}º Período`;
       placa.setAttribute(
         "text",
-        `value: ${periodo}º PERÍODO; width: 3.2; color: #152235; anchor: center; align: center; fontSize: 26; font: ${FONT_UNICODE}`
+        `value: ${ordinal}; width: 2.4; color: #ffffff; anchor: center; align: center; fontSize: 13`
       );
-      placa.setAttribute("position", "0 2.55 0.20");
+      placa.setAttribute("position", "0 2.45 0.18");
       placa.setAttribute("pointer-events", "none");
       placa.setAttribute("face-camera", "");
 
-      // Selo frontal na porta: ajuda o usuário a reconhecer cada sala/período sem depender só do texto pequeno.
-      const seloFundo = document.createElement("a-box");
-      seloFundo.setAttribute("width", "1.38");
-      seloFundo.setAttribute("height", "0.88");
-      seloFundo.setAttribute("depth", "0.035");
-      seloFundo.setAttribute("color", curso === "tecnologia" ? "#12364d" : "#4a2036");
-      seloFundo.setAttribute("position", "0 1.18 0.235");
-      seloFundo.setAttribute("material", "opacity: 0.92");
-      seloFundo.setAttribute("pointer-events", "none");
-
-      const seloTexto = document.createElement("a-entity");
-      seloTexto.setAttribute(
-        "text",
-        `value: ${periodo}º\nPERÍODO; width: 1.8; color: #ffffff; anchor: center; align: center; wrapCount: 12; fontSize: 18; font: ${FONT_UNICODE}`
-      );
-      seloTexto.setAttribute("position", "0 1.25 0.27");
-      seloTexto.setAttribute("pointer-events", "none");
-
-      const cursoTexto = document.createElement("a-entity");
-      cursoTexto.setAttribute(
-        "text",
-        `value: ${label}; width: 1.7; color: #d8f9ff; anchor: center; align: center; fontSize: 12; font: ${FONT_UNICODE}`
-      );
-      cursoTexto.setAttribute("position", "0 0.72 0.27");
-      cursoTexto.setAttribute("pointer-events", "none");
-
-      portaGroup.appendChild(frame);
+      portaGroup.appendChild(moldura);
       portaGroup.appendChild(porta);
-      portaGroup.appendChild(seloFundo);
-      portaGroup.appendChild(seloTexto);
-      portaGroup.appendChild(cursoTexto);
       portaGroup.appendChild(placa);
       portasCorredor.appendChild(portaGroup);
     }
@@ -285,14 +182,11 @@ async function iniciarQuizPorSala(curso, periodo) {
   console.log("🎓 Iniciando quiz por sala", curso, periodo);
   cursoSelecionado = curso;
   periodoSelecionado = String(periodo);
-  perguntaAtualIndex = 0;
-  pontuacaoFinal = 0;
-  perguntaRespondida = false;
-  perguntas = [];
-  perguntaAtual = null;
-
-  resetarUIQuiz();
-  mostrarSalaQuiz();
+  telaAtual = "quiz";
+  interfacePanel.setAttribute("visible", true);
+  interfacePanel.setAttribute("position", "0 2 -42");
+  teleportar(0, -38);
+  resultadoTitulo.setAttribute("visible", false);
   await iniciarQuiz();
 }
 
@@ -302,8 +196,8 @@ async function escolherPeriodoVR(periodo) {
   console.log("PERIODO ESCOLHIDO:", periodo);
   console.log("CURSO ATUAL:", cursoSelecionado);
   periodoSelecionado = String(periodo);
-  resetarUIQuiz();
-  mostrarSalaQuiz();
+  telaAtual = "quiz";
+  interfacePanel.setAttribute("visible", true);
 
   // Carrega perguntas e inicia quiz
   await iniciarQuiz();
@@ -326,7 +220,7 @@ function voltarMapa() {
   boxEls.forEach((box) => {
     if (box) {
       box.setAttribute("visible", true);
-      box.setAttribute("material", "color", "#22324a");
+      box.setAttribute("material", "color", "#1d2a42");
       box.setAttribute("material", "opacity", 0.96);
     }
   });
@@ -338,12 +232,9 @@ function voltarMapa() {
   });
   btnVoltarMapa.setAttribute("visible", false);
   textBtnVoltar.setAttribute("visible", false);
-  btnRefazer.setAttribute("visible", false);
-  textBtnRefazer.setAttribute("visible", false);
   btnSair.setAttribute("visible", false);
   textBtnSair.setAttribute("visible", false);
   interfacePanel.setAttribute("visible", false);
-  esconderSalaQuiz();
   // Mostrar mapa/prédios e posicionar o rig na praça
   const predioCC = document.getElementById("predioCCGroup");
   const predioDireito = document.getElementById("predioDireitoGroup");
@@ -365,8 +256,29 @@ async function novoQuiz() {
   perguntaRespondida = false;
   perguntas = [];
   perguntaAtual = null;
-  resetarUIQuiz();
-  mostrarSalaQuiz();
+  resultadoTitulo.setAttribute("visible", false);
+  atualizarFeedback("", "#f5c66b");
+  pergunta.setAttribute("text", "value", "");
+  boxEls.forEach((box) => {
+    if (box) {
+      box.setAttribute("visible", true);
+      box.setAttribute("material", "color", "#1d2a42");
+      box.setAttribute("material", "opacity", 0.96);
+    }
+  });
+  altEls.forEach((alt) => {
+    if (alt) {
+      alt.setAttribute("visible", true);
+      alt.setAttribute("text", "value", "");
+    }
+  });
+  btnVoltarMapa.setAttribute("visible", false);
+  textBtnVoltar.setAttribute("visible", false);
+  btnSair.setAttribute("visible", false);
+  textBtnSair.setAttribute("visible", false);
+  interfacePanel.setAttribute("visible", true);
+  interfacePanel.setAttribute("position", "0 2 -42");
+  teleportar(0, -38);
   await iniciarQuiz();
 }
 
@@ -398,20 +310,22 @@ function atualizarContador() {
   const pergNum = Math.min(perguntaAtualIndex + 1, total);
   contador.setAttribute(
     "text",
-    `value: Pergunta ${pergNum} de ${total}   •   Pontuação ${pontuacaoFinal}; font: ${FONT_UNICODE}`
+    "value",
+    `Pergunta ${pergNum} de ${total} | Pontuação: ${pontuacaoFinal}`
   );
 }
 
 // Atualiza feedback
 function atualizarFeedback(msg, cor = "#f5c66b") {
-  feedback.setAttribute("text", `value: ${msg}; color: ${cor}; font: ${FONT_UNICODE}`);
+  feedback.setAttribute("text", "value", msg);
+  feedback.setAttribute("text", "color", cor);
 }
 
 // Reseta alternativas
 function resetarAlternativas() {
   boxEls.forEach((box) => {
     if (!box) return;
-    box.setAttribute("material", "color", "#22324a");
+    box.setAttribute("material", "color", "#1d2a42");
     box.setAttribute("material", "opacity", 0.96);
     box.setAttribute("visible", true);
   });
@@ -431,18 +345,13 @@ function mostrarPergunta() {
     return;
   }
   perguntaAtual = perguntas[perguntaAtualIndex];
-  pergunta.setAttribute("position", "0 0.82 0.16");
-  resultadoTitulo.setAttribute("position", "0 1.18 0.14");
   atualizarContador();
-  pergunta.setAttribute("text", `value: ${formatarTextoQuiz(perguntaAtual.pergunta || "")}; font: ${FONT_UNICODE}`);
-  atualizarFeedback("Mire em um card e confirme.");
+  pergunta.setAttribute("text", "value", perguntaAtual.pergunta || "");
+  atualizarFeedback("Escolha uma alternativa.");
   resetarAlternativas();
   altEls.forEach((alt, i) => {
     if (!alt) return;
-    alt.setAttribute(
-      "text",
-      `value: ${formatarTextoQuiz(perguntaAtual.opcoes[i] || "")}; font: ${FONT_UNICODE}`
-    );
+    alt.setAttribute("text", "value", perguntaAtual.opcoes[i] || "");
   });
 }
 
@@ -517,8 +426,8 @@ async function iniciarQuiz() {
     perguntas = [];
     perguntaAtual = null;
     interfacePanel.setAttribute("visible", true);
-    atualizarFeedback("NENHUMA PERGUNTA ENCONTRADA PARA ESTE PERÍODO", "#ff6b6b");
-    pergunta.setAttribute("text", `value: Nenhuma pergunta encontrada para este período.; font: ${FONT_UNICODE}`);
+    atualizarFeedback("NENHUMA PERGUNTA ENCONTRADA PARA ESTE PERIODO", "#ff6b6b");
+    pergunta.setAttribute("text", "value", "Nenhuma pergunta encontrada para este período.");
     boxEls.forEach((box) => {
       if (box) box.setAttribute("visible", false);
     });
@@ -540,9 +449,9 @@ async function salvarResposta(p, idx, correta) {
     nome: nomeAluno,
     curso: cursoSelecionado === "tecnologia" ? "Ciência da Computação" : "Direito",
     periodo: periodoSelecionado,
-    pergunta: formatarTextoQuiz(p.pergunta),
-    respostaEscolhida: formatarTextoQuiz(p.opcoes[idx]),
-    respostaCorreta: formatarTextoQuiz(p.opcoes[p.correta]),
+    pergunta: p.pergunta,
+    respostaEscolhida: p.opcoes[idx],
+    respostaCorreta: p.opcoes[p.correta],
     acertou: correta,
     pontuacao: correta ? 10 : 0,
   };
@@ -564,15 +473,15 @@ function finalizarQuiz() {
   telaAtual = "final";
   contador.setAttribute(
     "text",
-    `value: PONTUACAO FINAL: ${pontuacaoFinal} / ${perguntas.length * 10 || 50}; font: ${FONT_UNICODE}`
+    "value",
+    `PONTUACAO FINAL: ${pontuacaoFinal} / ${perguntas.length * 10 || 50}`
   );
   resultadoTitulo.setAttribute("visible", true);
-  resultadoTitulo.setAttribute("position", "0 0.85 0.18");
-  resultadoTitulo.setAttribute("text", `value: RESULTADO FINAL; color: #ffffff; width: 5.2; anchor: center; align: center; fontSize: 18; font: ${FONT_UNICODE}`);
-  pergunta.setAttribute("position", "0 0.25 0.18");
+  resultadoTitulo.setAttribute("text", "value", "RESULTADO FINAL");
   pergunta.setAttribute(
     "text",
-    `value: Voce fez ${pontuacaoFinal} pontos de ${perguntas.length * 10 || 50}.; color: #bdd8ff; width: 5.2; anchor: center; align: center; fontSize: 18; font: ${FONT_UNICODE}`
+    "value",
+    "Obrigado por participar."
   );
   atualizarFeedback(
     "Escolha uma opção abaixo.",
@@ -588,16 +497,12 @@ function finalizarQuiz() {
   });
 
   // Mostra botões
-  btnVoltarMapa.setAttribute("position", "-1.35 -0.78 0.16");
-  textBtnVoltar.setAttribute("position", "-1.35 -0.78 0.24");
-  btnRefazer.setAttribute("position", "0 -0.78 0.16");
-  textBtnRefazer.setAttribute("position", "0 -0.78 0.24");
-  btnSair.setAttribute("position", "1.35 -0.78 0.16");
-  textBtnSair.setAttribute("position", "1.35 -0.78 0.24");
+  btnVoltarMapa.setAttribute("position", "-1.3 -0.8 0.08");
+  textBtnVoltar.setAttribute("position", "-1.3 -0.8 0.15");
+  btnSair.setAttribute("position", "1.3 -0.8 0.08");
+  textBtnSair.setAttribute("position", "1.3 -0.8 0.15");
   btnVoltarMapa.setAttribute("visible", true);
   textBtnVoltar.setAttribute("visible", true);
-  btnRefazer.setAttribute("visible", true);
-  textBtnRefazer.setAttribute("visible", true);
   btnSair.setAttribute("visible", true);
   textBtnSair.setAttribute("visible", true);
 }
@@ -612,7 +517,6 @@ window.voltarParaPraca = voltarMapa;
 window.sairExperiencia = sairExperiencia;
 window.testarClique = testarClique;
 window.mostrarMapaPrincipal = mostrarMapaPrincipal;
-window.mostrarSalaQuiz = mostrarSalaQuiz;
 
 window.addEventListener("load", () => {
   console.log("🚀 VR Game iniciado!");
