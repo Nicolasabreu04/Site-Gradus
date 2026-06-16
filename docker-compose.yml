@@ -16,7 +16,10 @@ services:
     build: ./backend
     container_name: gradus_backend
     ports:
-      - "3000:3000"
+      - target: 3000
+        published: 0
+        protocol: tcp
+        mode: host
     depends_on:
       - db
     environment:
@@ -30,7 +33,10 @@ services:
     build: ./frontend
     container_name: gradus_frontend
     ports:
-      - "8080:80"
+      - target: 80
+        published: 0
+        protocol: tcp
+        mode: host
     depends_on:
       - backend
 

@@ -68,7 +68,7 @@ let telaAtual = "mapa"; // mapa, salas, corredor, quiz, final
 // Constante para fonte que suporta acentos
 const FONT_UNICODE = "https://cdn.aframe.io/fonts/DejaVu-sdf.fnt";
 
-const POSICAO_SALA_QUIZ = { x: 0, z: -58.2 };
+const POSICAO_SALA_QUIZ = { x: 0, z: -54.0 };
 const POSICAO_PAINEL_QUIZ = "0 2.05 -61.55";
 
 function setVisible(el, visible) {
@@ -234,55 +234,26 @@ function criarPortasCorredor() {
       porta.setAttribute("position", "0 1.05 0.08");
       porta.setAttribute("onclick", `iniciarQuizPorSala('${curso}', ${periodo})`);
 
-      // Placa superior grande e limpa para identificar o período mesmo à distância.
-      const placa = document.createElement("a-entity");
-      placa.setAttribute(
-        "text",
-        `value: ${periodo}º PERÍODO; width: 3.2; color: #152235; anchor: center; align: center; fontSize: 26; font: ${FONT_UNICODE}`
-      );
-      placa.setAttribute("position", "0 2.55 0.20");
-      placa.setAttribute("pointer-events", "none");
-      placa.setAttribute("face-camera", "");
-
-      // Selo frontal na porta: ajuda o usuário a reconhecer cada sala/período sem depender só do texto pequeno.
-      const seloFundo = document.createElement("a-box");
-      seloFundo.setAttribute("width", "1.38");
-      seloFundo.setAttribute("height", "0.88");
-      seloFundo.setAttribute("depth", "0.035");
-      seloFundo.setAttribute("color", curso === "tecnologia" ? "#12364d" : "#4a2036");
-      seloFundo.setAttribute("position", "0 1.18 0.235");
-      seloFundo.setAttribute("material", "opacity: 0.92");
-      seloFundo.setAttribute("pointer-events", "none");
-
+      // Texto centralizado dentro da própria porta (mostra número e 'SEMESTRE')
       const seloTexto = document.createElement("a-entity");
       seloTexto.setAttribute(
         "text",
-        `value: ${periodo}º\nPERÍODO; width: 1.8; color: #ffffff; anchor: center; align: center; wrapCount: 12; fontSize: 18; font: ${FONT_UNICODE}`
+        `value: ${periodo}\nSEMESTRE; width: 1.8; color: #ffffff; anchor: center; align: center; wrapCount: 12; fontSize: 18; font: ${FONT_UNICODE}`
       );
-      seloTexto.setAttribute("position", "0 1.25 0.27");
+      seloTexto.setAttribute("position", "0 1.16 0.27");
       seloTexto.setAttribute("pointer-events", "none");
 
-      const cursoTexto = document.createElement("a-entity");
-      cursoTexto.setAttribute(
-        "text",
-        `value: ${label}; width: 1.7; color: #d8f9ff; anchor: center; align: center; fontSize: 12; font: ${FONT_UNICODE}`
-      );
-      cursoTexto.setAttribute("position", "0 0.72 0.27");
-      cursoTexto.setAttribute("pointer-events", "none");
-
+      // Apenas adicionar moldura, porta e o texto centralizado
       portaGroup.appendChild(frame);
       portaGroup.appendChild(porta);
-      portaGroup.appendChild(seloFundo);
       portaGroup.appendChild(seloTexto);
-      portaGroup.appendChild(cursoTexto);
-      portaGroup.appendChild(placa);
       portasCorredor.appendChild(portaGroup);
     }
   });
 }
 
 async function iniciarQuizPorSala(curso, periodo) {
-  console.log("🎓 Iniciando quiz por sala", curso, periodo);
+  console.log("🎓 Sala selecionada", curso, periodo);
   cursoSelecionado = curso;
   periodoSelecionado = String(periodo);
   perguntaAtualIndex = 0;
@@ -293,6 +264,36 @@ async function iniciarQuizPorSala(curso, periodo) {
 
   resetarUIQuiz();
   mostrarSalaQuiz();
+  mostrarTelaInicioQuiz();
+}
+
+function mostrarTelaInicioQuiz() {
+  interfacePanel.setAttribute("visible", true);
+  resultadoTitulo.setAttribute("visible", false);
+
+  // Esconder alternativas e boxes
+  boxEls.forEach((box) => setVisible(box, false));
+  altEls.forEach((alt) => setVisible(alt, false));
+
+  // Esconder botões finais
+  [btnVoltarMapa, textBtnVoltar, btnSair, textBtnSair].forEach((el) => setVisible(el, false));
+
+  // Preparar botão COMEÇAR reutilizando btnRefazer/textBtnRefazer
+  btnRefazer.setAttribute("visible", true);
+  textBtnRefazer.setAttribute("visible", true);
+  textBtnRefazer.setAttribute("value", "COMEÇAR");
+  btnRefazer.setAttribute("onclick", "comecarQuizSelecionado()");
+  textBtnRefazer.setAttribute("onclick", "comecarQuizSelecionado()");
+
+  // Conteúdos do painel
+  contador.setAttribute("text", `value: Avaliação selecionada; font: ${FONT_UNICODE}`);
+  pergunta.setAttribute("text", `value: Pronto para começar?; font: ${FONT_UNICODE}`);
+  atualizarFeedback("Clique em COMEÇAR para iniciar o quiz.");
+}
+
+async function comecarQuizSelecionado() {
+  if (!cursoSelecionado || !periodoSelecionado) return;
+  resetarUIQuiz();
   await iniciarQuiz();
 }
 
@@ -600,6 +601,10 @@ function finalizarQuiz() {
   textBtnRefazer.setAttribute("visible", true);
   btnSair.setAttribute("visible", true);
   textBtnSair.setAttribute("visible", true);
+  // Garantir que o botão REFAZER volte a reiniciar o quiz normalmente
+  btnRefazer.setAttribute("onclick", "novoQuiz()");
+  textBtnRefazer.setAttribute("onclick", "novoQuiz()");
+  textBtnRefazer.setAttribute("value", "REFAZER");
 }
 
 // ===== INICIALIZAÇÃO =====
