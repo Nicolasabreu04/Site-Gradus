@@ -234,27 +234,48 @@ function criarPortasCorredor() {
       porta.setAttribute("position", "0 1.05 0.08");
       porta.setAttribute("onclick", `iniciarQuizPorSala('${curso}', ${periodo})`);
 
+      // Placa superior grande e limpa para identificar o período mesmo à distância.
       const placa = document.createElement("a-entity");
       placa.setAttribute(
         "text",
-        `value: ${periodo}º; width: 2; color: #152235; anchor: center; align: center; fontSize: 36; font: ${FONT_UNICODE}`
+        `value: ${periodo}º PERÍODO; width: 3.2; color: #152235; anchor: center; align: center; fontSize: 26; font: ${FONT_UNICODE}`
       );
-      placa.setAttribute("position", "0 2.45 0.18");
+      placa.setAttribute("position", "0 2.55 0.20");
       placa.setAttribute("pointer-events", "none");
       placa.setAttribute("face-camera", "");
 
-      const etiqueta = document.createElement("a-entity");
-      etiqueta.setAttribute(
+      // Selo frontal na porta: ajuda o usuário a reconhecer cada sala/período sem depender só do texto pequeno.
+      const seloFundo = document.createElement("a-box");
+      seloFundo.setAttribute("width", "1.38");
+      seloFundo.setAttribute("height", "0.88");
+      seloFundo.setAttribute("depth", "0.035");
+      seloFundo.setAttribute("color", curso === "tecnologia" ? "#12364d" : "#4a2036");
+      seloFundo.setAttribute("position", "0 1.18 0.235");
+      seloFundo.setAttribute("material", "opacity: 0.92");
+      seloFundo.setAttribute("pointer-events", "none");
+
+      const seloTexto = document.createElement("a-entity");
+      seloTexto.setAttribute(
         "text",
-        `value: ${label}; width: 1.6; color: #ffffff; anchor: center; align: center; fontSize: 16; font: ${FONT_UNICODE}`
+        `value: ${periodo}º\nPERÍODO; width: 1.8; color: #ffffff; anchor: center; align: center; wrapCount: 12; fontSize: 18; font: ${FONT_UNICODE}`
       );
-      etiqueta.setAttribute("position", "0 1.1 0.25");
-      etiqueta.setAttribute("pointer-events", "none");
+      seloTexto.setAttribute("position", "0 1.25 0.27");
+      seloTexto.setAttribute("pointer-events", "none");
+
+      const cursoTexto = document.createElement("a-entity");
+      cursoTexto.setAttribute(
+        "text",
+        `value: ${label}; width: 1.7; color: #d8f9ff; anchor: center; align: center; fontSize: 12; font: ${FONT_UNICODE}`
+      );
+      cursoTexto.setAttribute("position", "0 0.72 0.27");
+      cursoTexto.setAttribute("pointer-events", "none");
 
       portaGroup.appendChild(frame);
       portaGroup.appendChild(porta);
+      portaGroup.appendChild(seloFundo);
+      portaGroup.appendChild(seloTexto);
+      portaGroup.appendChild(cursoTexto);
       portaGroup.appendChild(placa);
-      portaGroup.appendChild(etiqueta);
       portasCorredor.appendChild(portaGroup);
     }
   });
