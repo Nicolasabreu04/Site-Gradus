@@ -68,8 +68,8 @@ let telaAtual = "mapa"; // mapa, salas, corredor, quiz, final
 // Constante para fonte que suporta acentos
 const FONT_UNICODE = "https://cdn.aframe.io/fonts/DejaVu-sdf.fnt";
 
-const POSICAO_SALA_QUIZ = { x: 0, z: -58.2 };
-const POSICAO_PAINEL_QUIZ = "0 2.05 -61.55";
+const POSICAO_SALA_QUIZ = { x: 0, z: -52 };
+const POSICAO_PAINEL_QUIZ = "0 2 -61.75";
 
 function setVisible(el, visible) {
   if (el) el.setAttribute("visible", visible);
@@ -410,8 +410,6 @@ function mostrarPergunta() {
     return;
   }
   perguntaAtual = perguntas[perguntaAtualIndex];
-  pergunta.setAttribute("position", "0 0.82 0.16");
-  resultadoTitulo.setAttribute("position", "0 1.18 0.14");
   atualizarContador();
   pergunta.setAttribute("text", `value: ${formatarTextoQuiz(perguntaAtual.pergunta || "")}; font: ${FONT_UNICODE}`);
   atualizarFeedback("Mire em um card e confirme.");
@@ -546,12 +544,10 @@ function finalizarQuiz() {
     `value: PONTUACAO FINAL: ${pontuacaoFinal} / ${perguntas.length * 10 || 50}; font: ${FONT_UNICODE}`
   );
   resultadoTitulo.setAttribute("visible", true);
-  resultadoTitulo.setAttribute("position", "0 0.85 0.18");
-  resultadoTitulo.setAttribute("text", `value: RESULTADO FINAL; color: #ffffff; width: 5.2; anchor: center; align: center; fontSize: 18; font: ${FONT_UNICODE}`);
-  pergunta.setAttribute("position", "0 0.25 0.18");
+  resultadoTitulo.setAttribute("text", `value: RESULTADO FINAL; font: ${FONT_UNICODE}`);
   pergunta.setAttribute(
     "text",
-    `value: Voce fez ${pontuacaoFinal} pontos de ${perguntas.length * 10 || 50}.; color: #bdd8ff; width: 5.2; anchor: center; align: center; fontSize: 18; font: ${FONT_UNICODE}`
+    `value: Obrigado por participar.; font: ${FONT_UNICODE}`
   );
   atualizarFeedback(
     "Escolha uma opção abaixo.",

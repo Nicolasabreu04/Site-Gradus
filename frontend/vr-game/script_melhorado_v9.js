@@ -1,5 +1,6 @@
 // script.js
 // VR Game Gradus com mapa interativo, escolha de cursos/períodos e quiz.
+// v9: volta ao estilo da v7, mantendo o piso da sala uniforme na cor cinza do caminho/calçada e sem sobreposição.
 
 const API_URL = "http://localhost:3000";
 
@@ -68,8 +69,8 @@ let telaAtual = "mapa"; // mapa, salas, corredor, quiz, final
 // Constante para fonte que suporta acentos
 const FONT_UNICODE = "https://cdn.aframe.io/fonts/DejaVu-sdf.fnt";
 
-const POSICAO_SALA_QUIZ = { x: 0, z: -58.2 };
-const POSICAO_PAINEL_QUIZ = "0 2.05 -61.55";
+const POSICAO_SALA_QUIZ = { x: 0, z: -57.0 };
+const POSICAO_PAINEL_QUIZ = "0 2.65 -64.25";
 
 function setVisible(el, visible) {
   if (el) el.setAttribute("visible", visible);
@@ -89,7 +90,7 @@ function resetarUIQuiz() {
   boxEls.forEach((box) => {
     if (!box) return;
     box.setAttribute("visible", true);
-    box.setAttribute("material", "color", "#22324a");
+    box.setAttribute("material", "color", "#16365b");
     box.setAttribute("material", "opacity", 0.96);
   });
 
@@ -105,6 +106,11 @@ function mostrarSalaQuiz() {
   setVisible(salaQuizGroup, true);
   setVisible(interfacePanel, true);
 
+  // Oculta o corredor externo enquanto a sala está ativa para evitar sobreposição visual
+  // entre pisos/planos no mesmo eixo, que causa flicker (z-fighting).
+  const corredorGroup = document.getElementById("corredorGroup");
+  setVisible(corredorGroup, false);
+
   const predioCC = document.getElementById("predioCCGroup");
   const predioDireito = document.getElementById("predioDireitoGroup");
   setVisible(predioCC, true);
@@ -116,6 +122,8 @@ function mostrarSalaQuiz() {
 
 function esconderSalaQuiz() {
   setVisible(salaQuizGroup, false);
+  const corredorGroup = document.getElementById("corredorGroup");
+  setVisible(corredorGroup, true);
 }
 
 
@@ -305,7 +313,7 @@ function voltarMapa() {
   boxEls.forEach((box) => {
     if (box) {
       box.setAttribute("visible", true);
-      box.setAttribute("material", "color", "#22324a");
+      box.setAttribute("material", "color", "#16365b");
       box.setAttribute("material", "opacity", 0.96);
     }
   });
@@ -377,7 +385,7 @@ function atualizarContador() {
   const pergNum = Math.min(perguntaAtualIndex + 1, total);
   contador.setAttribute(
     "text",
-    `value: Pergunta ${pergNum} de ${total}   •   Pontuação ${pontuacaoFinal}; font: ${FONT_UNICODE}`
+    `value: Pergunta ${pergNum} de ${total}        Pontuação ${pontuacaoFinal}; width: 9.8; wrapCount: 50; fontSize: 6.8; font: ${FONT_UNICODE}`
   );
 }
 
@@ -390,7 +398,7 @@ function atualizarFeedback(msg, cor = "#f5c66b") {
 function resetarAlternativas() {
   boxEls.forEach((box) => {
     if (!box) return;
-    box.setAttribute("material", "color", "#22324a");
+    box.setAttribute("material", "color", "#16365b");
     box.setAttribute("material", "opacity", 0.96);
     box.setAttribute("visible", true);
   });
@@ -410,17 +418,19 @@ function mostrarPergunta() {
     return;
   }
   perguntaAtual = perguntas[perguntaAtualIndex];
-  pergunta.setAttribute("position", "0 0.82 0.16");
-  resultadoTitulo.setAttribute("position", "0 1.18 0.14");
+  pergunta.setAttribute("position", "0 0.78 0.22");
+  resultadoTitulo.setAttribute("position", "0 0.88 0.22");
   atualizarContador();
-  pergunta.setAttribute("text", `value: ${formatarTextoQuiz(perguntaAtual.pergunta || "")}; font: ${FONT_UNICODE}`);
-  atualizarFeedback("Mire em um card e confirme.");
+  pergunta.setAttribute("text", `value: ${formatarTextoQuiz(perguntaAtual.pergunta || "")}; width: 9.8; wrapCount: 48; fontSize: 10; font: ${FONT_UNICODE}`);
+  atualizarFeedback("Mire em uma alternativa e confirme para continuar.");
   resetarAlternativas();
+  const letras = ["A", "B", "C", "D", "E"];
   altEls.forEach((alt, i) => {
     if (!alt) return;
+    const textoOpcao = formatarTextoQuiz(perguntaAtual.opcoes[i] || "");
     alt.setAttribute(
       "text",
-      `value: ${formatarTextoQuiz(perguntaAtual.opcoes[i] || "")}; font: ${FONT_UNICODE}`
+      `value: ${letras[i]}   ${textoOpcao}; width: 8.0; wrapCount: 70; fontSize: 5.6; color: #eef4fb; anchor: left; align: left; font: ${FONT_UNICODE}`
     );
   });
 }
@@ -541,21 +551,22 @@ async function salvarResposta(p, idx, correta) {
 function finalizarQuiz() {
   console.log("🏁 Quiz finalizado!");
   telaAtual = "final";
+  const totalPossivel = perguntas.length * 10 || 50;
   contador.setAttribute(
     "text",
-    `value: PONTUACAO FINAL: ${pontuacaoFinal} / ${perguntas.length * 10 || 50}; font: ${FONT_UNICODE}`
+    `value: PONTUAÇÃO FINAL                 ${pontuacaoFinal} / ${totalPossivel}; color: #ffffff; width: 9.8; wrapCount: 50; fontSize: 6.8; font: ${FONT_UNICODE}`
   );
   resultadoTitulo.setAttribute("visible", true);
-  resultadoTitulo.setAttribute("position", "0 0.85 0.18");
-  resultadoTitulo.setAttribute("text", `value: RESULTADO FINAL; color: #ffffff; width: 5.2; anchor: center; align: center; fontSize: 18; font: ${FONT_UNICODE}`);
-  pergunta.setAttribute("position", "0 0.25 0.18");
+  resultadoTitulo.setAttribute("position", "0 0.80 0.22");
+  resultadoTitulo.setAttribute("text", `value: Resultado Final; color: #ffffff; width: 7.6; anchor: center; align: center; fontSize: 11; font: ${FONT_UNICODE}`);
+  pergunta.setAttribute("position", "0 0.16 0.22");
   pergunta.setAttribute(
     "text",
-    `value: Voce fez ${pontuacaoFinal} pontos de ${perguntas.length * 10 || 50}.; color: #bdd8ff; width: 5.2; anchor: center; align: center; fontSize: 18; font: ${FONT_UNICODE}`
+    `value: Você fez ${pontuacaoFinal} pontos de ${totalPossivel}.; color: #bdd8ff; width: 7.6; anchor: center; align: center; fontSize: 9.5; font: ${FONT_UNICODE}`
   );
   atualizarFeedback(
-    "Escolha uma opção abaixo.",
-    "#bdd8ff"
+    "Escolha uma opção no próprio quadro.",
+    "#64e8e0"
   );
 
   // Esconde alternativas
@@ -567,12 +578,12 @@ function finalizarQuiz() {
   });
 
   // Mostra botões
-  btnVoltarMapa.setAttribute("position", "-1.35 -0.78 0.16");
-  textBtnVoltar.setAttribute("position", "-1.35 -0.78 0.24");
-  btnRefazer.setAttribute("position", "0 -0.78 0.16");
-  textBtnRefazer.setAttribute("position", "0 -0.78 0.24");
-  btnSair.setAttribute("position", "1.35 -0.78 0.16");
-  textBtnSair.setAttribute("position", "1.35 -0.78 0.24");
+  btnVoltarMapa.setAttribute("position", "-2.0 -0.55 0.22");
+  textBtnVoltar.setAttribute("position", "-2.0 -0.55 0.29");
+  btnRefazer.setAttribute("position", "0 -0.55 0.22");
+  textBtnRefazer.setAttribute("position", "0 -0.55 0.29");
+  btnSair.setAttribute("position", "2.0 -0.55 0.22");
+  textBtnSair.setAttribute("position", "2.0 -0.55 0.29");
   btnVoltarMapa.setAttribute("visible", true);
   textBtnVoltar.setAttribute("visible", true);
   btnRefazer.setAttribute("visible", true);
