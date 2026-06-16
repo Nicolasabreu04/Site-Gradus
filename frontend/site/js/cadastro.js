@@ -52,7 +52,7 @@ formCadastro.addEventListener("submit", async (event) => {
   const aluno = { nome, curso, periodo };
 
   try {
-    const resposta = await fetch("http://localhost:3000/alunos", {
+    const resposta = await fetch("http://wmglwrrkay8u8z62bj6n2axs.37.27.81.229.sslip.io/alunos", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(aluno),

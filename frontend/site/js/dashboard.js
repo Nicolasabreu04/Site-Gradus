@@ -1,7 +1,7 @@
 ﻿// dashboard.js
 // Consome o endpoint do backend e controla proteção e ações do painel.
 
-const urlResumo = "http://localhost:3000/dashboard/resumo";
+const urlResumo = "http://wmglwrrkay8u8z62bj6n2axs.37.27.81.229.sslip.io/dashboard/resumo";
 const mensagemErro = document.getElementById("mensagemErro");
 const botaoAtualizar = document.getElementById("botaoAtualizar");
 const botaoSair = document.getElementById("botaoSair");

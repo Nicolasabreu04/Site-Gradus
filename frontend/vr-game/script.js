@@ -1,7 +1,7 @@
 // script.js
 // VR Game Gradus com mapa interativo, escolha de cursos/períodos e quiz.
 
-const API_URL = "http://localhost:3000";
+const API_URL = "http://wmglwrrkay8u8z62bj6n2axs.37.27.81.229.sslip.io";
 
 // Leitura de dados do aluno do localStorage
 const alunoId = localStorage.getItem("alunoId");
