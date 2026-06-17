@@ -17,6 +17,7 @@ const FRONTEND_ALLOWED = [
   "http://localhost:5173",
   "http://localhost:3000",
 ];
+const ALLOWED_SSLIP = /https?:\/\/([a-z0-9-]+\.)*sslip\.io(:[0-9]+)?$/;
 
 app.use(
   cors({
@@ -25,6 +26,8 @@ app.use(
       if (!origin) return callback(null, true);
       // quick exact match
       if (FRONTEND_ALLOWED.indexOf(origin) !== -1) return callback(null, true);
+      // allow any sslip.io origin to support dynamic deployment hosts
+      if (ALLOWED_SSLIP.test(origin)) return callback(null, true);
       // allow origin that contains the configured host (handles ports, http/https variations)
       if (origin.indexOf(FRONTEND_HOST) !== -1) return callback(null, true);
       console.warn("CORS blocked origin:", origin);
@@ -45,7 +48,15 @@ app.get("/", (req, res) => {
   res.send("API Gradus funcionando com PostgreSQL");
 });
 
-const PORT = 3000;
-app.listen(PORT, () => {
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, async () => {
+  const dbHost = process.env.DB_HOST || "db";
+  const dbPort = process.env.DB_PORT || 5432;
+  try {
+    await require("./database").query("SELECT 1");
+    console.log(`Conectado ao PostgreSQL em ${dbHost}:${dbPort}`);
+  } catch (err) {
+    console.error("Falha ao conectar ao PostgreSQL durante inicialização:", err);
+  }
   console.log(`Servidor rodando na porta ${PORT}`);
 });

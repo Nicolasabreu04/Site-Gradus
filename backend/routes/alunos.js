@@ -19,7 +19,10 @@ router.get("/", async (req, res) => {
     return res.json({ mensagem: "Alunos listados com sucesso", alunos });
   } catch (error) {
     console.error("Erro ao listar alunos:", error);
-    return res.status(500).json({ mensagem: "Erro ao listar alunos" });
+    const message = process.env.NODE_ENV === "production"
+      ? "Erro ao listar alunos"
+      : `Erro ao listar alunos: ${error.message}`;
+    return res.status(500).json({ mensagem: message });
   }
 });
 
@@ -40,7 +43,8 @@ router.post("/", async (req, res) => {
     return res.status(201).json({ mensagem: "Aluno criado com sucesso", id: aluno.id, aluno });
   } catch (error) {
     console.error("Erro ao criar aluno:", error);
-    return res.status(500).json({ mensagem: "Erro ao criar aluno" });
+    const message = `Erro ao criar aluno: ${error.message}`;
+    return res.status(500).json({ mensagem: message });
   }
 });
 
