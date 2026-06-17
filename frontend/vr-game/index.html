@@ -112,7 +112,7 @@
     </a-entity>
 
     <!-- RIG: container de câmera e locomoção -->
-    <a-entity id="rig" position="0 0 6" rotation="0 -10 0">
+    <a-entity id="rig" position="0 0 9" rotation="0 0 0">
       <a-entity 
         id="camera"
         camera
@@ -198,30 +198,34 @@
       <!-- Pergunta e alternativas ficam todas dentro do quadro -->
       <a-entity id="pergunta" text="value: ; width: 9.8; color: #FFFFFF; anchor: center; align: center; wrapCount: 48; fontSize: 10; font: https://cdn.aframe.io/fonts/DejaVu-sdf.fnt" position="0 0.78 0.22"></a-entity>
 
-      <a-entity id="box0" class="clickable" position="0 0.22 0.17" geometry="primitive: box; width: 8.65; height: 0.35; depth: 0.07" material="color: #16365b; opacity: 0.96" onclick="responder(0)"></a-entity>
+      <a-entity id="box0" class="clickable" position="0 0.22 0.17" geometry="primitive: box; width: 8.65; height: 0.35; depth: 0.07" material="color: #16365b; opacity: 0.96" onclick="selecionarAlternativa(0)"></a-entity>
       <a-entity id="alt0" text="value: ; width: 8.0; color: #eef4fb; anchor: left; align: left; wrapCount: 70; fontSize: 5.6; font: https://cdn.aframe.io/fonts/DejaVu-sdf.fnt" position="-4.05 0.22 0.24" pointer-events="none"></a-entity>
 
-      <a-entity id="box1" class="clickable" position="0 -0.20 0.17" geometry="primitive: box; width: 8.65; height: 0.35; depth: 0.07" material="color: #16365b; opacity: 0.96" onclick="responder(1)"></a-entity>
+      <a-entity id="box1" class="clickable" position="0 -0.20 0.17" geometry="primitive: box; width: 8.65; height: 0.35; depth: 0.07" material="color: #16365b; opacity: 0.96" onclick="selecionarAlternativa(1)"></a-entity>
       <a-entity id="alt1" text="value: ; width: 8.0; color: #eef4fb; anchor: left; align: left; wrapCount: 70; fontSize: 5.6; font: https://cdn.aframe.io/fonts/DejaVu-sdf.fnt" position="-4.05 -0.20 0.24" pointer-events="none"></a-entity>
 
-      <a-entity id="box2" class="clickable" position="0 -0.62 0.17" geometry="primitive: box; width: 8.65; height: 0.35; depth: 0.07" material="color: #16365b; opacity: 0.96" onclick="responder(2)"></a-entity>
+      <a-entity id="box2" class="clickable" position="0 -0.62 0.17" geometry="primitive: box; width: 8.65; height: 0.35; depth: 0.07" material="color: #16365b; opacity: 0.96" onclick="selecionarAlternativa(2)"></a-entity>
       <a-entity id="alt2" text="value: ; width: 8.0; color: #eef4fb; anchor: left; align: left; wrapCount: 70; fontSize: 5.6; font: https://cdn.aframe.io/fonts/DejaVu-sdf.fnt" position="-4.05 -0.62 0.24" pointer-events="none"></a-entity>
 
-      <a-entity id="box3" class="clickable" position="0 -1.04 0.17" geometry="primitive: box; width: 8.65; height: 0.35; depth: 0.07" material="color: #16365b; opacity: 0.96" onclick="responder(3)"></a-entity>
+      <a-entity id="box3" class="clickable" position="0 -1.04 0.17" geometry="primitive: box; width: 8.65; height: 0.35; depth: 0.07" material="color: #16365b; opacity: 0.96" onclick="selecionarAlternativa(3)"></a-entity>
       <a-entity id="alt3" text="value: ; width: 8.0; color: #eef4fb; anchor: left; align: left; wrapCount: 70; fontSize: 5.6; font: https://cdn.aframe.io/fonts/DejaVu-sdf.fnt" position="-4.05 -1.04 0.24" pointer-events="none"></a-entity>
 
-      <a-entity id="box4" class="clickable" position="0 -1.46 0.17" geometry="primitive: box; width: 8.65; height: 0.35; depth: 0.07" material="color: #16365b; opacity: 0.96" onclick="responder(4)"></a-entity>
+      <a-entity id="box4" class="clickable" position="0 -1.46 0.17" geometry="primitive: box; width: 8.65; height: 0.35; depth: 0.07" material="color: #16365b; opacity: 0.96" onclick="selecionarAlternativa(4)"></a-entity>
       <a-entity id="alt4" text="value: ; width: 8.0; color: #eef4fb; anchor: left; align: left; wrapCount: 70; fontSize: 5.6; font: https://cdn.aframe.io/fonts/DejaVu-sdf.fnt" position="-4.05 -1.46 0.24" pointer-events="none"></a-entity>
 
+      <a-entity id="feedback" text="value: ; width: 4.8; color: #f5c66b; anchor: center; align: center; wrapCount: 34; fontSize: 6.2; font: https://cdn.aframe.io/fonts/DejaVu-sdf.fnt" position="0 -1.68 0.28" pointer-events="none"></a-entity>
+      <a-box id="btnConfirmar" class="clickable" position="0 -1.86 0.22" width="3.2" height="0.42" depth="0.08" color="#2d537b" opacity="0.96" visible="false" onclick="confirmarResposta()"></a-box>
+      <a-text id="textBtnConfirmar" class="clickable" value="CONFIRMAR" onclick="confirmarResposta()" width="2.8" color="#ffffff" anchor="center" align="center" wrapCount="10" font-size="10" position="0 -1.86 0.31" visible="false"></a-text>
+
       <!-- Botões finais dentro do próprio quadro -->
-      <a-box id="btnVoltarMapa" class="clickable" position="-2.7 -0.85 0.22" width="1.65" height="0.35" depth="0.07" color="#2d537b" opacity="0.96" visible="false" onclick="voltarMapa()"></a-box>
-      <a-text id="textBtnVoltar" class="clickable" value="VOLTAR" onclick="voltarMapa()" width="1.4" color="#fff" anchor="center" align="center" wrapCount="7" font-size="9" position="-2.7 -0.85 0.29" visible="false"></a-text>
+      <a-box id="btnVoltarMapa" class="clickable" position="-3 -0.85 0.22" width="2.15" height="0.46" depth="0.08" color="#2d537b" opacity="0.96" visible="false" onclick="voltarMapa()"></a-box>
+      <a-text id="textBtnVoltar" class="clickable" value="VOLTAR" onclick="voltarMapa()" width="1.85" color="#fff" anchor="center" align="center" wrapCount="8" font-size="10" position="-3 -0.85 0.31" visible="false"></a-text>
 
-      <a-box id="btnRefazer" class="clickable" position="0 -0.85 0.22" width="1.75" height="0.35" depth="0.07" color="#2ec4b6" opacity="0.96" visible="false" onclick="novoQuiz()"></a-box>
-      <a-text id="textBtnRefazer" class="clickable" value="REFAZER" onclick="novoQuiz()" width="1.5" color="#07172a" anchor="center" align="center" wrapCount="7" font-size="9" position="0 -0.85 0.29" visible="false"></a-text>
+      <a-box id="btnRefazer" class="clickable" position="0 -0.85 0.22" width="2.35" height="0.46" depth="0.08" color="#2ec4b6" opacity="0.96" visible="false" onclick="novoQuiz()"></a-box>
+      <a-text id="textBtnRefazer" class="clickable" value="REINICIAR" onclick="novoQuiz()" width="2.05" color="#07172a" anchor="center" align="center" wrapCount="8" font-size="10" position="0 -0.85 0.31" visible="false"></a-text>
 
-      <a-box id="btnSair" class="clickable" position="2.7 -0.85 0.22" width="1.65" height="0.35" depth="0.07" color="#b84e4e" opacity="0.96" visible="false" onclick="sairExperiencia()"></a-box>
-      <a-text id="textBtnSair" class="clickable" value="SAIR" onclick="sairExperiencia()" width="1.4" color="#fff" anchor="center" align="center" wrapCount="7" font-size="9" position="2.7 -0.85 0.29" visible="false"></a-text>
+      <a-box id="btnSair" class="clickable" position="3 -0.85 0.22" width="2.15" height="0.46" depth="0.08" color="#b84e4e" opacity="0.96" visible="false" onclick="sairExperiencia()"></a-box>
+      <a-text id="textBtnSair" class="clickable" value="SAIR" onclick="sairExperiencia()" width="1.85" color="#fff" anchor="center" align="center" wrapCount="8" font-size="10" position="3 -0.85 0.31" visible="false"></a-text>
     </a-entity>
 
     <!-- Corredor de períodos atrás da praça -->
@@ -367,20 +371,12 @@
       </a-entity>
     </a-entity>
 
-    <!-- Pontos de teleporte no chão (visual + clicável) -->
-    <a-entity id="tpInicio" class="clickable" geometry="primitive: cylinder; radius: 0.45; height: 0.08" material="color: #3f5a7f; emissive: #3f5a7f" position="0 0.04 8" onclick="teleportar(0, 8)"></a-entity>
-    <a-entity position="0 0.15 8" pointer-events="none" face-camera>
-      <a-plane width="1.4" height="0.6" color="#000000" position="0 0 -0.01" material="opacity: 0.3"></a-plane>
-      <a-plane width="1.35" height="0.55" color="#1a3a5f" position="0 0 0" material="opacity: 0.9"></a-plane>
-      <a-entity text="value: INÍCIO; width: 2.2; color: #FFFFFF; anchor: center; align: center; fontSize: 16; font: https://cdn.aframe.io/fonts/DejaVu-sdf.fnt" position="0 0.01 0.02"></a-entity>
-    </a-entity>
+    <!-- Pontos de locomoção da fonte -->
+    <a-entity id="tpFonteEsquerda" class="clickable" geometry="primitive: cylinder; radius: 0.55; height: 0.08" material="color: #2b6b8f; emissive: #2b6b8f" position="-2.5 0.06 1.8" onclick="teleportar(-2.5, 1.8)"></a-entity>
 
-    <!-- Novos pontos próximos da fonte (maiores e fáceis de mirar) -->
-    <a-entity class="clickable" geometry="primitive: cylinder; radius: 0.55; height: 0.08" material="color: #2b6b8f; emissive: #2b6b8f" position="-1.8 0.06 1" onclick="teleportar(0, -4)"></a-entity>
+    <a-entity id="tpFonteDireita" class="clickable" geometry="primitive: cylinder; radius: 0.55; height: 0.08" material="color: #2b6b8f; emissive: #2b6b8f" position="2.5 0.06 1.8" onclick="teleportar(2.5, 1.8)"></a-entity>
 
-    <a-entity class="clickable" geometry="primitive: cylinder; radius: 0.55; height: 0.08" material="color: #2b6b8f; emissive: #2b6b8f" position="1.8 0.06 1" onclick="teleportar(0, -4)"></a-entity>
-
-    <a-entity class="clickable" geometry="primitive: cylinder; radius: 0.55; height: 0.08" material="color: #2b6b8f; emissive: #2b6b8f" position="0 0.06 2.5" onclick="teleportar(0, -4)"></a-entity>
+    <a-entity id="tpFonteFrente" class="clickable" geometry="primitive: cylinder; radius: 0.55; height: 0.08" material="color: #2b6b8f; emissive: #2b6b8f" position="0 0.06 3.8" onclick="teleportar(0, 3.8)"></a-entity>
 
     <!-- Pontos intermediários no caminho branco (sequência para facilitar mira) -->
     <a-entity class="clickable" geometry="primitive: cylinder; radius: 0.55; height: 0.08" material="color: #3f78a0; emissive: #3f78a0" position="0 0.06 -2" onclick="teleportar(0, -2)"></a-entity>
@@ -390,9 +386,6 @@
     <a-entity class="clickable" geometry="primitive: cylinder; radius: 0.55; height: 0.08" material="color: #3f78a0; emissive: #3f78a7" position="0 0.06 -8" onclick="teleportar(0, -8)"></a-entity>
 
     <a-entity class="clickable" geometry="primitive: cylinder; radius: 0.55; height: 0.08" material="color: #3f78a0; emissive: #3f78a0" position="0 0.06 -11" onclick="teleportar(0, -11)"></a-entity>
-
-    <!-- Centro antigo mantenho (tpCentro) sem alterar seu comportamento original -->
-    <a-entity id="tpCentro" class="clickable" geometry="primitive: cylinder; radius: 0.45; height: 0.08" material="color: #3f5a7f; emissive: #3f5a7f" position="0 0.04 3" onclick="teleportar(0, 3)"></a-entity>
 
   </a-scene>
 

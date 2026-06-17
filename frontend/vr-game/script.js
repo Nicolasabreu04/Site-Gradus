@@ -79,12 +79,27 @@ function ocultarBotoesFinais() {
   [btnVoltarMapa, textBtnVoltar, btnRefazer, textBtnRefazer, btnSair, textBtnSair].forEach((el) => setVisible(el, false));
 }
 
+function setBotaoConfirmarVisivel(visible) {
+  setVisible(btnConfirmar, visible);
+  setVisible(textBtnConfirmar, visible);
+}
+
+function atualizarBotaoConfirmar(habilitado) {
+  if (!btnConfirmar || !textBtnConfirmar) return;
+  setBotaoConfirmarVisivel(true);
+  btnConfirmar.setAttribute("color", habilitado ? "#2ec4b6" : "#2d537b");
+  btnConfirmar.setAttribute("opacity", habilitado ? 0.98 : 0.72);
+  textBtnConfirmar.setAttribute("color", habilitado ? "#07172a" : "#ffffff");
+}
+
 function resetarUIQuiz() {
+  alternativaSelecionada = null;
   resultadoTitulo.setAttribute("visible", false);
   contador.setAttribute("text", `value: ; font: ${FONT_UNICODE}`);
   pergunta.setAttribute("text", `value: ; font: ${FONT_UNICODE}`);
   atualizarFeedback("", "#f5c66b");
   ocultarBotoesFinais();
+  setBotaoConfirmarVisivel(false);
 
   boxEls.forEach((box) => {
     if (!box) return;
@@ -164,6 +179,8 @@ const btnRefazer = document.getElementById("btnRefazer");
 const textBtnRefazer = document.getElementById("textBtnRefazer");
 const btnSair = document.getElementById("btnSair");
 const textBtnSair = document.getElementById("textBtnSair");
+const btnConfirmar = document.getElementById("btnConfirmar");
+const textBtnConfirmar = document.getElementById("textBtnConfirmar");
 const portasCorredor = document.getElementById("portasCorredor");
 const salaQuizGroup = document.getElementById("salaQuizGroup");
 
@@ -176,6 +193,7 @@ let perguntaAtual = null;
 let perguntaAtualIndex = 0;
 let pontuacaoFinal = 0;
 let perguntaRespondida = false;
+let alternativaSelecionada = null;
 
 // ===== NAVEGAÇÃO =====
 
@@ -194,14 +212,10 @@ function mostrarMapaPrincipal() {
 
   const predioCC = document.getElementById("predioCCGroup");
   const predioDireito = document.getElementById("predioDireitoGroup");
-  const tpInicio = document.getElementById("tpInicio");
-  const tpCentro = document.getElementById("tpCentro");
   if (predioCC) predioCC.setAttribute("visible", true);
   if (predioDireito) predioDireito.setAttribute("visible", true);
-  if (tpInicio) tpInicio.setAttribute("visible", true);
-  if (tpCentro) tpCentro.setAttribute("visible", true);
-  rig.setAttribute("rotation", "0 -10 0");
-  teleportar(0, 6);
+  rig.setAttribute("rotation", "0 0 0");
+  teleportar(0, 9);
 }
 
 function criarPortasCorredor() {
@@ -275,11 +289,20 @@ function mostrarTelaInicioQuiz() {
   // Esconder alternativas e boxes
   boxEls.forEach((box) => setVisible(box, false));
   altEls.forEach((alt) => setVisible(alt, false));
+  setBotaoConfirmarVisivel(false);
 
   // Esconder botões finais
   [btnVoltarMapa, textBtnVoltar, btnSair, textBtnSair].forEach((el) => setVisible(el, false));
 
   // Preparar botão de início reutilizando btnRefazer/textBtnRefazer
+  btnRefazer.setAttribute("position", "0 -0.82 0.16");
+  btnRefazer.setAttribute("width", "2.8");
+  btnRefazer.setAttribute("height", "0.52");
+  btnRefazer.setAttribute("depth", "0.08");
+  textBtnRefazer.setAttribute("position", "0 -0.82 0.27");
+  textBtnRefazer.setAttribute("width", "2.4");
+  textBtnRefazer.setAttribute("font-size", "11");
+  textBtnRefazer.setAttribute("wrapCount", "9");
   btnRefazer.setAttribute("visible", true);
   textBtnRefazer.setAttribute("visible", true);
   textBtnRefazer.setAttribute("value", "INICIAR");
@@ -344,6 +367,7 @@ function voltarMapa() {
   textBtnRefazer.setAttribute("visible", false);
   btnSair.setAttribute("visible", false);
   textBtnSair.setAttribute("visible", false);
+  setBotaoConfirmarVisivel(false);
   interfacePanel.setAttribute("visible", false);
   esconderSalaQuiz();
   // Mostrar mapa/prédios e posicionar o rig na praça
@@ -351,8 +375,8 @@ function voltarMapa() {
   const predioDireito = document.getElementById("predioDireitoGroup");
   if (predioCC) predioCC.setAttribute("visible", true);
   if (predioDireito) predioDireito.setAttribute("visible", true);
-  // Teleporta para a praça central
-  teleportar(0, 4);
+  // Teleporta para a entrada da praça
+  teleportar(0, 9);
 }
 
 async function novoQuiz() {
@@ -412,6 +436,7 @@ function atualizarFeedback(msg, cor = "#f5c66b") {
 
 // Reseta alternativas
 function resetarAlternativas() {
+  alternativaSelecionada = null;
   boxEls.forEach((box) => {
     if (!box) return;
     box.setAttribute("material", "color", "#22324a");
@@ -424,6 +449,40 @@ function resetarAlternativas() {
     alt.setAttribute("text", "color", "#eef4fb");
   });
   perguntaRespondida = false;
+  atualizarBotaoConfirmar(false);
+}
+
+function selecionarAlternativa(index) {
+  if (perguntaRespondida || !perguntaAtual) return;
+  alternativaSelecionada = index;
+  atualizarFeedback("");
+
+  boxEls.forEach((box, i) => {
+    if (!box) return;
+    box.setAttribute("material", "color", i === index ? "#2ec4b6" : "#22324a");
+    box.setAttribute("material", "opacity", i === index ? 1 : 0.96);
+  });
+
+  altEls.forEach((alt, i) => {
+    if (!alt) return;
+    alt.setAttribute("text", "color", i === index ? "#07172a" : "#eef4fb");
+  });
+
+  atualizarBotaoConfirmar(true);
+}
+
+function confirmarResposta() {
+  if (perguntaRespondida || !perguntaAtual) return;
+  if (alternativaSelecionada === null) {
+    atualizarFeedback("Escolha uma alternativa", "#f5c66b");
+    atualizarBotaoConfirmar(false);
+    return;
+  }
+
+  const selecionada = alternativaSelecionada;
+  alternativaSelecionada = null;
+  setBotaoConfirmarVisivel(false);
+  responder(selecionada);
 }
 
 // Mostra a pergunta atual
@@ -454,6 +513,11 @@ function responder(idx) {
   console.log("✅ Resposta selecionada:", idx);
   if (perguntaRespondida || !perguntaAtual) return;
   perguntaRespondida = true;
+  alternativaSelecionada = null;
+  setBotaoConfirmarVisivel(false);
+  altEls.forEach((alt) => {
+    if (alt) alt.setAttribute("text", "color", "#eef4fb");
+  });
 
   const correta = idx === perguntaAtual.correta;
   if (correta) {
@@ -522,6 +586,7 @@ async function iniciarQuiz() {
     interfacePanel.setAttribute("visible", true);
     atualizarFeedback("NENHUMA PERGUNTA ENCONTRADA PARA ESTE SEMESTRE", "#ff6b6b");
     pergunta.setAttribute("text", `value: Nenhuma pergunta encontrada para este semestre.; font: ${FONT_UNICODE}`);
+    setBotaoConfirmarVisivel(false);
     boxEls.forEach((box) => {
       if (box) box.setAttribute("visible", false);
     });
@@ -578,6 +643,7 @@ function finalizarQuiz() {
     `value: Total: ${pontuacaoFinal} pontos; color: #bdd8ff; width: 5.2; anchor: center; align: center; fontSize: 18; font: ${FONT_UNICODE}`
   );
   atualizarFeedback("");
+  setBotaoConfirmarVisivel(false);
 
   // Esconde alternativas
   boxEls.forEach((box) => {
@@ -588,26 +654,46 @@ function finalizarQuiz() {
   });
 
   // Mostra botões
-  btnVoltarMapa.setAttribute("position", "-1.35 -0.78 0.16");
-  textBtnVoltar.setAttribute("position", "-1.35 -0.78 0.24");
+  btnVoltarMapa.setAttribute("position", "-3 -0.78 0.16");
+  btnVoltarMapa.setAttribute("width", "2.15");
+  btnVoltarMapa.setAttribute("height", "0.46");
+  btnVoltarMapa.setAttribute("depth", "0.08");
+  textBtnVoltar.setAttribute("position", "-3 -0.78 0.27");
+  textBtnVoltar.setAttribute("width", "1.85");
+  textBtnVoltar.setAttribute("font-size", "10");
+  textBtnVoltar.setAttribute("wrapCount", "8");
   btnRefazer.setAttribute("position", "0 -0.78 0.16");
-  textBtnRefazer.setAttribute("position", "0 -0.78 0.24");
-  btnSair.setAttribute("position", "1.35 -0.78 0.16");
-  textBtnSair.setAttribute("position", "1.35 -0.78 0.24");
+  btnRefazer.setAttribute("width", "2.55");
+  btnRefazer.setAttribute("height", "0.46");
+  btnRefazer.setAttribute("depth", "0.08");
+  textBtnRefazer.setAttribute("position", "0 -0.78 0.27");
+  textBtnRefazer.setAttribute("width", "2.2");
+  textBtnRefazer.setAttribute("font-size", "10");
+  textBtnRefazer.setAttribute("wrapCount", "9");
+  btnSair.setAttribute("position", "3 -0.78 0.16");
+  btnSair.setAttribute("width", "2.15");
+  btnSair.setAttribute("height", "0.46");
+  btnSair.setAttribute("depth", "0.08");
+  textBtnSair.setAttribute("position", "3 -0.78 0.27");
+  textBtnSair.setAttribute("width", "1.85");
+  textBtnSair.setAttribute("font-size", "10");
+  textBtnSair.setAttribute("wrapCount", "8");
   btnVoltarMapa.setAttribute("visible", true);
   textBtnVoltar.setAttribute("visible", true);
   btnRefazer.setAttribute("visible", true);
   textBtnRefazer.setAttribute("visible", true);
   btnSair.setAttribute("visible", true);
   textBtnSair.setAttribute("visible", true);
-  // Garantir que o botão REFAZER volte a reiniciar o quiz normalmente
+  // Garantir que o botão central volte a reiniciar o quiz normalmente
   btnRefazer.setAttribute("onclick", "novoQuiz()");
   textBtnRefazer.setAttribute("onclick", "novoQuiz()");
-  textBtnRefazer.setAttribute("value", "REFAZER");
+  textBtnRefazer.setAttribute("value", "REINICIAR");
 }
 
 // ===== INICIALIZAÇÃO =====
 window.responder = responder;
+window.selecionarAlternativa = selecionarAlternativa;
+window.confirmarResposta = confirmarResposta;
 window.teleportar = teleportar;
 window.escolherPeriodoVR = escolherPeriodoVR;
 window.voltarMapa = voltarMapa;

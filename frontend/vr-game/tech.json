@@ -2,10 +2,10 @@
   "tecnologia": {
     "1": [
       {
-        "pergunta": "o que é um algoritmo",
+        "pergunta": "o que e um algoritmo",
         "opcoes": [
           "um tipo de hardware",
-          "um conjunto de instruções para resolver um problema",
+          "um conjunto de passos para resolver um problema",
           "um sistema operacional",
           "um protocolo de rede",
           "um banco de dados"
@@ -13,44 +13,44 @@
         "correta": 1
       },
       {
-        "pergunta": "o que é uma variável em programação",
+        "pergunta": "o que e uma variavel em programacao",
         "opcoes": [
           "um tipo de rede",
-          "um espaço de memória para armazenar valores",
-          "um dispositivo físico",
+          "um espaco de memoria para armazenar valores",
+          "um dispositivo fisico",
           "um formato de arquivo",
           "um sistema de build"
         ],
         "correta": 1
       },
       {
-        "pergunta": "qual estrutura é usada para repetição",
+        "pergunta": "qual estrutura e usada para repeticao",
         "opcoes": [
           "condicional if",
-          "loop repetição",
+          "loop repeticao",
           "arquivo de log",
-          "endereço ip",
+          "endereco ip",
           "driver de impressora"
         ],
         "correta": 1
       },
       {
-        "pergunta": "o que é pseudocódigo",
+        "pergunta": "o que e pseudocodigo",
         "opcoes": [
-          "código fonte compilado",
-          "descrição informal de um algoritmo",
+          "codigo fonte compilado",
+          "descricao informal de um algoritmo",
           "um tipo de banco de dados",
           "uma linguagem de rede",
-          "um protocolo de segurança"
+          "um protocolo de seguranca"
         ],
         "correta": 1
       },
       {
-        "pergunta": "qual é a finalidade de testar um algoritmo",
+        "pergunta": "qual e a finalidade de testar um algoritmo",
         "opcoes": [
-          "melhorar a segurança física do servidor",
+          "melhorar a seguranca fisica do servidor",
           "verificar se ele produz o resultado esperado",
-          "aumentar o consumo de memória",
+          "aumentar o consumo de memoria",
           "trocar o sistema operacional",
           "reduzir a largura de banda"
         ],
@@ -59,54 +59,54 @@
     ],
     "2": [
       {
-        "pergunta": "o que é um array",
+        "pergunta": "o que e um array",
         "opcoes": [
-          "estrutura que armazena itens em posições indexadas",
+          "estrutura que armazena itens em posicoes indexadas",
           "um tipo de processador",
-          "um serviço de rede",
+          "um servico de rede",
           "um sistema operacional",
-          "um protocolo de comunicação"
+          "um protocolo de comunicacao"
         ],
         "correta": 0
       },
       {
-        "pergunta": "o que é uma lista ligada",
+        "pergunta": "o que e uma lista ligada",
         "opcoes": [
-          "estrutura com nós que apontam para o próximo",
+          "estrutura com nos que apontam para o proximo",
           "um tipo de processador",
-          "um algoritmo de ordenação",
+          "um algoritmo de ordenacao",
           "um protocolo de rede",
           "um sistema de arquivos"
         ],
         "correta": 0
       },
       {
-        "pergunta": "qual a principal característica de uma pilha",
+        "pergunta": "qual a principal caracteristica de uma pilha",
         "opcoes": [
-          "acesso último a entrar, primeiro a sair",
-          "acesso em tempo constante aleatório",
+          "acesso ultimo a entrar, primeiro a sair",
+          "acesso em tempo constante aleatorio",
           "armazenamento em disco",
-          "transmissão de pacotes",
+          "transmissao de pacotes",
           "criptografia dos dados"
         ],
         "correta": 0
       },
       {
-        "pergunta": "o que é uma fila",
+        "pergunta": "o que e uma fila",
         "opcoes": [
-          "estrutura com princípio fifo",
-          "um tipo de memória ram",
-          "uma linguagem de programação",
+          "estrutura com principio fifo",
+          "um tipo de memoria ram",
+          "uma linguagem de programacao",
           "um servidor web",
           "um sistema de logs"
         ],
         "correta": 0
       },
       {
-        "pergunta": "o que é uma tabela hash",
+        "pergunta": "o que e uma tabela hash",
         "opcoes": [
           "estrutura que mapeia chaves para valores",
-          "um tipo de processador gráfico",
+          "um tipo de processador grafico",
           "um protocolo de rede",
           "um banco de dados relacional",
           "um tipo de sistema operacional"
@@ -116,18 +116,18 @@
     ],
     "3": [
       {
-        "pergunta": "o que é banco de dados relacional",
+        "pergunta": "o que e banco de dados relacional",
         "opcoes": [
           "banco que organiza dados em tabelas relacionadas",
-          "um tipo de software gráfico",
-          "uma linguagem de programação",
+          "um tipo de software grafico",
+          "uma linguagem de programacao",
           "um protocolo de internet",
           "uma placa de rede"
         ],
         "correta": 0
       },
       {
-        "pergunta": "qual a linguagem padrão para consultas sql",
+        "pergunta": "qual a linguagem padrao para consultas sql",
         "opcoes": [
           "sql",
           "html",
@@ -138,34 +138,34 @@
         "correta": 0
       },
       {
-        "pergunta": "o que é normalização de dados",
+        "pergunta": "o que e normalizacao de dados",
         "opcoes": [
-          "processo para reduzir redundância em tabelas",
-          "backup automático de servidores",
-          "aumento de desempenho gráfico",
+          "processo para reduzir redundancia em tabelas",
+          "backup automatico de servidores",
+          "aumento de desempenho grafico",
           "encrypt de redes sociais",
-          "instalação de drivers"
+          "instalacao de drivers"
         ],
         "correta": 0
       },
       {
-        "pergunta": "qual é a função de uma chave primária",
+        "pergunta": "qual e a funcao de uma chave primaria",
         "opcoes": [
           "identificar unicamente um registro",
-          "proteger contra invasões",
+          "proteger contra invasoes",
           "aumentar largura de banda",
-          "gerar relatórios automaticamente",
+          "gerar relatorios automaticamente",
           "compactar arquivos"
         ],
         "correta": 0
       },
       {
-        "pergunta": "o que é uma transação em banco de dados",
+        "pergunta": "o que e uma transacao em banco de dados",
         "opcoes": [
-          "conjunto de operações que devem ser atomicamente aplicadas",
+          "conjunto de operacoes que devem ser atomicamente aplicadas",
           "um tipo de firewall",
           "um servidor web",
-          "um processo gráfico",
+          "um processo grafico",
           "uma impressora de rede"
         ],
         "correta": 0
@@ -173,9 +173,9 @@
     ],
     "4": [
       {
-        "pergunta": "o que é programação orientada a objetos",
+        "pergunta": "o que e programacao orientada a objetos",
         "opcoes": [
-          "paradigma que usa objetos com dados e métodos",
+          "paradigma que usa objetos com dados e metodos",
           "um tipo de rede",
           "uma base de dados",
           "um protocolo de internet",
@@ -184,32 +184,32 @@
         "correta": 0
       },
       {
-        "pergunta": "o que é encapsulamento",
+        "pergunta": "o que e encapsulamento",
         "opcoes": [
           "ocultar detalhes internos e expor interface",
           "dividir a rede em subredes",
           "armazenar dados em disco",
-          "compilar código fonte",
-          "controlar versões do banco"
+          "compilar codigo fonte",
+          "controlar versoes do banco"
         ],
         "correta": 0
       },
       {
-        "pergunta": "o que é herança em oop",
+        "pergunta": "o que e heranca em oop",
         "opcoes": [
-          "reuso de código por meio de classes derivadas",
+          "reuso de codigo por meio de classes derivadas",
           "armazenamento em nuvem",
           "criptografia de dados",
           "monitoramento de rede",
-          "compilação incremental"
+          "compilacao incremental"
         ],
         "correta": 0
       },
       {
-        "pergunta": "o que é polimorfismo",
+        "pergunta": "o que e polimorfismo",
         "opcoes": [
           "capacidade de objetos responderem de formas diferentes",
-          "um metodo de compressão",
+          "um metodo de compressao",
           "uma ferramenta de rede",
           "um sistema operacional",
           "um formato de imagem"
@@ -219,7 +219,7 @@
       {
         "pergunta": "qual a vantagem de usar classes",
         "opcoes": [
-          "organizar código e facilitar reuso",
+          "organizar codigo e facilitar reuso",
           "aumentar temperatura do processador",
           "melhorar apenas a rede",
           "substituir banco de dados",
@@ -230,10 +230,10 @@
     ],
     "5": [
       {
-        "pergunta": "o que é engenharia de software",
+        "pergunta": "o que e engenharia de software",
         "opcoes": [
-          "disciplina que aplica processos e técnicas para desenvolver software",
-          "uma linguagem de programação",
+          "disciplina que aplica processos e tecnicas para desenvolver software",
+          "uma linguagem de programacao",
           "um tipo de hardware",
           "um banco de dados",
           "um protocolo de rede"
@@ -241,9 +241,9 @@
         "correta": 0
       },
       {
-        "pergunta": "o que é um requisito de software",
+        "pergunta": "o que e um requisito de software",
         "opcoes": [
-          "descrição do que o sistema deve fazer",
+          "descricao do que o sistema deve fazer",
           "um tipo de servidor",
           "um firmware",
           "um estilo de design",
@@ -252,53 +252,53 @@
         "correta": 0
       },
       {
-        "pergunta": "o que é teste de software",
+        "pergunta": "o que e teste de software",
         "opcoes": [
           "processo para identificar defeitos no sistema",
-          "instalação de hardware",
-          "configuração de rede",
+          "instalacao de hardware",
+          "configuracao de rede",
           "criptografia de banco",
           "desenho de interfaces"
         ],
         "correta": 0
       },
       {
-        "pergunta": "o que é integração contínua",
+        "pergunta": "o que e integracao continua",
         "opcoes": [
-          "prática de integrar e testar código com frequência",
+          "pratica de integrar e testar codigo com frequencia",
           "um tipo de monitor",
-          "um protocolo de sincronização de discos",
+          "um protocolo de sincronizacao de discos",
           "um servidor de e-mail",
           "uma impressora compartilhada"
         ],
         "correta": 0
       },
       {
-        "pergunta": "qual é o objetivo da documentação técnica",
+        "pergunta": "qual e o objetivo da documentacao tecnica",
         "opcoes": [
-          "facilitar manutenção e uso do software",
-          "aumentar consumo de memória",
-          "criar ruído na rede",
-          "reduzir número de usuários",
-          "melhorar apenas a rede física"
+          "facilitar manutencao e uso do software",
+          "aumentar consumo de memoria",
+          "criar ruido na rede",
+          "reduzir numero de usuarios",
+          "melhorar apenas a rede fisica"
         ],
         "correta": 0
       }
     ],
     "6": [
       {
-        "pergunta": "o que é modelo osi",
+        "pergunta": "o que e modelo osi",
         "opcoes": [
-          "referência em camadas para redes de comunicação",
+          "referencia em camadas para redes de comunicacao",
           "um banco de dados relacional",
-          "uma linguagem de programação",
+          "uma linguagem de programacao",
           "um sistema de arquivos",
           "um tipo de hardware"
         ],
         "correta": 0
       },
       {
-        "pergunta": "qual protocolo é usado para enviar e-mails",
+        "pergunta": "qual protocolo e usado para enviar e-mails",
         "opcoes": [
           "smtp",
           "http",
@@ -309,44 +309,44 @@
         "correta": 0
       },
       {
-        "pergunta": "o que é endereço ip",
+        "pergunta": "o que e endereco ip",
         "opcoes": [
-          "identificador numérico de um dispositivo na rede",
+          "identificador numerico de um dispositivo na rede",
           "tipo de processador",
           "formato de imagem",
-          "linguagem de marcação",
-          "um sistema de compressão"
+          "linguagem de marcacao",
+          "um sistema de compressao"
         ],
         "correta": 0
       },
       {
-        "pergunta": "o que é roteador",
+        "pergunta": "o que e roteador",
         "opcoes": [
           "dispositivo que encaminha pacotes entre redes",
           "um sistema operacional",
           "um banco de dados",
           "um protocolo de criptografia",
-          "uma placa de vídeo"
+          "uma placa de video"
         ],
         "correta": 0
       },
       {
-        "pergunta": "o que é nat",
+        "pergunta": "o que e nat",
         "opcoes": [
-          "técnica que permite a tradução de endereços entre redes",
-          "um tipo de vírus",
+          "tecnica que permite a traducao de enderecos entre redes",
+          "um tipo de virus",
           "um protocolo de e-mail",
           "um banco de dados",
-          "um modelo de segurança"
+          "um modelo de seguranca"
         ],
         "correta": 0
       }
     ],
     "7": [
       {
-        "pergunta": "o que é cloud computing",
+        "pergunta": "o que e cloud computing",
         "opcoes": [
-          "modelo de fornecimento de recursos de computação via internet",
+          "modelo de fornecimento de recursos de computacao via internet",
           "um tipo de hardware",
           "um protocolo de rede",
           "um banco de dados local",
@@ -355,31 +355,31 @@
         "correta": 0
       },
       {
-        "pergunta": "o que é container",
+        "pergunta": "o que e container",
         "opcoes": [
           "ambiente isolado para executar aplicativos",
-          "um servidor físico",
-          "um protocolo de comunicação",
-          "uma linguagem de programação",
+          "um servidor fisico",
+          "um protocolo de comunicacao",
+          "uma linguagem de programacao",
           "um banco de dados remoto"
         ],
         "correta": 0
       },
       {
-        "pergunta": "o que é orquestração de containers",
+        "pergunta": "o que e orquestracao de containers",
         "opcoes": [
-          "gerenciar implantação e escalonamento de containers",
+          "gerenciar implantacao e escalonamento de containers",
           "instalar sistemas operacionais",
           "criptografia de dados",
-          "controlar usuários",
+          "controlar usuarios",
           "configurar roteadores"
         ],
         "correta": 0
       },
       {
-        "pergunta": "o que é lambda em contextos serverless",
+        "pergunta": "o que e lambda em contextos serverless",
         "opcoes": [
-          "função executada em resposta a eventos",
+          "funcao executada em resposta a eventos",
           "um tipo de servidor",
           "um protocolo de rede",
           "um banco de dados",
@@ -388,11 +388,11 @@
         "correta": 0
       },
       {
-        "pergunta": "qual é a vantagem de usar microserviços",
+        "pergunta": "qual e a vantagem de usar microservicos",
         "opcoes": [
-          "facilitar escalabilidade e manutenção por serviços pequenos",
-          "aumentar dependências entre equipes",
-          "criar um monolítico maior",
+          "facilitar escalabilidade e manutencao por servicos pequenos",
+          "aumentar dependencias entre equipes",
+          "criar um monolitico maior",
           "impedir testes automatizados",
           "gradualmente reduzir a qualidade"
         ],
@@ -401,42 +401,42 @@
     ],
     "8": [
       {
-        "pergunta": "o que é cibersegurança",
+        "pergunta": "o que e ciberseguranca",
         "opcoes": [
-          "conjunto de práticas para proteger sistemas e dados",
-          "um tipo de vírus",
+          "conjunto de praticas para proteger sistemas e dados",
+          "um tipo de virus",
           "um banco de dados",
-          "uma ferramenta gráfica",
+          "uma ferramenta grafica",
           "um protocolo de rede"
         ],
         "correta": 0
       },
       {
-        "pergunta": "o que é autenticação",
+        "pergunta": "o que e autenticacao",
         "opcoes": [
-          "processo de verificar identidade de um usuário",
+          "processo de verificar identidade de um usuario",
           "criptografar todo o disco",
           "configurar um roteador",
-          "instalar um certificado físico",
+          "instalar um certificado fisico",
           "um tipo de rede"
         ],
         "correta": 0
       },
       {
-        "pergunta": "o que é criptografia",
+        "pergunta": "o que e criptografia",
         "opcoes": [
-          "técnica para proteger dados tornando-os incompreensíveis sem chave",
+          "tecnica para proteger dados tornando-os incompreensiveis sem chave",
           "um tipo de hardware",
           "um servidor web",
-          "um processo gráfico",
+          "um processo grafico",
           "uma impressora"
         ],
         "correta": 0
       },
       {
-        "pergunta": "o que é firewall",
+        "pergunta": "o que e firewall",
         "opcoes": [
-          "sistema que controla tráfego de rede conforme regras",
+          "sistema que controla trafego de rede conforme regras",
           "um tipo de banco de dados",
           "um cliente de e-mail",
           "uma rede social",
@@ -445,13 +445,13 @@
         "correta": 0
       },
       {
-        "pergunta": "o que é engenharia social",
+        "pergunta": "o que e engenharia social",
         "opcoes": [
-          "manipulação de pessoas para obter informações ou acesso",
-          "um algoritmo de ordenação",
-          "um serviço web",
-          "uma aplicação móvel",
-          "uma licitação"
+          "manipulacao de pessoas para obter informacoes ou acesso",
+          "um algoritmo de ordenacao",
+          "um servico web",
+          "uma aplicacao movel",
+          "uma licitacao"
         ],
         "correta": 0
       }
