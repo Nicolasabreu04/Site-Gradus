@@ -567,7 +567,7 @@ function finalizarQuiz() {
   telaAtual = "final";
   contador.setAttribute(
     "text",
-    `value: PONTUACAO FINAL: ${pontuacaoFinal} / ${perguntas.length * 10 || 50}; font: ${FONT_UNICODE}`
+    `value: PONTUAÇÃO FINAL: ${pontuacaoFinal} / ${perguntas.length * 10 || 50}; font: ${FONT_UNICODE}`
   );
   resultadoTitulo.setAttribute("visible", true);
   resultadoTitulo.setAttribute("position", "0 0.85 0.18");
@@ -575,7 +575,7 @@ function finalizarQuiz() {
   pergunta.setAttribute("position", "0 0.25 0.18");
   pergunta.setAttribute(
     "text",
-    `value: Voce fez ${pontuacaoFinal} pontos de ${perguntas.length * 10 || 50}.; color: #bdd8ff; width: 5.2; anchor: center; align: center; fontSize: 18; font: ${FONT_UNICODE}`
+    `value: Você fez ${pontuacaoFinal} pontos de ${perguntas.length * 10 || 50}.; color: #bdd8ff; width: 5.2; anchor: center; align: center; fontSize: 18; font: ${FONT_UNICODE}`
   );
   atualizarFeedback(
     "Escolha uma opção abaixo.",

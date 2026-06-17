@@ -2,53 +2,53 @@
   "direito": {
     "1": [
       {
-        "pergunta": "o que e a constituicao",
+        "pergunta": "o que é a constituição",
         "opcoes": [
           "conjunto de normas que organiza o estado",
           "um tipo de contrato privado",
-          "uma empresa publica",
-          "um tribunal especifico",
+          "uma empresa pública",
+          "um tribunal específico",
           "um protocolo de rede"
         ],
         "correta": 0
       },
       {
-        "pergunta": "qual e a funcao dos direitos fundamentais",
+        "pergunta": "qual é a função dos direitos fundamentais",
         "opcoes": [
-          "garantir protecao basica aos individuos",
+          "garantir proteção básica aos indivíduos",
           "regular apenas contratos comerciais",
           "definir taxas administrativas",
-          "organizar eleicoes internas",
+          "organizar eleições internas",
           "criar empresas estatais"
         ],
         "correta": 0
       },
       {
-        "pergunta": "o que significa separacao dos poderes",
+        "pergunta": "o que significa separação dos poderes",
         "opcoes": [
-          "divisao entre executivo legislativo e judiciario",
-          "controle unico do executivo",
-          "autonomia apenas do judiciario",
-          "unificacao dos poderes",
-          "dominacao do legislativo"
+          "divisão entre executivo legislativo e judiciário",
+          "controle único do executivo",
+          "autonomia apenas do judiciário",
+          "unificação dos poderes",
+          "dominação do legislativo"
         ],
         "correta": 0
       },
       {
-        "pergunta": "o que e fonte do direito",
+        "pergunta": "o que é fonte do direito",
         "opcoes": [
           "leis e normas publicadas",
           "apenas costumes locais",
-          "opiniao de empresas privadas",
-          "artigos cientificos",
+          "opinião de empresas privadas",
+          "artigos científicos",
           "protocolos de internet"
         ],
         "correta": 0
       },
       {
-        "pergunta": "o que e controle de constitucionalidade",
+        "pergunta": "o que é controle de constitucionalidade",
         "opcoes": [
-          "verificar se leis estao de acordo com a constituicao",
+          "verificar se leis estão de acordo com a constituição",
           "elaborar contratos internacionais",
           "julgar apenas casos civis",
           "organizar congressos",
@@ -63,39 +63,39 @@
         "opcoes": [
           "conduta prevista em lei penal",
           "mero desagrado social",
-          "divida nao paga",
+          "dívida não paga",
           "contrato rescindido",
-          "acao administrativa"
+          "ação administrativa"
         ],
         "correta": 0
       },
       {
-        "pergunta": "qual e o principio da legalidade penal",
+        "pergunta": "qual é o princípio da legalidade penal",
         "opcoes": [
-          "nao ha crime sem lei previa",
+          "não há crime sem lei prévia",
           "lei posterior pode punir retroativamente",
           "juiz cria crimes conforme o caso",
-          "policia determina a lei",
-          "lei e opcional"
+          "polícia determina a lei",
+          "lei é opcional"
         ],
         "correta": 0
       },
       {
-        "pergunta": "o que e tipicidade no direito penal",
+        "pergunta": "o que é tipicidade no direito penal",
         "opcoes": [
-          "adequacao da conduta a descricao legal do crime",
+          "adequação da conduta à descrição legal do crime",
           "apenas a pena aplicada",
           "a forma do processo civil",
           "o cumprimento de um contrato",
-          "a competencia do tribunal"
+          "a competência do tribunal"
         ],
         "correta": 0
       },
       {
-        "pergunta": "o que e ilicitude",
+        "pergunta": "o que é ilicitude",
         "opcoes": [
-          "ausencia de justificativa legal para a conduta",
-          "apenas ausencia de prova",
+          "ausência de justificativa legal para a conduta",
+          "apenas ausência de prova",
           "erro de procedimento civil",
           "disputa contratual",
           "regularidade administrativa"
@@ -103,7 +103,7 @@
         "correta": 0
       },
       {
-        "pergunta": "qual e a finalidade da pena",
+        "pergunta": "qual é a finalidade da pena",
         "opcoes": [
           "reprimir e prevenir condutas lesivas",
           "aumentar taxa de litigiosidade",
@@ -116,10 +116,10 @@
     ],
     "3": [
       {
-        "pergunta": "o que e obrigacao civil",
+        "pergunta": "o que é obrigação civil",
         "opcoes": [
-          "vinculo juridico entre credor e devedor",
-          "acao penal imediata",
+          "vínculo jurídico entre credor e devedor",
+          "ação penal imediata",
           "direito administrativo",
           "processo trabalhista",
           "norma constitucional"
@@ -127,101 +127,101 @@
         "correta": 0
       },
       {
-        "pergunta": "o que e contrato",
+        "pergunta": "o que é contrato",
         "opcoes": [
-          "acordo de vontades que gera efeitos juridicos",
+          "acordo de vontades que gera efeitos jurídicos",
           "uma lei federal",
-          "uma medida provisoria",
+          "uma medida provisória",
           "um tipo de pena",
           "um recurso ministerial"
         ],
         "correta": 0
       },
       {
-        "pergunta": "o que e responsabilidade civil",
+        "pergunta": "o que é responsabilidade civil",
         "opcoes": [
           "dever de reparar dano causado a terceiro",
           "penas aplicadas em processos penais",
           "controle de constitucionalidade",
-          "normas de licitacao",
-          "regulacao tributaria"
+          "normas de licitação",
+          "regulação tributária"
         ],
         "correta": 0
       },
       {
-        "pergunta": "o que e posse",
+        "pergunta": "o que é posse",
         "opcoes": [
-          "exercicio de fato sobre coisa",
-          "sentenca judicial definitiva",
+          "exercício de fato sobre coisa",
+          "sentença judicial definitiva",
           "norma administrativa",
-          "tipificacao penal",
-          "recurso extraordinario"
+          "tipificação penal",
+          "recurso extraordinário"
         ],
         "correta": 0
       },
       {
-        "pergunta": "qual e a funcao do registro de imoveis",
+        "pergunta": "qual é a função do registro de imóveis",
         "opcoes": [
-          "publicar e garantir seguranca das transacoes imobiliarias",
+          "publicar e garantir segurança das transações imobiliárias",
           "cobrar tributos municipais",
           "julgar crimes ambientais",
           "organizar processos eleitorais",
-          "administrar fundos publicos"
+          "administrar fundos públicos"
         ],
         "correta": 0
       }
     ],
     "4": [
       {
-        "pergunta": "o que e crime",
+        "pergunta": "o que é crime",
         "opcoes": [
-          "acao que viola a norma penal",
+          "ação que viola a norma penal",
           "contrato civil",
-          "lei tributaria",
+          "lei tributária",
           "norma administrativa",
           "direito internacional"
         ],
         "correta": 0
       },
       {
-        "pergunta": "o que e tipicacao penal",
+        "pergunta": "o que é tipificação penal",
         "opcoes": [
-          "adequar uma conduta a descricao de crime na lei",
+          "adequar uma conduta a descrição do crime na lei",
           "registro de empresas",
-          "contratacao publica",
+          "contratação pública",
           "direito do trabalho",
-          "licitacao"
+          "licitação"
         ],
         "correta": 0
       },
       {
-        "pergunta": "qual e a finalidade da pena restritiva de direitos",
+        "pergunta": "qual é a finalidade da pena restritiva de direitos",
         "opcoes": [
           "substituir penas privativas de liberdade em casos previstos",
-          "aumentar cargas tributarias",
+          "aumentar cargas tributárias",
           "encerrar processos civis",
           "julgar recursos eleitorais",
-          "organizar servicos publicos"
+          "organizar serviços públicos"
         ],
         "correta": 0
       },
       {
-        "pergunta": "o que e principio da presuncao de inocencia",
+        "pergunta": "o que é princípio da presunção de inocência",
         "opcoes": [
-          "nenhum individuo e considerado culpado sem condenacao definitiva",
-          "todos sao culpados ate prova em contrario",
-          "penas sao aplicadas sem processo",
-          "juizes decidem sem provas",
-          "acusado nao tem direitos"
+          "nenhum indivíduo é considerado culpado sem condenação definitiva",
+          "todos são culpados até prova em contrário",
+          "penas são aplicadas sem processo",
+          "juízes decidem sem provas",
+          "acusado não tem direitos"
         ],
         "correta": 0
       },
       {
-        "pergunta": "o que e medida cautelar",
+        "pergunta": "o que é medida cautelar",
         "opcoes": [
-          "provisao para assegurar eficacia do processo",
+          "provisão para assegurar eficácia do processo",
           "tipo de contrato comercial",
-          "norma tributaria",
+          "norma tributária",
           "documento de propriedade",
           "registro civil"
         ],
@@ -230,7 +230,7 @@
     ],
     "5": [
       {
-        "pergunta": "o que e processo civil",
+        "pergunta": "o que é processo civil",
         "opcoes": [
           "conjunto de normas que regulam o procedimento judicial civil",
           "um tipo de crime",
@@ -241,20 +241,20 @@
         "correta": 0
       },
       {
-        "pergunta": "o que e peticao inicial",
+        "pergunta": "o que é petição inicial",
         "opcoes": [
-          "documento que inicia a acao judicial",
-          "sentenca final do juiz",
-          "declaracao de bens",
+          "documento que inicia a ação judicial",
+          "sentença final do juiz",
+          "declaração de bens",
           "registro empresarial",
-          "ata de reuniao"
+          "ata de reunião"
         ],
         "correta": 0
       },
       {
-        "pergunta": "o que e recurso",
+        "pergunta": "o que é recurso",
         "opcoes": [
-          "meio para contestar decisao judicial",
+          "meio para contestar decisão judicial",
           "documento fiscal",
           "medida administrativa",
           "contrato laboral",
@@ -263,90 +263,90 @@
         "correta": 0
       },
       {
-        "pergunta": "qual e o objetivo da coerencia processual",
+        "pergunta": "qual é o objetivo da coerência processual",
         "opcoes": [
           "garantir regularidade e previsibilidade do processo",
           "aumentar prazos sem justificativa",
           "eliminar provas testemunhais",
           "atribuir poderes ao executivo",
-          "modificar constituicao"
+          "modificar constituição"
         ],
         "correta": 0
       },
       {
-        "pergunta": "o que e incidente de desconsideracao da personalidade juridica",
+        "pergunta": "o que é incidente de desconsideração da personalidade jurídica",
         "opcoes": [
-          "procedimento para responsabilizar socios por atos da empresa",
+          "procedimento para responsabilizar sócios por atos da empresa",
           "tipo de contrato civil",
           "um recurso eleitoral",
-          "uma norma tributaria",
-          "um crime especifico"
+          "uma norma tributária",
+          "um crime específico"
         ],
         "correta": 0
       }
     ],
     "6": [
       {
-        "pergunta": "o que e processo penal",
+        "pergunta": "o que é processo penal",
         "opcoes": [
           "conjunto de regras para apurar e julgar crimes",
           "um contrato trabalhista",
-          "uma norma tributaria",
+          "uma norma tributária",
           "um registro civil",
           "um documento administrativo"
         ],
         "correta": 0
       },
       {
-        "pergunta": "o que e denuncia no processo penal",
+        "pergunta": "o que é denúncia no processo penal",
         "opcoes": [
-          "exposicao do fato criminoso feita pelo ministerio publico",
+          "exposição do fato criminoso feita pelo Ministério Público",
           "um tipo de recurso civil",
-          "uma execucao fiscal",
+          "uma execução fiscal",
           "um contrato administrativo",
           "um ato de registro"
         ],
         "correta": 0
       },
       {
-        "pergunta": "o que e audiencia de instruccao",
+        "pergunta": "o que é audiência de instrução",
         "opcoes": [
           "fase em que se colhem provas e ouvem testemunhas",
           "apenas julgamento do recurso",
           "registro de contratos",
-          "inspecao fiscal",
-          "assinatura de peticoes"
+          "inspeção fiscal",
+          "assinatura de petições"
         ],
         "correta": 0
       },
       {
-        "pergunta": "o que e prisao preventiva",
+        "pergunta": "o que é prisão preventiva",
         "opcoes": [
           "medida cautelar que limita a liberdade antes do julgamento",
-          "pena aplicada apos condenacao",
+          "pena aplicada após condenação",
           "mesma coisa que liberdade condicional",
-          "tipo de sancao administrativa",
+          "tipo de sanção administrativa",
           "um recurso especial"
         ],
         "correta": 0
       },
       {
-        "pergunta": "o que e medida protetiva em violencia domestica",
+        "pergunta": "o que é medida protetiva em violência doméstica",
         "opcoes": [
-          "acao para proteger vitimas como afastamento do agressor",
+          "ação para proteger vítimas como afastamento do agressor",
           "apenas multas administrativas",
           "registro de propriedade",
-          "audiencia civil",
-          "tipo de recurso tributario"
+          "audiência civil",
+          "tipo de recurso tributário"
         ],
         "correta": 0
       }
     ],
     "7": [
       {
-        "pergunta": "o que e direito do trabalho",
+        "pergunta": "o que é direito do trabalho",
         "opcoes": [
-          "conjunto de normas que regulam a relacao de emprego",
+          "conjunto de normas que regulam a relação de emprego",
           "um tipo de contrato civil",
           "uma norma penal",
           "um procedimento fiscal",
@@ -355,20 +355,20 @@
         "correta": 0
       },
       {
-        "pergunta": "o que e carteira de trabalho",
+        "pergunta": "o que é carteira de trabalho",
         "opcoes": [
-          "registro das informacoes do contrato de trabalho",
+          "registro das informações do contrato de trabalho",
           "um documento eleitoral",
           "um tipo de contrato internacional",
-          "um formulario tributario",
-          "um protocolo de seguranca"
+          "um formulário tributário",
+          "um protocolo de segurança"
         ],
         "correta": 0
       },
       {
-        "pergunta": "o que e jornada de trabalho",
+        "pergunta": "o que é jornada de trabalho",
         "opcoes": [
-          "tempo em que o empregado esta a disposicao do empregador",
+          "tempo em que o empregado está à disposição do empregador",
           "uma taxa de imposto",
           "uma pena criminal",
           "um recurso civil",
@@ -377,90 +377,90 @@
         "correta": 0
       },
       {
-        "pergunta": "o que e justa causa para demissao",
+        "pergunta": "o que é justa causa para demissão",
         "opcoes": [
-          "faltas graves do empregado que autorizam a demissao",
-          "um tipo de beneficio previdenciario",
+          "faltas graves do empregado que autorizam a demissão",
+          "um tipo de benefício previdenciário",
           "uma norma constitucional",
-          "uma licitacao publica",
-          "um registro imobiliario"
+          "uma licitação pública",
+          "um registro imobiliário"
         ],
         "correta": 0
       },
       {
-        "pergunta": "qual e a funcao da convencao coletiva",
+        "pergunta": "qual é a função da convenção coletiva",
         "opcoes": [
-          "estabelecer condicoes de trabalho entre sindicatos e empresas",
+          "estabelecer condições de trabalho entre sindicatos e empresas",
           "definir tributos municipais",
           "julgar processos civis",
-          "registrar imoveis",
-          "emitir licencas ambientais"
+          "registrar imóveis",
+          "emitir licenças ambientais"
         ],
         "correta": 0
       }
     ],
     "8": [
       {
-        "pergunta": "o que e direito tributario",
+        "pergunta": "o que é direito tributário",
         "opcoes": [
-          "regulacao sobre tributos e arrecadacao",
+          "regulação sobre tributos e arrecadação",
           "um procedimento penal",
           "uma lei civil",
-          "um servico administrativo",
+          "um serviço administrativo",
           "um contrato comercial"
         ],
         "correta": 0
       },
       {
-        "pergunta": "o que e tributo",
+        "pergunta": "o que é tributo",
         "opcoes": [
-          "prestacao compulsoria prevista em lei",
+          "prestação compulsória prevista em lei",
           "uma multa administrativa",
           "um contrato civil",
-          "uma licitacao",
-          "um servico municipal"
+          "uma licitação",
+          "um serviço municipal"
         ],
         "correta": 0
       },
       {
-        "pergunta": "o que e principio da capacidade contributiva",
+        "pergunta": "o que é princípio da capacidade contributiva",
         "opcoes": [
           "quem tem mais renda deve contribuir mais",
           "todos pagam igual independentemente de renda",
-          "so empresa paga tributo",
-          "isencao para funcionarios publicos",
-          "tributo sobre propriedade publica apenas"
+          "só empresa paga tributo",
+          "isenção para funcionários públicos",
+          "tributo sobre propriedade pública apenas"
         ],
         "correta": 0
       },
       {
-        "pergunta": "o que e fato gerador do tributo",
+        "pergunta": "o que é fato gerador do tributo",
         "opcoes": [
-          "situacao que cria a obrigacao tributaria",
-          "apenas a emissao de multa",
-          "a publicacao da lei",
+          "situação que cria a obrigação tributária",
+          "apenas a emissão de multa",
+          "a publicação da lei",
           "o julgamento judicial",
           "a assinatura de contrato"
         ],
         "correta": 0
       },
       {
-        "pergunta": "qual e a finalida de contencioso administrativo tributario",
+        "pergunta": "qual é a finalidade do contencioso administrativo tributário",
         "opcoes": [
-          "resolver disputas entre contribuinte e administracao tributaria",
+          "resolver disputas entre contribuinte e administração tributária",
           "arquivar processos civis",
-          "financiar obras publicas",
+          "financiar obras públicas",
           "regular contratos trabalhistas",
-          "emitir licencas ambientais"
+          "emitir licenças ambientais"
         ],
         "correta": 0
       }
     ],
     "9": [
       {
-        "pergunta": "o que e direito administrativo",
+        "pergunta": "o que é direito administrativo",
         "opcoes": [
-          "conjunto de normas que regem a administracao publica",
+          "conjunto de normas que regem a administração pública",
           "um tipo de processo penal",
           "uma norma trabalhista",
           "um contrato comercial",
@@ -469,21 +469,21 @@
         "correta": 0
       },
       {
-        "pergunta": "o que e licitacao publica",
+        "pergunta": "o que é licitação pública",
         "opcoes": [
-          "procedimento para contratar terceiros pela administracao",
-          "audiencia criminal",
+          "procedimento para contratar terceiros pela administração",
+          "audiência criminal",
           "recurso civil",
-          "registro imobiliario",
+          "registro imobiliário",
           "contrato internacional"
         ],
         "correta": 0
       },
       {
-        "pergunta": "o que e ato administrativo",
+        "pergunta": "o que é ato administrativo",
         "opcoes": [
-          "manifestacao da administracao que produz efeitos juridicos",
-          "sentenca penal",
+          "manifestação da administração que produz efeitos jurídicos",
+          "sentença penal",
           "contrato de trabalho",
           "norma constitucional",
           "um documento privado"
@@ -491,45 +491,45 @@
         "correta": 0
       },
       {
-        "pergunta": "qual e a finalidade da responsabilizacao administrativa",
+        "pergunta": "qual é a finalidade da responsabilização administrativa",
         "opcoes": [
-          "punir irregularidades cometidas por agentes publicos",
+          "punir irregularidades cometidas por agentes públicos",
           "processar crimes federais",
-          "alterar legislacao",
+          "alterar legislação",
           "emitir debitos comerciais",
           "criar normas internacionais"
         ],
         "correta": 0
       },
       {
-        "pergunta": "o que e controle interno na administracao",
+        "pergunta": "o que é controle interno na administração",
         "opcoes": [
           "mecanismos para monitorar e prevenir irregularidades",
-          "audiencia penal publica",
-          "registro de imoveis",
-          "votacao legislativa",
-          "emissao de moeda"
+          "audiência penal pública",
+          "registro de imóveis",
+          "votação legislativa",
+          "emissão de moeda"
         ],
         "correta": 0
       }
     ],
     "10": [
       {
-        "pergunta": "o que e etica juridica",
+        "pergunta": "o que é ética jurídica",
         "opcoes": [
-          "conjunto de principios que orientam a conduta do profissional do direito",
+          "conjunto de princípios que orientam a conduta do profissional do direito",
           "um tipo de processo penal",
-          "uma norma tributaria",
+          "uma norma tributária",
           "registro de empresas",
           "um protocolo de rede"
         ],
         "correta": 0
       },
       {
-        "pergunta": "o que e peticao inicial na pratica juridica",
+        "pergunta": "o que é petição inicial na prática jurídica",
         "opcoes": [
-          "documento que formaliza o inicio da acao e expoe pedidos",
-          "uma decisao judicial final",
+          "documento que formaliza o início da ação e expõe pedidos",
+          "uma decisão judicial final",
           "um contrato laboral",
           "um ato administrativo",
           "um recurso especial"
@@ -537,34 +537,34 @@
         "correta": 0
       },
       {
-        "pergunta": "qual e a importancia do sigilo profissional do advogado",
+        "pergunta": "qual é a importancia do sigilo profissional do advogado",
         "opcoes": [
-          "proteger informacoes do cliente e garantir confianca",
+          "proteger informações do cliente e garantir confiança",
           "impedir o andamento dos processos",
           "substituir a prova documental",
           "aumentar taxas judiciais",
-          "organizar licitacoes"
+          "organizar licitações"
         ],
         "correta": 0
       },
       {
-        "pergunta": "o que e consultoria juridica",
+        "pergunta": "o que é consultoria jurídica",
         "opcoes": [
-          "orientacao preventiva sobre riscos e cumprimento de normas",
-          "execucao de penas",
+          "orientação preventiva sobre riscos e cumprimento de normas",
+          "execução de penas",
           "registro de nascimento",
-          "audiencia criminal",
-          "gestao de recursos financeiros"
+          "audiência criminal",
+          "gestão de recursos financeiros"
         ],
         "correta": 0
       },
       {
-        "pergunta": "qual e a funcao da conciliacao na pratica juridica",
+        "pergunta": "qual é a função da conciliação na prática jurídica",
         "opcoes": [
           "buscar acordo entre partes para resolver conflitos sem julgamento",
           "impor penas automaticamente",
-          "realizar denuncias penais",
-          "emitir licencas ambientais",
+          "realizar denúncias penais",
+          "emitir licenças ambientais",
           "executar contratos civis"
         ],
         "correta": 0
