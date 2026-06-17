@@ -279,17 +279,17 @@ function mostrarTelaInicioQuiz() {
   // Esconder botões finais
   [btnVoltarMapa, textBtnVoltar, btnSair, textBtnSair].forEach((el) => setVisible(el, false));
 
-  // Preparar botão COMEÇAR reutilizando btnRefazer/textBtnRefazer
+  // Preparar botão de início reutilizando btnRefazer/textBtnRefazer
   btnRefazer.setAttribute("visible", true);
   textBtnRefazer.setAttribute("visible", true);
-  textBtnRefazer.setAttribute("value", "COMEÇAR");
+  textBtnRefazer.setAttribute("value", "INICIAR");
   btnRefazer.setAttribute("onclick", "comecarQuizSelecionado()");
   textBtnRefazer.setAttribute("onclick", "comecarQuizSelecionado()");
 
   // Conteúdos do painel
-  contador.setAttribute("text", `value: Avaliação selecionada; font: ${FONT_UNICODE}`);
-  pergunta.setAttribute("text", `value: Pronto para começar?; font: ${FONT_UNICODE}`);
-  atualizarFeedback("Clique em COMEÇAR para iniciar o quiz.");
+  contador.setAttribute("text", `value: Desafio escolhido; font: ${FONT_UNICODE}`);
+  pergunta.setAttribute("text", `value: Pronto para iniciar?; font: ${FONT_UNICODE}`);
+  atualizarFeedback("");
 }
 
 async function comecarQuizSelecionado() {
@@ -301,7 +301,7 @@ async function comecarQuizSelecionado() {
 
 // Escolhe um período e inicia o quiz
 async function escolherPeriodoVR(periodo) {
-  console.log("PERIODO ESCOLHIDO:", periodo);
+  console.log("SEMESTRE ESCOLHIDO:", periodo);
   console.log("CURSO ATUAL:", cursoSelecionado);
   periodoSelecionado = String(periodo);
   resetarUIQuiz();
@@ -400,7 +400,7 @@ function atualizarContador() {
   const pergNum = Math.min(perguntaAtualIndex + 1, total);
   contador.setAttribute(
     "text",
-    `value: Pergunta ${pergNum} de ${total}   •   Pontuação ${pontuacaoFinal}; font: ${FONT_UNICODE}`
+    `value: Pergunta ${pergNum} de ${total}   •   Pontos ${pontuacaoFinal}; font: ${FONT_UNICODE}`
   );
 }
 
@@ -438,7 +438,7 @@ function mostrarPergunta() {
   resultadoTitulo.setAttribute("position", "0 1.18 0.14");
   atualizarContador();
   pergunta.setAttribute("text", `value: ${formatarTextoQuiz(perguntaAtual.pergunta || "")}; font: ${FONT_UNICODE}`);
-  atualizarFeedback("Mire em um card e confirme.");
+  atualizarFeedback("");
   resetarAlternativas();
   altEls.forEach((alt, i) => {
     if (!alt) return;
@@ -520,8 +520,8 @@ async function iniciarQuiz() {
     perguntas = [];
     perguntaAtual = null;
     interfacePanel.setAttribute("visible", true);
-    atualizarFeedback("NENHUMA PERGUNTA ENCONTRADA PARA ESTE PERÍODO", "#ff6b6b");
-    pergunta.setAttribute("text", `value: Nenhuma pergunta encontrada para este período.; font: ${FONT_UNICODE}`);
+    atualizarFeedback("NENHUMA PERGUNTA ENCONTRADA PARA ESTE SEMESTRE", "#ff6b6b");
+    pergunta.setAttribute("text", `value: Nenhuma pergunta encontrada para este semestre.; font: ${FONT_UNICODE}`);
     boxEls.forEach((box) => {
       if (box) box.setAttribute("visible", false);
     });
@@ -567,7 +567,7 @@ function finalizarQuiz() {
   telaAtual = "final";
   contador.setAttribute(
     "text",
-    `value: PONTUAÇÃO FINAL: ${pontuacaoFinal} / ${perguntas.length * 10 || 50}; font: ${FONT_UNICODE}`
+    `value: PONTOS: ${pontuacaoFinal} / ${perguntas.length * 10 || 50}; font: ${FONT_UNICODE}`
   );
   resultadoTitulo.setAttribute("visible", true);
   resultadoTitulo.setAttribute("position", "0 0.85 0.18");
@@ -575,12 +575,9 @@ function finalizarQuiz() {
   pergunta.setAttribute("position", "0 0.25 0.18");
   pergunta.setAttribute(
     "text",
-    `value: Você fez ${pontuacaoFinal} pontos de ${perguntas.length * 10 || 50}.; color: #bdd8ff; width: 5.2; anchor: center; align: center; fontSize: 18; font: ${FONT_UNICODE}`
+    `value: Total: ${pontuacaoFinal} pontos; color: #bdd8ff; width: 5.2; anchor: center; align: center; fontSize: 18; font: ${FONT_UNICODE}`
   );
-  atualizarFeedback(
-    "Escolha uma opção abaixo.",
-    "#bdd8ff"
-  );
+  atualizarFeedback("");
 
   // Esconde alternativas
   boxEls.forEach((box) => {
